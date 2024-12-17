@@ -1,0 +1,25 @@
+:root {
+  --green: #9DC183
+}
+
+body {
+  margin: 0;
+  font-family: "Calibri";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+span {
+  display: block;
+}
+
+/* adjust based on the height of the header */
+.headroom-wrapper + * {
+  padding-top: 200px;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+}
+
