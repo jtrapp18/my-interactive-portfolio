@@ -8,14 +8,7 @@ const ProjectPage = () => {
 
     return (
         <main>
-            <ProjectFilter />
-            <Card.Group itemsPerRow={2}>
-                {projects.map(project=>
-                    <ProjectCard
-                        key={project.name}
-                        {...project}
-                    />)}
-            </Card.Group>
+            <p>This is the project page!</p>
         </main>
     );
 }

@@ -23,3 +23,7 @@ section {
   justify-content: center;
 }
 
+main {
+  padding: 20px;
+  margin: 20px;
+}

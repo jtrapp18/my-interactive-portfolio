@@ -8,6 +8,7 @@ const StyledCard = styled.article`
     height: 500px;
     overflow: hidden;
     margin: 20px;
+    position: relative;
     // width: 40%;
 
     h2, .rating {

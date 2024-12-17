@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import data from "../data"
 
 const StyledFooter = styled.footer`
     padding-top: 50px;
@@ -32,19 +33,22 @@ const StyledFooter = styled.footer`
 ` 
 
 const Footer = () => {
-    const logos = ["github-mark.png", "LI-Black.png", "Instagram_Glyph_Black.jpg"]
+    const socials = data.socials;
+
     return (
         <StyledFooter>
             <p>This is some basic information</p>
             <div id="socials-container">
-                {logos.map(logo=>
-                    <img
-                        key={logo}
-                        className="logo"
-                        src={`images/logos/${logo}`}
-                        alt={logo}
-                    >
+                {socials.map(social=>
+                    <a href={social.link} 
+                        key={social.name}>
+                        <img
+                            className="logo"
+                            src={`images/logos/${social.image}`}
+                            alt={social.name}
+                        >
                     </img>
+                    </a>
                 )}
             </div>
             <span id="end-note">Jacqueline Trapp</span>
