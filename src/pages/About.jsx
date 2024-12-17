@@ -6,6 +6,8 @@ const StyledImg = styled.img`
 `
 
 const About = () => {
+    const languages = ["Python", "React", "JavaScript", "VBA", "CSS", "HTML", "Power BI"]
+    
     return (
         <main>
             <h1>About Me</h1>
@@ -38,6 +40,7 @@ const About = () => {
                 science and technology by designing innovative, automated solutions 
                 that save time and improve the efficiency of actuarial processes.
             </p>
+            
         </main>
     );
 }

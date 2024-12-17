@@ -9,14 +9,15 @@ const data = {
             collaborators: [
                 {
                     name: "Elchonon Klafter",
-                    link: "github.com"
+                    link: "https://github.com/klaftech"
                 }
             ],
             description: "curriculum management tool",
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
-            website_link: "",
-            repo_link: ""
+            website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
+            repo_fe: "https://github.com/jtrapp18/wandr-personal-travel-journal",
+            repo_be: "https://github.com/jtrapp18/wandr-personal-travel-journal-be"
         },
         {
             id: 2,
@@ -27,25 +28,27 @@ const data = {
             collaborators: [
                 {
                     name: "Kelsey Roche",
-                    link: "github.com"
+                    link: "https://github.com/kelseyroche"
                 }
             ],
             description: "to be determined",
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
-            website_link: "",
-            repo_link: ""
+            website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
+            repo_fe: "https://github.com/jtrapp18/english-study-curriculum-mgmt",
+            repo_be: "https://github.com/jtrapp18/english-study-curriculum-mgmt-be"
         }
     ],
     relevantWork: [
         {
             id: 1,
-            name: "Project Management Tool",
+            name: "Project Management Tool 'Portal'",
             summary: "",
             languages: ["SQL", "MS Access", "VBA"],
             description: "curriculum management tool",
             year: 0,
             company: 0,
+            areas: ["Pension"],
             image: "images/projects/curriculum-mgmt.png"
         },
         {
@@ -55,7 +58,8 @@ const data = {
             languages: ["VBA", "MS Excel"],
             description: "to be determined",
             year: 0,
-            company: 0,
+            company: "The Benefit Practice",
+            areas: ["Pension"],
             image: "images/projects/curriculum-mgmt.png"
         },
         {
@@ -65,7 +69,8 @@ const data = {
             languages: ["Python"],
             description: "to be determined",
             year: 0,
-            company: 0,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["Audit"],
             image: "images/projects/curriculum-mgmt.png"
         },
         {
@@ -75,9 +80,21 @@ const data = {
             languages: ["Python"],
             description: "to be determined",
             year: 0,
-            company: 0,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["Audit"],
             image: "images/projects/curriculum-mgmt.png"
-        }
+        },
+        {
+            id: 5,
+            name: "Assumption Management Tool",
+            summary: "",
+            languages: ["Python"],
+            description: "to be determined",
+            year: 0,
+            company: "Knights of Columbus",
+            areas: ["Life Insurance"],
+            image: "images/projects/curriculum-mgmt.png"
+        },
     ],
     socials: [
         {

@@ -4,10 +4,24 @@ import ProjectCard from "../components/ProjectCard";
 import data from "../data"
 import styled from "styled-components";
 
+
+const TripsMain = styled.section`
+  flex: 1;
+
+  > div {
+    padding: 20px;
+  }
+`
+
 const CardContainer = styled.div`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  flex: 1;
+
+//   > div {
+//     padding: 20px;
+//   }
 `
 
 const Projects = () => {

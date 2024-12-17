@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import data from "../data"
 
 const StyledFooter = styled.footer`
+    border-top: 1px solid black;
     padding-top: 50px;
 
     &* {

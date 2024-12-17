@@ -86,12 +86,16 @@ function ProjectCard({name, phase, languages, description, image, gif}) {
       <StyledCard>
         <h2>{name}</h2>
         <h3>{`Phase ${phase}`}</h3>
-        <ul>{languages.map(language=><li key={language}>{language}</li>)}</ul>
         <section className="img-container">
           <img src={image} alt={image} className="static" />
           <img src={gif} alt={gif} className="animated" />
         </section>
         <Tags tags={languages}/>
+        <details>
+            <summary>Details</summary>
+            <p>{description}</p>
+
+        </details>
       </StyledCard>
   );
 };
