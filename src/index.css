@@ -17,14 +17,3 @@ span {
 .headroom-wrapper + * {
   padding-top: 200px;
 }
-
-section {
-  display: flex;
-  justify-content: center;
-}
-
-/* main {
-  display: flex;
-  padding: 20px;
-  margin: 20px;
-} */

@@ -2,9 +2,18 @@ import { useState } from "react";
 
 const LanguageFilter = (projects) => {
 
-const [languageFilter, setLanguageFilter] = useState([])
+const [filters, setFilters] = useState({
+    "Python": true, 
+    "React": true, 
+    "JavaScript": true, 
+    "CSS": true, 
+    "HTML": true, 
+    "VBA":true
+})
 
-const showProjects = languageFilter.length === 0 
+const languageFilter = Object.keys(filters).filter(language => filters[language]===true)
+
+const showProjects = filters.length === 0 
 ? projects 
 : projects.filter(project =>
     new Set(project.languages).size > 0 &&
@@ -12,7 +21,7 @@ const showProjects = languageFilter.length === 0
     [...new Set(project.languages)].some(lang => new Set(languageFilter).has(lang))
     );
 
-    return [languageFilter, setLanguageFilter, showProjects]
+    return [filters, setFilters, showProjects]
 }
 
 export default LanguageFilter;

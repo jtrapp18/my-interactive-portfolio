@@ -16,11 +16,11 @@ const CardContainer = styled.div`
 
 const RelevantWork = () => {
     const relevantWork = data.relevantWork;
-    const [languageFilter, setLanguageFilter, showProjects] = LanguageFilter(relevantWork)
+    const [filters, setFilters, showProjects] = LanguageFilter(relevantWork)
 
     return (
         <StyledMain>
-            <SideBar setLanguageFilter={setLanguageFilter}/>
+            <SideBar filters={filters} setFilters={setFilters}/>
             <CardContainer>
                 {showProjects.map(work=>
                     <WorkCard

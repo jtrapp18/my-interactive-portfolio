@@ -1,6 +1,4 @@
-import { Card } from "semantic-ui-react";
-import ProjectFilter from "../components/ProjectFilter";
-import ProjectCard from "../components/ProjectCard";
+
 import data from "../data"
 
 const ProjectPage = () => {

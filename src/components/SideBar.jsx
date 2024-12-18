@@ -2,11 +2,13 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 
 const SidePanelContainer = styled.section`
+    position:relative;
     padding: 20px;
     min-width: 200px;
     max-width: 20%;
     width: 15%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     background-color: gray;
     border-right: 2px solid #C8C8C8;
     resize: horizontal;
@@ -29,10 +31,14 @@ const ClearFilter = styled.p`
     }
 `;
 
-const SideBar = ({setLanguageFilter}) => {
-    const languages = ["Python", "React", "JavaScript", "CSS", "HTML", "VBA"]
+const SideBar = ({filters, setFilters}) => {
     
-    const handleClick = (event) => setLanguageFilter(prevFilters => [...prevFilters, "Python"])
+    const handleClick = (event) => {
+        const name = event.target.name
+        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
+
+        setFilters(prevFilters => ({...prevFilters, [name]: value}))
+    }
 
     // const clearFilter = (filterType) => {
 
@@ -65,18 +71,19 @@ const SideBar = ({setLanguageFilter}) => {
 
     return (
         <SidePanelContainer className="side-panel">
-            <button onClick={handleClick}>Click Me!</button>
-            {/* <h2>Apply Filters</h2>
-            <h3>Trip Status</h3>
-            <label>
-                <input
-                    checked={filterInput.complete}
-                    type="checkbox"
-                    name="complete"
-                    onChange={handleClick}
-                />
-                Complete
-            </label> */}
+            <h2>Apply Filters</h2>
+            <h3>Languages</h3>
+            {Object.keys(filters).map(language => 
+                <label key={language}>
+                    <input
+                        checked={filters[language]}
+                        type="checkbox"
+                        name={language}
+                        onChange={handleClick}
+                    />
+                    {language}
+                </label>)
+            }
             {/* <ClearFilter onClick={()=>clearFilter("status")}>clear status filter</ClearFilter>
             <h3>Dates</h3>
             <label htmlFor="startDate">Start Date</label>
