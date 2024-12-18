@@ -59,4 +59,4 @@ const CardStyling = css`
     overflow: hidden;
   `
 
-export { CardHover, CardStyling, TypeAnimation, SlideAnimation }
+export { CardHover, CardStyling, TypeAnimation }

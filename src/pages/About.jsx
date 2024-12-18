@@ -1,6 +1,5 @@
 // import React from 'react';
 import styled from "styled-components";
-import { SlideAnimation } from "../MiscStyling";
 
 const StyledMain = styled.main`
     display: grid;
@@ -25,10 +24,11 @@ const StyledArticle = styled.article`
     box-sizing: border-box;
     padding: 20px 100px 100px 100px;
     height: var(--size-body);
-    border: 2px solid black;
-    background-color: ${props => props.color ? props.color : null};
+    background: ${props => props.color ? props.color : null};
     background-image: ${props => props.image ? `url(${props.image})` : null};
-    background-size: cover;
+    background-size: ${props => props.image ? "80%" : null};
+    background-repeat: no-repeat;
+    background-position: bottom;
 
     h1 {
         font-size: 75px;
@@ -51,7 +51,7 @@ const StyledArticle = styled.article`
     p {
         font-size: 1.5vw;
         padding: 5px;
-        background-color: ${props => props.image ? "white" : null};
+        background: ${props => props.image ? "white" : null};
         box-shadow: ${props => props.image ? "var(--shadow)" : null};
     }
 `
@@ -60,7 +60,7 @@ const About = () => {
 
     return (
         <StyledMain>
-            <StyledArticle color="blue">
+            <StyledArticle color="var(--striped-gray)">
                 <h1>About Me</h1>
                 <div>
                     <img
@@ -70,7 +70,7 @@ const About = () => {
                     <p>My name is Jacqueline and I am studying to be a Software Engineer.</p>
                 </div>
             </StyledArticle>
-            <StyledArticle color="yellow">
+            <StyledArticle color="white">
                 <h1>My Background</h1>
                 <div>
                     <img

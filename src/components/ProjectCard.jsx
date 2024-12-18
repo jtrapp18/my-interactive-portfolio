@@ -57,7 +57,7 @@ function ProjectCard({name, phase, summary, languages, collaborators,
               <a href={repo_be}>Back-end Repository</a>
               <strong>Collaborators:</strong>
               {collaborators.map(collaborator =>
-                <div id={collaborator.name}>
+                <div key={collaborator.name}>
                   <a href={collaborator.link}>{collaborator.name}</a>
                 </div>
               )}
