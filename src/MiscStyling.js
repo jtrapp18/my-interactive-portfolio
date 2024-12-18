@@ -11,7 +11,7 @@ const CardHover = css`
 
 const CardStyling = css`
     background: var(--background);
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+    box-shadow: var(--shadow);
     border-radius: 10px;
     height: 450px;
     overflow: hidden;

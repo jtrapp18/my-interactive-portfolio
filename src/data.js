@@ -99,15 +99,15 @@ const data = {
     socials: [
         {
             id: 1,
-            name: "Github",
-            image: "github-mark.png",
-            link: "https://github.com/jtrapp18"
-        },
-        {
-            id: 2,
             name: "LinkedIn",
             image: "LI-In-Bug.png",
             link: "https://www.linkedin.com/in/jacqueline-trapp-065a936b"
+        },
+        {
+            id: 2,
+            name: "Github",
+            image: "github-mark.png",
+            link: "https://github.com/jtrapp18"
         },
         {
             id: 3,

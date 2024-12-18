@@ -14,7 +14,7 @@ const StyledCard = styled.article`
       img {
         position: absolute;
         bottom: 5%;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
+        box-shadow: var(--shadow);
         width: 100%;
         height: 100%;
         object-fit: cover;
