@@ -5,24 +5,24 @@ const StyledMain = styled.main`
     display: grid;
     position: relative;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     margin: 0;
 
     article {
+        box-sizing: border-box;
         padding: 20px 100px 100px 100px;
-        height: calc(var(--size-body)-100px);
+        height: var(--size-body);
         border: 2px solid black;
 
         img {
             width: 30%;
-            min-width: 500px;
+            // min-width: 500px;
         }
     }
 `
 
 const About = () => {
-    const languages = ["Python", "React", "JavaScript", "VBA", "CSS", "HTML", "Power BI"]
-    
+
     return (
         <StyledMain>
             <article>
@@ -34,6 +34,11 @@ const About = () => {
                 <p>My name is Jacqueline and I am studying to be a Software Engineer.</p>
             </article>
             <article>
+                <h1>My Background</h1>
+                <img
+                    src="/images/kev_and_me.jpg"
+                    alt="My boyfriend and me in Scotland"
+                />
                 <p>
                     I have spent my career as an actuary. I have worked in pension consulting, 
                     life insurance, and currently as an auditor and consultant. During my first job, 
@@ -46,6 +51,7 @@ const About = () => {
                 </p>
             </article>
             <article>
+                <h1>My Hobbies</h1>
                 <p>
                     Experienced Actuary and Full-Stack Developer with a background in 
                     pension, life insurance, audit, and consulting.
