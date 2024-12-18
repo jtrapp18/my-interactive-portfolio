@@ -1,5 +1,6 @@
 // import React from 'react';
 import styled from "styled-components";
+import { SlideAnimation } from "../MiscStyling";
 
 const StyledMain = styled.main`
     display: grid;
@@ -32,6 +33,7 @@ const StyledArticle = styled.article`
     h1 {
         font-size: 75px;
         margin-bottom: 10px;
+        animation: slideRight 1s;
     }
 
     div {
@@ -39,6 +41,7 @@ const StyledArticle = styled.article`
         width: 100%;
         max-height: 80%;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        animation: slideLeft 1s;
     }
 
     img {

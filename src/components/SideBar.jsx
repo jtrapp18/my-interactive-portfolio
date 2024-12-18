@@ -11,9 +11,9 @@ const SidePanelContainer = styled.section`
     flex-direction: column;
     // background-color: gray;
     border-right: 2px solid #C8C8C8;
-    // background-image: linear-gradient(to right, #ff7e5f, #feb47b), url('/images/birch_paneling.jpeg');
-    background-image: url('/images/birch_paneling.jpeg');
-    background-size: cover;
+    background: linear-gradient(to top, var(--light-green), white);
+    // background-image: url('/images/birch_paneling.jpeg');
+    // background-size: cover;
     // opacity: 0.8;
     resize: horizontal;
 

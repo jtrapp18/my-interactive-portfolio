@@ -3,8 +3,10 @@ import styled from 'styled-components';
 import data from "../data"
 
 const StyledFooter = styled.footer`
-    padding-top: 50px;
+    padding-top: 20px;
     background: linear-gradient(to bottom, var(--light-green), white);
+    background-image: url('/images/birch_paneling.jpeg');
+    background-size: cover;
 
     & * {
         align-items: center;

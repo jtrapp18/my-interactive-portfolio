@@ -5,19 +5,19 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import LanguageFilter from "../hooks/languageFilter";
 
-const StyledMain = styled.section`
+const StyledMain = styled.main`
   display: flex;
+
+  div > h3 {
+    margin: 20px;
+  }
 `
 
-const CardContainer = styled.div`
+const CardContainer = styled.section`
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
   flex: 1;
-
-//   > div {
-//     padding: 20px;
-//   }
 `
 
 const Projects = () => {
@@ -27,13 +27,16 @@ const Projects = () => {
     return (
         <StyledMain>
             <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>
-            <CardContainer>
-                {showProjects.map(project=>
-                    <ProjectCard
-                        key={project.id}
-                        {...project}
-                    />)}
-            </CardContainer>
+            <div>
+                <h3>Throughout my Software Engineering course at FlatIron School, I worked on a series of projects</h3>
+                <CardContainer>
+                    {showProjects.map(project=>
+                        <ProjectCard
+                            key={project.id}
+                            {...project}
+                        />)}
+                </CardContainer>
+            </div>
         </StyledMain>
     );
 }

@@ -53,5 +53,10 @@ const CardStyling = css`
       position: relative;
       }
   `
+  const TypeAnimation = css`
+    animation: typing 2s steps(30) 1s 1 normal both;
+    white-space: nowrap;
+    overflow: hidden;
+  `
 
-export { CardHover, CardStyling }
+export { CardHover, CardStyling, TypeAnimation, SlideAnimation }

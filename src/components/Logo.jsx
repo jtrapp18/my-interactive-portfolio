@@ -7,12 +7,11 @@ const LogoContainer = styled.div`
   margin-left: 20px;
 
   img {
-    // width: 115px;
     height: 100%;
   }
 
   & img:hover {
-    zoom: 120%;
+    height: 120%;
   }
 ` 
 

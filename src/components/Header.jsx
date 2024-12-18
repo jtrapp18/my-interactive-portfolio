@@ -24,14 +24,21 @@ const ExtendedHeader = styled.div`
         max-width: 100%; 
         cursor: pointer; 
     }
+
+    h1 {
+        animation: var(--typing-animation);
+        white-space: nowrap;
+        overflow: hidden;
+        text-align: center;
+    }
 `;
 
 const Header = () => {
     return (
         <header>
             <ExtendedHeader>
-                <h1>Hello, my name is <strong>Jacqueline</strong></h1>
-                <p>I'm a <strong>Full-Stack Developer</strong> in New Hampshire</p>
+                {/* <h1>Hello, my name is <strong>Jacqueline</strong></h1>
+                <p>I'm a <strong>Full-Stack Developer</strong> in New Hampshire</p> */}
             </ExtendedHeader>
             <NavBar />
         </header>
