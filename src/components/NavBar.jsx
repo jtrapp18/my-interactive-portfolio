@@ -4,20 +4,35 @@ import styled from "styled-components";
 
 const StyledNavBar = styled.nav`
   position: fixed;
-  background-color: white;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   width: 100%;
-  padding-left: 10px 0px 0px 0px;
+  height: 90px;
+
+  article {
+    background-color: white;
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
 `;
+
+const StyledDivider = styled.img`
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 200px;
+`
 
 function NavBar() {
   return (
     <StyledNavBar>
-      <Logo />
-      <NavLinks />
+      <article>
+        <Logo />
+        <NavLinks />
+      </article>
+      <StyledDivider src="/images/dividers/leaf_divider.png" />
     </StyledNavBar>
   );
 };

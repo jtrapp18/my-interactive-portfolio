@@ -32,7 +32,7 @@ function NavLinks() {
         to="/about"
         className="nav-link"
       >
-        About
+        About Me
       </StyledNavLink>
       <StyledNavLink
         to="/projects"

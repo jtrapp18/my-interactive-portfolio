@@ -3,9 +3,16 @@ import styled from "styled-components";
 
 const LogoContainer = styled.div`
   text-align: left;
+  height: 100%;
+  margin-left: 20px;
 
   img {
-    width: 115px;
+    // width: 115px;
+    height: 100%;
+  }
+
+  & img:hover {
+    zoom: 120%;
   }
 ` 
 

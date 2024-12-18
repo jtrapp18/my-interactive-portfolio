@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const ExtendedHeader = styled.div`
     display: flex;
+    flex-direction: column;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -12,6 +13,10 @@ const ExtendedHeader = styled.div`
     width: 100%;
     background-color: white;
 
+    & * {
+        margin: 5px;
+    }
+
     img {
         height: auto; 
         max-height: 150px; 
@@ -19,23 +24,14 @@ const ExtendedHeader = styled.div`
         max-width: 100%; 
         cursor: pointer; 
     }
-
-    i {
-        position: absolute;
-        color: gray;
-        right: 20px;
-        bottom: 0;
-        text-align: end;
-        font-size: 12px;
-    }
 `;
 
 const Header = () => {
     return (
         <header>
             <ExtendedHeader>
-                <h2>Hello, my name is</h2>
-                <h1>Jacqueline</h1>
+                <h1>Hello, my name is <strong>Jacqueline</strong></h1>
+                <p>I'm a <strong>Full-Stack Developer</strong> in New Hampshire</p>
             </ExtendedHeader>
             <NavBar />
         </header>

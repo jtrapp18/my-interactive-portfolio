@@ -22,11 +22,11 @@ const CardContainer = styled.div`
 
 const Projects = () => {
     const projects = data.projects;
-    const [filters, setFilters, showProjects] = LanguageFilter(projects)
+    const [filters, setFilters, showProjects, selectAll, onSelectAll] = LanguageFilter(projects)
 
     return (
         <StyledMain>
-            <SideBar filters={filters} setFilters={setFilters}/>
+            <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>
             <CardContainer>
                 {showProjects.map(project=>
                     <ProjectCard

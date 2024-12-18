@@ -106,17 +106,11 @@ const data = {
         {
             id: 2,
             name: "LinkedIn",
-            image: "LI-Black.png",
+            image: "LI-In-Bug.png",
             link: "https://www.linkedin.com/in/jacqueline-trapp-065a936b"
         },
         {
             id: 3,
-            name: "Instagram",
-            image: "Instagram_Glyph_Black.jpg",
-            link: "https://www.instagram.com/jtrapp18/"
-        },
-        {
-            id: 4,
             name: "Hashnode",
             image: "hashnode.png",
             link: "https://hashnode.com/672903e59b3903ff579fbdcd/dashboard"

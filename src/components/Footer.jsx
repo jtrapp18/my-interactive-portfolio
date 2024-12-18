@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import data from "../data"
 
 const StyledFooter = styled.footer`
-    border-top: 1px solid black;
     padding-top: 50px;
+    background: linear-gradient(to bottom, var(--light-green), white);
 
     & * {
         align-items: center;
@@ -15,7 +15,6 @@ const StyledFooter = styled.footer`
     #socials-container {
         display: flex;
     }
-        
     
     .logo {
         width: 40px;
@@ -31,13 +30,18 @@ const StyledFooter = styled.footer`
         background-color: black;
         color: white;
     }
-` 
+`
+
+const StyledDivider = styled.img`
+    width: 200px;
+`
 
 const Footer = () => {
     const socials = data.socials;
 
     return (
         <StyledFooter>
+            <div><StyledDivider src="/images/dividers/split_leaf_divider.png" /></div>
             <p>This is some basic information</p>
             <div id="socials-container">
                 {socials.map(social=>

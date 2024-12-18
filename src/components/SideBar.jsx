@@ -9,8 +9,12 @@ const SidePanelContainer = styled.section`
     width: 15%;
     display: flex;
     flex-direction: column;
-    background-color: gray;
+    // background-color: gray;
     border-right: 2px solid #C8C8C8;
+    // background-image: linear-gradient(to right, #ff7e5f, #feb47b), url('/images/birch_paneling.jpeg');
+    background-image: url('/images/birch_paneling.jpeg');
+    background-size: cover;
+    // opacity: 0.8;
     resize: horizontal;
 
     &input[type="checkbox"]:hover {
@@ -31,7 +35,7 @@ const ClearFilter = styled.p`
     }
 `;
 
-const SideBar = ({filters, setFilters}) => {
+const SideBar = ({filters, setFilters, selectAll, onSelectAll}) => {
     
     const handleClick = (event) => {
         const name = event.target.name
@@ -40,39 +44,19 @@ const SideBar = ({filters, setFilters}) => {
         setFilters(prevFilters => ({...prevFilters, [name]: value}))
     }
 
-    // const clearFilter = (filterType) => {
-
-    //     switch (filterType) {
-    //         case "status":
-    //             setFilterInput(prevFilter=>{
-    //                 return {
-    //                     ...prevFilter,
-    //                     complete: true,
-    //                     incomplete: true,
-    //                 }
-    //             });
-    //             break;
-    //         case "dates":
-    //             setFilterInput(prevFilter=>{
-    //                 return {
-    //                     ...prevFilter,
-    //                     startDate: "",
-    //                     endDate: "",
-    //                 }
-    //             });
-    //             break;
-    //         case "rating":
-    //             updateRating(0)
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
-
     return (
         <SidePanelContainer className="side-panel">
             <h2>Apply Filters</h2>
             <h3>Languages</h3>
+            <label>
+                <input
+                    checked={selectAll}
+                    type="checkbox"
+                    name="selectAll"
+                    onChange={onSelectAll}
+                />
+                <strong>Select All</strong>
+            </label>
             {Object.keys(filters).map(language => 
                 <label key={language}>
                     <input
@@ -84,16 +68,7 @@ const SideBar = ({filters, setFilters}) => {
                     {language}
                 </label>)
             }
-            {/* <ClearFilter onClick={()=>clearFilter("status")}>clear status filter</ClearFilter>
-            <h3>Dates</h3>
-            <label htmlFor="startDate">Start Date</label>
-            <input
-                value={filterInput.startDate}
-                type="date"
-                name="startDate"
-                onChange={handleChange}
-            />
-            <ClearFilter onClick={()=>clearFilter("dates")}>clear dates filter</ClearFilter> */}
+
         </SidePanelContainer>
     );
 }
