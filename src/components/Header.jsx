@@ -8,7 +8,7 @@ const ExtendedHeader = styled.div`
     justify-content: center;
     align-items: center;
     height: 175px;
-    color: white;
+    // color: white;
     width: 100%;
     background-color: white;
 
@@ -34,7 +34,8 @@ const Header = () => {
     return (
         <header>
             <ExtendedHeader>
-                <h2>This is a Header!</h2>
+                <h2>Hello, my name is</h2>
+                <h1>Jacqueline</h1>
             </ExtendedHeader>
             <NavBar />
         </header>

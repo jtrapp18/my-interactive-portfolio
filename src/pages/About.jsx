@@ -2,11 +2,12 @@
 import styled from "styled-components";
 
 const StyledMain = styled.main`
-    padding: 20px;
-    margin: 20px;
+    // padding: 20px;
+    margin: 30px;
 
     img {
         width: 30%;
+        min-width: 500px;
     }
 `
 

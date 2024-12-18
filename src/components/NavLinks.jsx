@@ -3,34 +3,25 @@ import styled from "styled-components";
 
 const LinkContainer = styled.div`
   color: black;
-  font-size: 20px;
   margin: 25px;
   font-weight: bold;
   text-decoration: none;
   text-align: right;
   position: absolute;
   right: 0;
-
-&.active {
-  text-decoration: overline;
-}
+  display: flex;
 `
 
 const StyledNavLink = styled(NavLink)`
     color: black;
-    font-size: 15px;
-    margin: 25px;
-    font-weight: bold;
     text-decoration: none;
-    text-align: right;
-
-    img {
-        height: 30px;
-        vertical-align: middle;
-    }
+    text-align: center;
+    padding: 0px 10px 10px 10px;
 
     &.active {
         text-decoration: overline;
+        text-decoration-thickness: 2px;
+        background: var(--striped)
     }
 `
 

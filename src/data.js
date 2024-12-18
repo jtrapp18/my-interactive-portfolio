@@ -107,7 +107,7 @@ const data = {
             id: 2,
             name: "LinkedIn",
             image: "LI-Black.png",
-            link: "www.linkedin.com/in/jacqueline-trapp-065a936b"
+            link: "https://www.linkedin.com/in/jacqueline-trapp-065a936b"
         },
         {
             id: 3,

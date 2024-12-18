@@ -42,7 +42,8 @@ const Footer = () => {
             <div id="socials-container">
                 {socials.map(social=>
                     <a href={social.link} 
-                        key={social.name}>
+                        key={social.name}
+                        target="_blank">
                         <img
                             className="logo"
                             src={`images/logos/${social.image}`}
@@ -52,8 +53,8 @@ const Footer = () => {
                     </a>
                 )}
             </div>
-            <strong>Python | React | JavaScript | VBA | CSS | HTML | Power BI</strong>
-            <span>Jacqueline Trapp</span>
+            <span>Python | React | JavaScript | VBA | CSS | HTML | Power BI</span>
+            {/* <span>Jacqueline Trapp</span> */}
         </StyledFooter>
     );
 }

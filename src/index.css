@@ -1,13 +1,52 @@
 :root {
-  --green: #9DC183
+  --green: #0b7c21;
+  --light-green: #9DC183;
+  --light-gray: #e7e4e4;
+  --background: white;
+  --primary: black;
+  --h3: var(--green);
+  --font-color: black;
+  --striped: repeating-linear-gradient(-45deg, var(--light-gray),var(--light-gray) 2px, white 2px, white 10px);
+}
+
+@font-face {
+  font-family: 'Volkhov';
+  src: url('/fonts/Volkhov-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NotoSerif';
+  src: url('/fonts/NotoSerif-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body {
   margin: 0;
-  font-family: "Calibri";
+  font-family: 'NotoSerif';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+h1, h2, h3 {
+  font-family: 'Volkhov', sans-serif;
+  letter-spacing: .04em;
+}
+
+h1, h2 {
+  color: var(--primary);
+}
+
+h3 {
+  color: var(--h3);
+}
+
+p {
+  color: var(--font-color);  
+}
+
 
 span {
   display: block;

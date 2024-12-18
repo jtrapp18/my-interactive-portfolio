@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 const LogoContainer = styled.div`
   text-align: left;
+
+  img {
+    width: 115px;
+  }
 ` 
 
 function Logo() {
@@ -12,7 +16,7 @@ function Logo() {
           to="/"
           className="nav-link home"
         >
-          Home
+          <img src="/images/icons/cabin.png" alt="home icon"/>
         </NavLink>
       </LogoContainer>
   );

@@ -8,7 +8,8 @@ const StyledTag = styled.div`
         padding: 0px 10px 0px 10px;
         margin: 10px 0px 10px 10px;
         background-color: var(--green);
-        border: 2px solid var(--dark-green);
+        color: white;
+        border: 2px solid black;
         border-radius: 5px;
         font-size: 15px;
     }
