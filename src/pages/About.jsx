@@ -1,17 +1,22 @@
 // import React from 'react';
 import styled from "styled-components";
 
-const StyledImg = styled.img`
-    width: 30%;
+const StyledMain = styled.main`
+    padding: 20px;
+    margin: 20px;
+
+    img {
+        width: 30%;
+    }
 `
 
 const About = () => {
     const languages = ["Python", "React", "JavaScript", "VBA", "CSS", "HTML", "Power BI"]
     
     return (
-        <main>
+        <StyledMain>
             <h1>About Me</h1>
-            <StyledImg
+            <img
                 src="/images/kev_and_me.jpg"
                 alt="My boyfriend and me in Scotland"
             />
@@ -40,8 +45,7 @@ const About = () => {
                 science and technology by designing innovative, automated solutions 
                 that save time and improve the efficiency of actuarial processes.
             </p>
-            
-        </main>
+        </StyledMain>
     );
 }
 

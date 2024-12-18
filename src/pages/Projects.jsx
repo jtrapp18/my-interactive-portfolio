@@ -1,16 +1,12 @@
-// import { Card } from "semantic-ui-react";
-import ProjectFilter from "../components/ProjectFilter";
+import SideBar from "../components/SideBar";
 import ProjectCard from "../components/ProjectCard";
 import data from "../data"
 import styled from "styled-components";
+import { useEffect, useState } from "react";
+import LanguageFilter from "../hooks/languageFilter";
 
-
-const TripsMain = styled.section`
-  flex: 1;
-
-  > div {
-    padding: 20px;
-  }
+const StyledMain = styled.section`
+  display: flex;
 `
 
 const CardContainer = styled.div`
@@ -26,18 +22,19 @@ const CardContainer = styled.div`
 
 const Projects = () => {
     const projects = data.projects;
+    const [languageFilter, setLanguageFilter, showProjects] = LanguageFilter(projects)
 
     return (
-        <main>
-            <ProjectFilter />
+        <StyledMain>
+            <SideBar setLanguageFilter={setLanguageFilter}/>
             <CardContainer>
-                {projects.map(project=>
+                {showProjects.map(project=>
                     <ProjectCard
-                        key={project.name}
+                        key={project.id}
                         {...project}
                     />)}
             </CardContainer>
-        </main>
+        </StyledMain>
     );
 }
 

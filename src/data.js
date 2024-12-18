@@ -4,7 +4,7 @@ const data = {
             id: 1,
             name: "Curriculum Management",
             phase: 1,
-            summary: "",
+            summary: "Single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades.",
             languages: ["CSS", "HTML", "JavaScript"],
             collaborators: [
                 {
@@ -15,15 +15,15 @@ const data = {
             description: "curriculum management tool",
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
-            website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
-            repo_fe: "https://github.com/jtrapp18/wandr-personal-travel-journal",
-            repo_be: "https://github.com/jtrapp18/wandr-personal-travel-journal-be"
+            website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
+            repo_fe: "https://github.com/jtrapp18/english-study-curriculum-mgmt",
+            repo_be: "https://github.com/jtrapp18/english-study-curriculum-mgmt-be"
         },
         {
             id: 2,
-            name: "React Project",
+            name: "Wandr Personal Travel Journal",
             phase: 2,
-            summary: "",
+            summary: "A React-based application designed to document your travels, build itineraries for bucket list destinations, leave reviews and photos, and track visited places.",
             languages: ["CSS", "React"],
             collaborators: [
                 {
@@ -32,11 +32,11 @@ const data = {
                 }
             ],
             description: "to be determined",
-            image: "images/projects/curriculum-mgmt.png",
-            gif: "images/projects/curriculum-mgmt.gif",
-            website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
-            repo_fe: "https://github.com/jtrapp18/english-study-curriculum-mgmt",
-            repo_be: "https://github.com/jtrapp18/english-study-curriculum-mgmt-be"
+            image: "images/projects/wandr-personal-travel-journal.png",
+            gif: "images/projects/wandr-personal-travel-journal.gif",
+            website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
+            repo_fe: "https://github.com/jtrapp18/wandr-personal-travel-journal",
+            repo_be: "https://github.com/jtrapp18/wandr-personal-travel-journal-be"
         }
     ],
     relevantWork: [
@@ -47,7 +47,7 @@ const data = {
             languages: ["SQL", "MS Access", "VBA"],
             description: "curriculum management tool",
             year: 0,
-            company: 0,
+            company: "The Benefit Practice",
             areas: ["Pension"],
             image: "images/projects/curriculum-mgmt.png"
         },
@@ -76,7 +76,7 @@ const data = {
         {
             id: 4,
             name: "VA Lapse Experience Study for Audit",
-            summary: "",
+            summary: "Managing team to develop standardized process for building VA lapse experience studies in Python scikit-learn, which will be used to assess reasonability of client lapse assumptions for yearly audit procedures across practice",
             languages: ["Python"],
             description: "to be determined",
             year: 0,

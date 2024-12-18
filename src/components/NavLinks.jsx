@@ -16,27 +16,45 @@ const LinkContainer = styled.div`
 }
 `
 
+const StyledNavLink = styled(NavLink)`
+    color: black;
+    font-size: 15px;
+    margin: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: right;
+
+    img {
+        height: 30px;
+        vertical-align: middle;
+    }
+
+    &.active {
+        text-decoration: overline;
+    }
+`
+
 function NavLinks() {
   return (
     <LinkContainer>
-      <NavLink
+      <StyledNavLink
         to="/about"
         className="nav-link"
       >
         About
-      </NavLink>
-      <NavLink
+      </StyledNavLink>
+      <StyledNavLink
         to="/projects"
         className="nav-link"
       >
         Projects
-      </NavLink>
-      <NavLink
+      </StyledNavLink>
+      <StyledNavLink
         to="/relevant-work"
         className="nav-link"
       >
         Relevant Work
-      </NavLink>
+      </StyledNavLink>
     </LinkContainer>
   );
 };

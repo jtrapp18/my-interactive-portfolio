@@ -8,14 +8,8 @@ const StyledCard = styled.article`
     height: 500px;
     overflow: hidden;
     margin: 20px;
+    padding: 20px;
     position: relative;
-
-    h2, {
-        position: absolute;
-        background-color: rgba(0,0,0,.5);
-        margin-left: 5px;
-        color: white;
-    }
 
     span {
         top: 75%;
@@ -27,8 +21,8 @@ const StyledCard = styled.article`
       padding: 0;
     }
 
-    &:hover h2 {
-      zoom: 130%;
+    &:hover {
+      background-color: gray;
     }
 
     details summary:hover {
@@ -56,15 +50,19 @@ const StyledCard = styled.article`
   }
   `
 
-function WorkCard({name, languages, description, image}) {
+function WorkCard({id, name, summary, languages, description, year, company, areas, image}) {
 
   return(  
       <StyledCard>
         <h2>{name}</h2>
-        <img src={image} alt={image} />
+        <h3>{company}</h3>
+        <Tags tags={areas}/>
+        {/* <img src={image} alt={image} /> */}
+        <p>{summary}</p>
+        <p>{description}</p>
         <Tags tags={languages}/>
       </StyledCard>
   );
 };
 
-export default WorkCard;
+export default WorkCard; 

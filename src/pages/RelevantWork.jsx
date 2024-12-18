@@ -1,8 +1,12 @@
-// import { Card } from "semantic-ui-react";
-// import ProjectFilter from "../components/ProjectFilter";
 import WorkCard from "../components/WorkCard";
 import data from "../data"
 import styled from "styled-components";
+import LanguageFilter from "../hooks/languageFilter";
+import SideBar from "../components/SideBar";
+
+const StyledMain = styled.section`
+  display: flex;
+`
 
 const CardContainer = styled.div`
   display: grid;
@@ -12,18 +16,19 @@ const CardContainer = styled.div`
 
 const RelevantWork = () => {
     const relevantWork = data.relevantWork;
+    const [languageFilter, setLanguageFilter, showProjects] = LanguageFilter(relevantWork)
 
     return (
-        <main>
-            {/* <ProjectFilter /> */}
+        <StyledMain>
+            <SideBar setLanguageFilter={setLanguageFilter}/>
             <CardContainer>
-                {relevantWork.map(work=>
+                {showProjects.map(work=>
                     <WorkCard
                         key={work.name}
                         {...work}
                     />)}
             </CardContainer>
-        </main>
+        </StyledMain>
     );
 }
 

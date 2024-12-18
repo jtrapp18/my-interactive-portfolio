@@ -6,7 +6,7 @@ const StyledFooter = styled.footer`
     border-top: 1px solid black;
     padding-top: 50px;
 
-    &* {
+    & * {
         align-items: center;
         justify-content: center;
         text-align: center;
@@ -27,7 +27,7 @@ const StyledFooter = styled.footer`
         cursor: pointer;
     }
 
-    #end-note {
+    span {
         background-color: black;
         color: white;
     }
@@ -52,7 +52,8 @@ const Footer = () => {
                     </a>
                 )}
             </div>
-            <span id="end-note">Jacqueline Trapp</span>
+            <strong>Python | React | JavaScript | VBA | CSS | HTML | Power BI</strong>
+            <span>Jacqueline Trapp</span>
         </StyledFooter>
     );
 }
