@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import {handleTabClick} from "../helper"
 
 const LinkContainer = styled.div`
   color: black;
@@ -36,18 +37,21 @@ function NavLinks() {
       <StyledNavLink
         to="/about"
         className="nav-link"
+        onClick={handleTabClick}
       >
         About Me
       </StyledNavLink>
       <StyledNavLink
         to="/projects"
         className="nav-link"
+        onClick={handleTabClick}
       >
         Projects
       </StyledNavLink>
       <StyledNavLink
         to="/relevant-work"
         className="nav-link"
+        onClick={handleTabClick}
       >
         Relevant Work
       </StyledNavLink>

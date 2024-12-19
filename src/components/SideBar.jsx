@@ -55,7 +55,7 @@ const SideBar = ({filters, setFilters, selectAll, onSelectAll}) => {
                     name="selectAll"
                     onChange={onSelectAll}
                 />
-                <strong>Select All</strong>
+                <strong>{selectAll ? "Deselect All" : "Select All"}</strong>
             </label>
             {Object.keys(filters).map(language => 
                 <label key={language}>

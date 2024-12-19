@@ -9,6 +9,7 @@ const StyledMain = styled.main`
   display: flex;
 
   div > h3 {
+    padding-top: 20px;
     margin: 20px;
   }
 `

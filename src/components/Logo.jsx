@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+import { handleTabClick } from "../helper";
 
 const LogoContainer = styled.div`
   text-align: left;
@@ -39,6 +40,7 @@ function Logo() {
           to="/"
           className="nav-link"
           id="home"
+          onClick={handleTabClick}
         >
           <img src="/images/icons/cabin.png" alt="home icon"/>
         </NavLink>

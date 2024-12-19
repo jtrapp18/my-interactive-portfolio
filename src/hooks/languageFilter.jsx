@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const LanguageFilter = (projects) => {
 
@@ -21,7 +21,7 @@ const noFilters = {
 }
 
 const [selectAll, setSelectAll] = useState(true);
-const [filters, setFilters] = useState(allFilters)
+const [filters, setFilters] = useState(allFilters);
 
 const onSelectAll = () => {
     setSelectAll(selectAll=> {
@@ -35,17 +35,15 @@ const onSelectAll = () => {
         return !selectAll});
 }
 
-const languageFilter = Object.keys(filters).filter(language => filters[language]===true)
+const languageFilter = Object.keys(filters).filter(language => filters[language]===true);
 
-const showProjects = languageFilter.length === 0 
-? projects 
-: projects.filter(project =>
+const showProjects = projects.filter(project =>
     new Set(project.languages).size > 0 &&
     new Set(languageFilter).size > 0 &&
     [...new Set(project.languages)].some(lang => new Set(languageFilter).has(lang))
-    );
+);
 
-    return [filters, setFilters, showProjects, selectAll, onSelectAll]
+return [filters, setFilters, showProjects, selectAll, onSelectAll]
 }
 
 export default LanguageFilter;
