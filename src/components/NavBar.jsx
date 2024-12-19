@@ -12,7 +12,6 @@ const StyledNavBar = styled.nav`
     height: 80%;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
   }
 `;

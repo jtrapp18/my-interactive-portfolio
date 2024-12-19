@@ -9,13 +9,14 @@ const LinkContainer = styled.div`
   text-align: right;
   position: absolute;
   right: 0;
+  bottom: 0;
   display: flex;
 `
 
 const StyledNavLink = styled(NavLink)`
     color: black;
     text-decoration: none;
-    text-align: center;
+    // text-align: center;
     padding: 0px 10px 10px 10px;
 
     &.active {

@@ -27,7 +27,7 @@ const StyledArticle = styled.article`
     height: var(--size-body);
     background: ${props => props.color ? props.color : null};
     background-image: ${props => props.image ? `url(${props.image})` : null};
-    background-size: ${props => props.image ? "80%" : null};
+    background-size: ${props => props.image ? "90%" : null};
     background-repeat: no-repeat;
     background-position: bottom;
 
@@ -35,24 +35,29 @@ const StyledArticle = styled.article`
         font-size: 75px;
         margin-bottom: 10px;
         animation: slideRight 1s;
+        width: fit-content;
+        background: rgba(255, 255, 255, 0.5);
     }
 
     div {
         display: grid;
         width: 100%;
         max-height: 80%;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         animation: slideLeft 1s;
     }
 
     img {
-        max-width: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin-left: 20px;
     }
     
     p {
         font-size: 1.5vw;
-        padding: 5px;
-        background: ${props => props.image ? "white" : null};
+        padding: 20px;;
+        margin: 20px;
+        background: ${props => props.image ? "rgba(255, 255, 255, 0.9)" : null};
         box-shadow: ${props => props.image ? "var(--shadow)" : null};
     }
 `
@@ -61,7 +66,7 @@ const About = () => {
 
     return (
         <StyledMain>
-            <StyledArticle color="var(--striped-gray)">
+            <StyledArticle image="/images/birch_trees.jpeg">
                 <h1>About Me</h1>
                 <div>
                     <img
@@ -71,13 +76,10 @@ const About = () => {
                     <p>My name is Jacqueline and I am studying to be a Software Engineer.</p>
                 </div>
             </StyledArticle>
-            <StyledArticle color="white">
+            <StyledArticle image="/images/leaf_painting.jpeg">
                 <h1>My Background</h1>
                 <div>
-                    <img
-                        src="/images/kev_and_me.jpg"
-                        alt="My boyfriend and me in Scotland"
-                    />
+                {/* <span></span> */}
                     <p>
                         I have spent my career as an actuary. I have worked in pension consulting, 
                         life insurance, and currently as an auditor and consultant. During my first job, 

@@ -14,17 +14,27 @@ const StyledDiv = styled.div`
     z-index: 1;
 
     h1, p {
+      font-family: 'Cascadia Code', sans-serif;;
       color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
+      text-shadow: 5px 7px 4px rgba(0, 0, 0, .7);
       text-align: center;
-      // background: linear-gradient(to right, red, blue);
-      // -webkit-background-clip: text;
-      // -webkit-text-fill-color: transparent;
     }
 
     h1 {
       ${TypeAnimation};        
       font-size: clamp(1rem, calc(100vw / 15), 5rem);
+    }
+
+    strong {
+      color:rgb(255, 255, 157);
+    }
+
+    h1:hover strong, p:hover strong {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke: 1px white;
+      zoom: 130%;
+      font-weight: bold;
     }
 
     p {
@@ -48,7 +58,7 @@ const StyledDiv = styled.div`
 `;
 
 const Home = () => {
-  const seasons = ["winter", "spring", "summer", "fall"];
+  const seasons = ["fall", "winter", "spring", "summer"];
   const [index, setIndex] = useState(0);
 
   useEffect(() => {
