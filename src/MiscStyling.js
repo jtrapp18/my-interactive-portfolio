@@ -1,5 +1,60 @@
 import styled, {css} from "styled-components";
 
+const ConditionalHighlight = css`
+    &:hover {
+        background-color: var(--yellow);
+    };
+    
+    &:focus {
+        border: 3px solid var(--green);
+        background-color: var(--yellow);
+    }
+    `
+
+const StyledButton = styled.button`
+    background-color: var(--green);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 200px;
+
+    &: hover {
+      background: None;
+      border: 3px solid var(--green);
+      color: var(--green);
+      font-weight: bold;
+    }
+`
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  width: 90%;
+  max-width: 700px;
+  min-width: 500px;
+  align-items: center;
+
+  label {
+    width: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  input, textarea {
+    width: 80%;
+    position: absolute;
+    right: 0;
+    ${ConditionalHighlight};
+  }
+
+  textarea {
+    height: 200px;
+  }
+`
+
 const CardHover = css`
     &:hover {
         --background: var(--striped);
@@ -59,4 +114,4 @@ const CardStyling = css`
     overflow: hidden;
   `
 
-export { CardHover, CardStyling, TypeAnimation }
+export { StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }

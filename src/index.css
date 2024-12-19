@@ -3,6 +3,7 @@
   --light-green: #9DC183;
   --light-gray: #e7e4e4;
   --gray: #d1d1d1; 
+  --yellow: #FFFDD0;
   --background: white;
   --primary: black;
   --h3: var(--green);
@@ -91,6 +92,15 @@ span {
   }
   to {
     width: 100%;
+  }
+}
+
+@keyframes pauseShow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
   }
 }
 

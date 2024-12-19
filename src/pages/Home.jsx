@@ -38,7 +38,9 @@ const StyledDiv = styled.div`
     }
 
     p {
-      animation: fadeIn 8s;        
+      // opacity: 0;
+      animation: pauseShow 3s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
+      // animation-delay: 3s;
       font-size: clamp(.5rem, calc(100vw / 30), 2rem);
     }
   }
@@ -48,7 +50,7 @@ const StyledDiv = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 3s ease-in-out;
     opacity: 0;
   }
 
@@ -65,7 +67,7 @@ const Home = () => {
     const changeSeason = () => {
       setIndex((prevIndex) => (prevIndex + 1) % seasons.length);
     };
-    const intervalId = setInterval(changeSeason, 5000);
+    const intervalId = setInterval(changeSeason, 7000);
     
     return () => clearInterval(intervalId);
   }, []);
@@ -75,13 +77,13 @@ const Home = () => {
       <StyledDiv>
         <section>
           <h1>Hello, my name is <strong>Jacqueline</strong></h1>
-          <p>I'm a <strong>Full-Stack Developer</strong> in New Hampshire</p>
+          <p>I'm a <strong>Full-Stack Developer</strong> from New Hampshire</p>
         </section>
         
         {seasons.map((season, idx) => (
           <img
             key={season}
-            src={`/images/${season}.jpg`}
+            src={`/images/seasons/${season}.jpg`}
             alt={season}
             className={idx === index ? 'visible' : ''}
           />
