@@ -3,11 +3,12 @@ const data = {
         {
             id: 1,
             name: "Curriculum Management",
-            phase: 1,
+            phase: "I",
             summary: "Single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades.",
             languages: ["CSS", "HTML", "JavaScript"],
             collaborators: [
                 {
+                    id: 1,
                     name: "Elchonon Klafter",
                     link: "https://github.com/klaftech"
                 }
@@ -22,11 +23,12 @@ const data = {
         {
             id: 2,
             name: "Wandr Personal Travel Journal",
-            phase: 2,
+            phase: "II",
             summary: "A React-based application designed to document your travels, build itineraries for bucket list destinations, leave reviews and photos, and track visited places.",
             languages: ["CSS", "React"],
             collaborators: [
                 {
+                    id: 1,
                     name: "Kelsey Roche",
                     link: "https://github.com/kelseyroche"
                 }

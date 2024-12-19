@@ -3,6 +3,11 @@ import styled from "styled-components";
 const StyledTag = styled.div`
     display: flex;
     justify-content: end;
+    align-items: center;
+
+    label {
+        color: var(--green);
+    }
 
     span {
         padding: 0px 10px 0px 10px;
@@ -14,9 +19,10 @@ const StyledTag = styled.div`
         font-size: 15px;
     }
 `
-const Tags = ({tags}) => {
+const Tags = ({tags, tagType}) => {
     return (
         <StyledTag>
+            <label>{tagType ? `${tagType}:` : "Tags:"}</label>
             {tags.map(tag=>
                 <span key={tag}>
                     {tag}

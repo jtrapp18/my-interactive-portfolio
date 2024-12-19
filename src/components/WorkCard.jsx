@@ -68,11 +68,10 @@ function WorkCard({id, name, summary, languages, description, year, company, are
       <StyledCard ref={cardRef} className={className} onClick={handleClick}>
         <h2>{name}</h2>
         <h3>{company}</h3>
-        <Tags tags={areas}/>
-        {/* <img src={image} alt={image} /> */}
+        <Tags tags={areas} tagType="Areas of Practice"/>
         <p>{summary}</p>
         <p>{description}</p>
-        <Tags tags={languages}/>
+        <Tags tags={languages} tagType="Languages Used"/>
       </StyledCard>
   );
 };

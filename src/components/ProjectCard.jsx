@@ -1,6 +1,7 @@
 import { useParams, useOutletContext } from "react-router-dom";
 import styled from "styled-components";
 import Tags from "./Tags";
+import { useState } from "react";
 import { CardStyling } from "../MiscStyling";
 
 const StyledCard = styled.article`
@@ -16,16 +17,23 @@ const StyledCard = styled.article`
     }
 
     section {
+      height: 275px;
+      left: 50%;
+      transform: translateX(-50%);
+
       img {
         position: absolute;
-        bottom: 5%;
+        top: 0px;
         box-shadow: var(--shadow);
         width: 100%;
-        height: 100%;
         object-fit: cover;
         overflow: hidden;
         border-radius: 5px;
         cursor: pointer;
+      }
+
+      &.hide {
+        display: None;
       }
     }
 
@@ -42,32 +50,65 @@ const StyledCard = styled.article`
     }
   }
   `
+const StyledDetails = styled.details`
+
+  div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  i, p, a {
+    font-size: 15px;
+  }
+
+  .collaborator {
+    margin-left: 20px;
+  }
+
+  summary:hover {
+    font-weight: bold;
+  }
+
+  label, label a {
+    font-size: 12px;
+  }
+`
+
 function ProjectCard({name, phase, summary, languages, collaborators, 
   description, image, gif, website_link, repo_fe, repo_be}) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleToggle = (e) => {
+    setIsOpen(e.target.open);
+  };
 
   return(  
       <StyledCard>
         <h2 title={`Click to go to project site`} onClick={()=>window.open(website_link, "_blank")}>{name}</h2>
-        <p>{summary}</p>
-        <section>
+        {/* <p>{summary}</p> */}
+        <section className={isOpen ? "hide" : ""}>
           <img src={image} alt={image} className="static" />
           <img src={gif} alt={gif} className="animated" />
         </section>
-        <Tags tags={languages}/>
-        <details>
+        <Tags tags={languages} tagType="Languages Used"/>
+        <StyledDetails onToggle={handleToggle}>
             <summary>Details</summary>
             <div>
-              <p>{`Phase ${phase} Project for FlatIron School Software Engineering Bootcamp`}</p>
-              <a href={repo_fe}>Front-end Repository</a>
-              <a href={repo_be}>Back-end Repository</a>
+              <p>{summary}</p>
               <strong>Collaborators:</strong>
               {collaborators.map(collaborator =>
-                <div key={collaborator.name}>
-                  <a href={collaborator.link}>{collaborator.name}</a>
+                <div key={collaborator.id}>
+                  <a title={collaborator.link} href={collaborator.link} className="collaborator">{`>>${collaborator.name}`}</a>
                 </div>
               )}
+              <br/>
+              <strong>Github Code Repositories:</strong>
+              <label>Front-end: <a href={repo_fe}>{repo_fe}</a></label>
+              <label>Back-end: <a href={repo_be}>{repo_be}</a></label>
+              <br/>
+              <i>{`This project was developed for the end of Phase ${phase} assignment for the FlatIron School Software Engineering Bootcamp`}</i>
             </div>
-        </details>
+        </StyledDetails>
       </StyledCard>
   );
 };
