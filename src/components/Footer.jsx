@@ -30,7 +30,18 @@ const StyledFooter = styled.footer`
 
     span {
         background-color: black;
+        display: flex;
+    }
+
+    span p {
         color: white;
+        margin: 2px;
+    }
+
+    span p:hover {
+        background: linear-gradient(to right, var(--green), var(--light-green));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 `
 
@@ -59,7 +70,15 @@ const Footer = () => {
                     </a>
                 )}
             </div>
-            <span>Python | React | JavaScript | VBA | CSS | HTML | Power BI</span>
+            <span>
+                <p>Python</p><p>|</p>  
+                <p>React</p><p>|</p>
+                <p>JavaScript</p><p>|</p>
+                <p>VBA</p><p>|</p>
+                <p>CSS</p><p>|</p>
+                <p>HTML</p><p>|</p>
+                <p>Power BI</p>
+            </span>
             {/* <span>Jacqueline Trapp</span> */}
         </StyledFooter>
     );

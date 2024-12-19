@@ -10,7 +10,7 @@
   --striped: repeating-linear-gradient(-45deg, var(--light-gray),var(--light-gray) 2px, white 2px, white 10px);
   --striped-gray: repeating-linear-gradient(-45deg, var(--light-gray),var(--light-gray) 2px, var(--gray) 2px, var(--gray) 10px);
   --padding-top: 75px;
-  --size-body: calc(100vh - 255px);
+  --size-body: calc(100vh - 50px);
   --shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 

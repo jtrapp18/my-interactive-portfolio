@@ -6,6 +6,11 @@ import { CardStyling } from "../MiscStyling";
 const StyledCard = styled.article`
     ${CardStyling}
 
+    h2:hover {
+      color: blue;
+      text-decoration: underline;
+    }
+
     &:hover {
       cursor: pointer;
     }
@@ -42,7 +47,7 @@ function ProjectCard({name, phase, summary, languages, collaborators,
 
   return(  
       <StyledCard>
-        <h2 onClick={()=>window.open(website_link, "_blank")}>{name}</h2>
+        <h2 title={`Click to go to project site`} onClick={()=>window.open(website_link, "_blank")}>{name}</h2>
         <p>{summary}</p>
         <section>
           <img src={image} alt={image} className="static" />

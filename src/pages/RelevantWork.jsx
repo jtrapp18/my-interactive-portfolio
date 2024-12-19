@@ -3,6 +3,7 @@ import data from "../data"
 import styled from "styled-components";
 import LanguageFilter from "../hooks/languageFilter";
 import SideBar from "../components/SideBar";
+import { useState } from "react";
 
 const StyledMain = styled.section`
   display: flex;
@@ -16,6 +17,7 @@ const CardContainer = styled.div`
 
 const RelevantWork = () => {
     const relevantWork = data.relevantWork;
+    const [activeProj, setActiveProj] = useState(null);
     const [filters, setFilters, showProjects, selectAll, onSelectAll] = LanguageFilter(relevantWork)
 
     return (
@@ -26,6 +28,8 @@ const RelevantWork = () => {
                     <WorkCard
                         key={work.name}
                         {...work}
+                        activeProj={activeProj}
+                        setActiveProj={setActiveProj}
                     />)}
             </CardContainer>
         </StyledMain>

@@ -2,6 +2,7 @@
 import styled from "styled-components";
 
 const StyledMain = styled.main`
+    box-sizing: border-box;
     display: grid;
     position: relative;
     justify-content: center;
@@ -10,7 +11,7 @@ const StyledMain = styled.main`
 
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: calc(100vh - 200px);
+    height: calc(100vh - 5px);
 
     ::-webkit-scrollbar {
         width: 0px;

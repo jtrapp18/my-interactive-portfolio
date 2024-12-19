@@ -17,16 +17,19 @@ const StyledDiv = styled.div`
       color: white;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, .9);
       text-align: center;
+      // background: linear-gradient(to right, red, blue);
+      // -webkit-background-clip: text;
+      // -webkit-text-fill-color: transparent;
     }
 
     h1 {
       ${TypeAnimation};        
-      font-size: 50px;
+      font-size: clamp(1rem, calc(100vw / 15), 5rem);
     }
 
     p {
       animation: fadeIn 8s;        
-      font-size: 20px;
+      font-size: clamp(.5rem, calc(100vw / 30), 2rem);
     }
   }
 
@@ -35,12 +38,12 @@ const StyledDiv = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: opacity 1s ease-in-out; /* Smooth transition */
-    opacity: 0; /* Set initial opacity to 0 */
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
   }
 
   .visible {
-    opacity: 1; /* Set opacity to 1 for visible image */
+    opacity: 1;
   }
 `;
 
@@ -65,10 +68,9 @@ const Home = () => {
           <p>I'm a <strong>Full-Stack Developer</strong> in New Hampshire</p>
         </section>
         
-        {/* Add visibility class based on index */}
         {seasons.map((season, idx) => (
           <img
-            key={season} // Ensure a unique key for each image
+            key={season}
             src={`/images/${season}.jpg`}
             alt={season}
             className={idx === index ? 'visible' : ''}

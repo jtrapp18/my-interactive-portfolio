@@ -36,10 +36,10 @@ const ExtendedHeader = styled.div`
 const Header = () => {
     return (
         <header>
-            <ExtendedHeader>
+            {/* <ExtendedHeader> */}
                 {/* <h1>Hello, my name is <strong>Jacqueline</strong></h1>
                 <p>I'm a <strong>Full-Stack Developer</strong> in New Hampshire</p> */}
-            </ExtendedHeader>
+            {/* </ExtendedHeader> */}
             <NavBar />
         </header>
     );
