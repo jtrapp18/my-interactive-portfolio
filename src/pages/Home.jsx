@@ -76,8 +76,8 @@ const Home = () => {
     <main>
       <StyledDiv>
         <section>
-          <h1>Hello, my name is <strong>Jacqueline</strong></h1>
-          <p>I'm a <strong>Full-Stack Developer</strong> from New Hampshire</p>
+          <h1>Hi, I'm <strong>Jacqueline</strong></h1>
+          <p>I'm an <strong>Actuary</strong> and <strong>Full-Stack Developer</strong></p>
         </section>
         
         {seasons.map((season, idx) => (

@@ -13,7 +13,7 @@ const data = {
                     link: "https://github.com/klaftech"
                 }
             ],
-            description: "curriculum management tool",
+            features: [],
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
             website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
@@ -33,54 +33,89 @@ const data = {
                     link: "https://github.com/kelseyroche"
                 }
             ],
-            description: "to be determined",
+            features: [],
             image: "images/projects/wandr-personal-travel-journal.png",
             gif: "images/projects/wandr-personal-travel-journal.gif",
             website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
             repo_fe: "https://github.com/jtrapp18/wandr-personal-travel-journal",
             repo_be: "https://github.com/jtrapp18/wandr-personal-travel-journal-be"
+        },
+        {
+            id: 3,
+            name: "Rental Management Tool",
+            phase: "III",
+            summary: ".",
+            languages: ["Python"],
+            collaborators: [
+            ],
+            features: [],
+            image: "images/projects/rental_management_tool.png",
+            gif: "images/projects/rental_management_tool.gif",
+            website_link: "https://github.com/jtrapp18/rental_management_tool",
+            repo_fe: "https://github.com/jtrapp18/rental_management_tool",
+            repo_be: null
         }
     ],
     relevantWork: [
         {
             id: 1,
             name: "Project Management Tool 'Portal'",
-            summary: "",
+            summary: "Management tool used by company on a daily basis to track progress on tasks, view client/plan information, and automate mass data requests.",
             languages: ["SQL", "MS Access", "VBA"],
-            description: "curriculum management tool",
+            features: [
+                "View and manage client information, including client contacts",
+                "View and manage plan information",
+                "View and update regular tasks linked to individual user",
+                "Filter status tracking information based on various features",
+                "Generate mass emails for data requests and send draft emails to Outlook account"
+            ],
             year: 0,
             company: "The Benefit Practice",
             areas: ["Pension"],
-            image: "images/projects/curriculum-mgmt.png"
+            image: null
         },
         {
             id: 2,
             name: "Pension Liability Valution",
-            summary: "",
+            summary: "In-house pension funding valuation in Excel, which uses VBA to generate current and projected pension liabilities on an individual basis for a given year.",
             languages: ["VBA", "MS Excel"],
-            description: "to be determined",
+            features: [
+                "Calculate current and projected liabilities for Unit Accrual, Final Average Salary and Cash Balance Plan types",
+                "Calculates pension liabilities for year-end FASB Disclosures"
+            ],
             year: 0,
             company: "The Benefit Practice",
             areas: ["Pension"],
-            image: "images/projects/curriculum-mgmt.png"
+            image: null
         },
         {
             id: 3,
             name: "Projected Pension Liabilities",
-            summary: "",
+            summary: "Project seriatim-level projected 401-k expenses for hypothetical client retirement plan",
             languages: ["Python"],
-            description: "to be determined",
+            features: [
+                "Project rollforwards for various investment accounts in hypothetical 401-k plan"
+            ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
-            areas: ["Audit"],
+            areas: ["Consulting"],
             image: "images/projects/curriculum-mgmt.png"
         },
         {
             id: 4,
             name: "VA Lapse Experience Study for Audit",
-            summary: "Managing team to develop standardized process for building VA lapse experience studies in Python scikit-learn, which will be used to assess reasonability of client lapse assumptions for yearly audit procedures across practice",
+            summary: "Generates VA lapse experience study based on actual experience study data, used to assess reasonability of client lapse assumptions for year-end audit.",
             languages: ["Python"],
-            description: "to be determined",
+            features: [
+                "Utilizes sk-learn library to fit experience data to logistic regression, random forest and neural network models",
+                "Compares models and chooses the 'best' model based on pre-determined metrics",
+                "Performs comprehensive validation procedures on client experience study data",
+                "Generates exploratory analysis graphs used to assess client data",
+                "Generates graphs to compare client data to PwC-produced data",
+                "Generates standardizes pdf report containing graphs described above",
+                "Reads and writes data to and from AWS S3 buckets",
+                "Utilizes streamlit library to summarize results and allow user to download reports"
+            ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
             areas: ["Audit"],
@@ -88,10 +123,12 @@ const data = {
         },
         {
             id: 5,
-            name: "Assumption Management Tool",
+            name: "Assumption Inventory",
             summary: "",
-            languages: ["Python"],
-            description: "to be determined",
+            languages: ["VBA", "SQL", "MS Access"],
+            features: [
+
+            ],
             year: 0,
             company: "Knights of Columbus",
             areas: ["Life Insurance"],

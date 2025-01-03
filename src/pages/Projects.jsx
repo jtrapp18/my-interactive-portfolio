@@ -7,9 +7,14 @@ import LanguageFilter from "../hooks/languageFilter";
 
 const StyledMain = styled.main`
   display: flex;
+  div {
+    width: 100%;
+  }
 
   div > h3 {
     padding-top: 20px;
+  }
+  div > h3, div > p, div > i {
     margin: 20px;
   }
 `
@@ -17,8 +22,7 @@ const StyledMain = styled.main`
 const CardContainer = styled.section`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-  flex: 1;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 `
 
 const Projects = () => {
@@ -29,14 +33,16 @@ const Projects = () => {
         <StyledMain>
             <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>
             <div>
-                <h3>Throughout my Software Engineering course at FlatIron School, I worked on a series of projects</h3>
-                <CardContainer>
-                    {showProjects.map(project=>
-                        <ProjectCard
-                            key={project.id}
-                            {...project}
-                        />)}
-                </CardContainer>
+              <h3>Featured Projects</h3>
+              <p>During my Software Engineering course at Flatiron School, I completed several impactful projects.</p>
+              <i>Explore the projects below and click 'Details' on any card to learn more.</i>
+              <CardContainer>
+                  {showProjects.map(project=>
+                      <ProjectCard
+                          key={project.id}
+                          {...project}
+                      />)}
+              </CardContainer>
             </div>
         </StyledMain>
     );

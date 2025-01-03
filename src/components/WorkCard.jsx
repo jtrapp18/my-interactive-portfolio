@@ -8,6 +8,10 @@ const StyledCard = styled.article`
     ${CardStyling}
     cursor: pointer;
 
+    section {
+      overflow-X: scroll;
+    }
+
     &.collapsed {
       opacity: .3;
       pointer-events: none;
@@ -15,15 +19,18 @@ const StyledCard = styled.article`
 
     &.expanded {
       position: absolute;
+      bottom: 0px;
       width: 50%;
       left: 50%;
+      height: 600px;
       transform: translateX(-50%);
-      max-width: none;
+      min-width: 500px;
       z-index: 10;
     }
   `
 
-function WorkCard({id, name, summary, languages, description, year, company, areas, image, activeProj, setActiveProj}) {
+function WorkCard({id, name, summary, languages, features, 
+  year, company, areas, image, activeProj, setActiveProj}) {
 
   const cardRef = useRef(null); // Create a reference to the card element
 
@@ -68,10 +75,21 @@ function WorkCard({id, name, summary, languages, description, year, company, are
       <StyledCard ref={cardRef} className={className} onClick={handleClick}>
         <h2>{name}</h2>
         <h3>{company}</h3>
-        <Tags tags={areas} tagType="Areas of Practice"/>
         <p>{summary}</p>
-        <p>{description}</p>
+        <Tags tags={areas} tagType="Areas of Practice"/>
         <Tags tags={languages} tagType="Languages Used"/>
+        {className==="expanded" && (
+          <section>
+            <h3>Features</h3>
+            <ul>
+              {features.map(feature=>(
+                <li key={feature}>
+                  {feature}
+                </li>)
+              )}
+            </ul>
+          </section>
+        )}
       </StyledCard>
   );
 };

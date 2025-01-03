@@ -57,7 +57,7 @@ const StyledForm = styled.form`
 
 const CardHover = css`
     &:hover {
-        --background: var(--striped);
+        --background: var(--light-green);
         // --primary: gray;
         // --h3: var(--light-gray);
         // --font-color: black;

@@ -84,8 +84,8 @@ function ProjectCard({name, phase, summary, languages, collaborators,
 
   return(  
       <StyledCard>
-        <h2 title={`Click to go to project site`} onClick={()=>window.open(website_link, "_blank")}>{name}</h2>
-        {/* <p>{summary}</p> */}
+        <h2>{name}</h2>
+        {/* <p title={`Click to go to project site`} onClick={()=>window.open(website_link, "_blank")}>Go to Project Site</p> */}
         <section className={isOpen ? "hide" : ""}>
           <img src={image} alt={image} className="static" />
           <img src={gif} alt={gif} className="animated" />
@@ -98,13 +98,13 @@ function ProjectCard({name, phase, summary, languages, collaborators,
               <strong>Collaborators:</strong>
               {collaborators.map(collaborator =>
                 <div key={collaborator.id}>
-                  <a title={collaborator.link} href={collaborator.link} className="collaborator">{`>>${collaborator.name}`}</a>
+                  <a title={collaborator.link} href={collaborator.link} target="_blank" className="collaborator">{`>>${collaborator.name}`}</a>
                 </div>
               )}
               <br/>
               <strong>Github Code Repositories:</strong>
-              <label>Front-end: <a href={repo_fe}>{repo_fe}</a></label>
-              <label>Back-end: <a href={repo_be}>{repo_be}</a></label>
+              <label>Front-end: <a href={repo_fe} target="_blank">{repo_fe}</a></label>
+              <label>Back-end: <a href={repo_be} target="_blank">{repo_be}</a></label>
               <br/>
               <i>{`This project was developed for the end of Phase ${phase} assignment for the FlatIron School Software Engineering Bootcamp`}</i>
             </div>
