@@ -1,5 +1,21 @@
 import styled, {css} from "styled-components";
 
+const StyledMain = styled.main`
+  display: flex;
+  div {
+    width: 100%;
+  }
+
+  article {
+    padding-top: 20px;
+    margin: 20px;
+
+    i {
+      color: blue;
+    }
+  }
+`
+
 const ConditionalHighlight = css`
     &:hover {
         background-color: var(--yellow);
@@ -68,7 +84,7 @@ const CardStyling = css`
     background: var(--background);
     box-shadow: var(--shadow);
     border-radius: 10px;
-    height: 415px;
+    height: 450px;
     overflow: hidden;
     margin: 20px;
     padding: 20px;
@@ -92,4 +108,4 @@ const CardStyling = css`
     overflow: hidden;
   `
 
-export { StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }
+export { StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }

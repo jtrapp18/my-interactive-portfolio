@@ -9,7 +9,14 @@ const StyledCard = styled.article`
     cursor: pointer;
 
     section {
-      overflow-X: scroll;
+      overflow-Y: scroll;
+    }
+
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+
     }
 
     &.collapsed {
@@ -36,10 +43,7 @@ function WorkCard({id, name, summary, languages, features,
 
   const handleClickOutside = (e) => {
     if (cardRef.current && !cardRef.current.contains(e.target)) {
-      console.log("clicked outside");
       setActiveProj(null);
-    } else {
-      console.log("clicked inside");
     }
   };
 
@@ -73,13 +77,13 @@ function WorkCard({id, name, summary, languages, features,
 
   return(  
       <StyledCard ref={cardRef} className={className} onClick={handleClick}>
+        {className==="expanded" && <span className="close" onClick={()=>setActiveProj(null)}>✖</span>}
         <h2>{name}</h2>
-        <h3>{company}</h3>
+        <h3>{`For ${company}`}</h3>
         <p>{summary}</p>
-        <Tags tags={areas} tagType="Areas of Practice"/>
-        <Tags tags={languages} tagType="Languages Used"/>
         {className==="expanded" && (
           <section>
+            <hr></hr>
             <h3>Features</h3>
             <ul>
               {features.map(feature=>(
@@ -90,6 +94,9 @@ function WorkCard({id, name, summary, languages, features,
             </ul>
           </section>
         )}
+        <hr></hr>
+        <Tags tags={areas} tagType="Areas of Practice"/>
+        <Tags tags={languages} tagType="Languages Used"/>
       </StyledCard>
   );
 };

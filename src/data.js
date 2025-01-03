@@ -4,7 +4,7 @@ const data = {
             id: 1,
             name: "Curriculum Management",
             phase: "I",
-            summary: "Single-page application that allows teachers of English study curriculums to simply and easily manage their book curriculum as well create assignments and track student's progress and grades.",
+            summary: "Single-page application designed to simplify the management of English study curriculums. Teachers can easily track assignments, grades, and student progress while curating their book lists.",
             languages: ["CSS", "HTML", "JavaScript"],
             collaborators: [
                 {
@@ -13,7 +13,17 @@ const data = {
                     link: "https://github.com/klaftech"
                 }
             ],
-            features: [],
+            features: [
+                "Access & search database of all published books to add to curriculum.",
+                "Allows easy management of active curriculum and assignments.",
+                "Create and edit assignments for each book.",
+                "Track and analyze student's grades and progress across entire class.",
+                "Integrated with OpenLibrary API to load, search and filter published books and retrieve cover images.",
+                "Connects to local database to store and retrieve curriculum, assignments, students and grades through a RESTful API hosted on Railway.",
+                "Listens for user events and updates the DOM in response.",
+                "Allows simple drag and drop adding of books to the curriculum.",
+                "Features highly interactive forms for easy data manipulation."
+            ],
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
             website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
@@ -24,7 +34,7 @@ const data = {
             id: 2,
             name: "Wandr Personal Travel Journal",
             phase: "II",
-            summary: "A React-based application designed to document your travels, build itineraries for bucket list destinations, leave reviews and photos, and track visited places.",
+            summary: "A React-based application designed for documenting travels, creating itineraries, leaving reviews, and tracking visited destinations.",
             languages: ["CSS", "React"],
             collaborators: [
                 {
@@ -33,7 +43,14 @@ const data = {
                     link: "https://github.com/kelseyroche"
                 }
             ],
-            features: [],
+            features: [
+                "Login and logout functionality.",
+                "Plan trips and save itineraries for destinations.",
+                "Add reviews with photos to share your travel experiences.",
+                "Locate trips using search and filter functionality.",
+                "Utilizes AcuWeather API to view weather forecast for upcoming trips.",
+                "Saves data to database stored in back-end API, hosted on Railway."
+            ],
             image: "images/projects/wandr-personal-travel-journal.png",
             gif: "images/projects/wandr-personal-travel-journal.gif",
             website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
@@ -48,7 +65,19 @@ const data = {
             languages: ["Python"],
             collaborators: [
             ],
-            features: [],
+            features: [
+                "Add, view, update, and delete rental units, tenants, expenses, and payment records.",
+                "Automatically generates and prints receipts for payments linked to specific tenants.",
+                "Provides a monthly rollforward showing amounts due for each tenant, including a full payment history.",
+                "Generates and prints a PDF income report summarizing both aggregate results and individual unit performance for a specified year.",
+                "Implements a tree structure using Node instances to provide dynamic, multi-level menu navigation with parent-child relationships.",
+                "Each Node can trigger user-defined procedures, allowing for dynamic operations like filtering tenants or viewing payment details.",
+                "Built with MenuTree and Node classes, enabling an expandable, user-friendly navigation structure.",
+                "A command-line interface enhanced with rich text formatting and custom ASCII art for improved user experience.",
+                "Easily extend the menu system to support future features and operations like tenant or payment management.",
+                "Manages database interactions for creating, reading, updating, and deleting records, with SQL (SQLite or chosen database).",
+                "Ensures that only valid data is entered into the system with custom validation functions for key attributes."
+            ],
             image: "images/projects/rental_management_tool.png",
             gif: "images/projects/rental_management_tool.gif",
             website_link: "https://github.com/jtrapp18/rental_management_tool",
@@ -60,14 +89,14 @@ const data = {
         {
             id: 1,
             name: "Project Management Tool 'Portal'",
-            summary: "Management tool used by company on a daily basis to track progress on tasks, view client/plan information, and automate mass data requests.",
+            summary: "A management tool utilized by the company on a daily basis to track task progress, view client and plan information, and automate mass data requests.",
             languages: ["SQL", "MS Access", "VBA"],
             features: [
-                "View and manage client information, including client contacts",
-                "View and manage plan information",
-                "View and update regular tasks linked to individual user",
-                "Filter status tracking information based on various features",
-                "Generate mass emails for data requests and send draft emails to Outlook account"
+                "Manage client information, including contact details and plan specifics.",
+                "Track and manage plan details and their status updates.",
+                "Link and track individual user tasks, including regular updates and task status.",
+                "Filter and sort status tracking data based on multiple user-defined criteria.",
+                "Automate generation of mass emails for data requests and draft them in Outlook for review."
             ],
             year: 0,
             company: "The Benefit Practice",
@@ -77,11 +106,11 @@ const data = {
         {
             id: 2,
             name: "Pension Liability Valution",
-            summary: "In-house pension funding valuation in Excel, which uses VBA to generate current and projected pension liabilities on an individual basis for a given year.",
+            summary: "In-house pension funding valuation tool built in Excel, utilizing VBA to generate both current and projected pension liabilities on an individual basis for a given year.",
             languages: ["VBA", "MS Excel"],
             features: [
-                "Calculate current and projected liabilities for Unit Accrual, Final Average Salary and Cash Balance Plan types",
-                "Calculates pension liabilities for year-end FASB Disclosures"
+                "Project current and future pension liabilities for multiple plan types, including Unit Accrual, Final Average Salary, and Cash Balance plans.",
+                "Generate year-end FASB Disclosures for pension liabilities."
             ],
             year: 0,
             company: "The Benefit Practice",
@@ -94,7 +123,7 @@ const data = {
             summary: "Project seriatim-level projected 401-k expenses for hypothetical client retirement plan",
             languages: ["Python"],
             features: [
-                "Project rollforwards for various investment accounts in hypothetical 401-k plan"
+                "Calculate rollforward projections for multiple investment accounts within a hypothetical 401(k) plan."
             ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
@@ -104,17 +133,17 @@ const data = {
         {
             id: 4,
             name: "VA Lapse Experience Study for Audit",
-            summary: "Generates VA lapse experience study based on actual experience study data, used to assess reasonability of client lapse assumptions for year-end audit.",
+            summary: "Generates a VA lapse experience study based on actual client data to assess the reasonability of client lapse assumptions for year-end audits.",
             languages: ["Python"],
             features: [
-                "Utilizes sk-learn library to fit experience data to logistic regression, random forest and neural network models",
-                "Compares models and chooses the 'best' model based on pre-determined metrics",
-                "Performs comprehensive validation procedures on client experience study data",
-                "Generates exploratory analysis graphs used to assess client data",
-                "Generates graphs to compare client data to PwC-produced data",
-                "Generates standardizes pdf report containing graphs described above",
-                "Reads and writes data to and from AWS S3 buckets",
-                "Utilizes streamlit library to summarize results and allow user to download reports"
+                "Uses scikit-learn to fit client data to logistic regression, random forest, and neural network models.",
+                "Evaluates and compares models to select the best-performing one based on pre-determined metrics.",
+                "Performs comprehensive data validation and diagnostic checks on client experience data.",
+                "Generates exploratory analysis graphs to visually assess client data quality.",
+                "Compares client data to PwC-produced benchmarks using visualization tools.",
+                "Automates PDF report generation, consolidating graphs and findings into a standardized format.",
+                "Reads and writes client data to AWS S3 storage for secure and scalable access.",
+                "Utilizes Streamlit to present results and allows users to download reports directly from the interface."
             ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
@@ -124,10 +153,10 @@ const data = {
         {
             id: 5,
             name: "Assumption Inventory",
-            summary: "",
+            summary: "MS Access-based database with custom front-end functionality to track and manage actuarial assumptions for life insurance models, improving accuracy and accessibility.",
             languages: ["VBA", "SQL", "MS Access"],
             features: [
-
+                "Tracks actuarial assumptions across multiple life insurance models."
             ],
             year: 0,
             company: "Knights of Columbus",
