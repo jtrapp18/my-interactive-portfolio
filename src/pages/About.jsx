@@ -1,6 +1,7 @@
-// import React from 'react';
+import React, { useRef, useState } from 'react';
 import styled from "styled-components";
 import data from "../data";
+import ChooseSection from '../hooks/chooseSection';
 
 const StyledMain = styled.main`
     box-sizing: border-box;
@@ -21,7 +22,7 @@ const StyledMain = styled.main`
         width: 0px;
         height: 0px;
     }
-`
+`;
 
 const StyledArticle = styled.article`
     scroll-snap-align: start;
@@ -54,27 +55,49 @@ const StyledArticle = styled.article`
         width: 100%;
         max-width: 500px;
     }
-    
-    p {
-        // font-size: 1.5vw;
+
+    .scroll-btns {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
     }
-`
+
+    .scroll-btn {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .scroll-btn:hover {
+        background-color: #0056b3;
+    }
+`;
 
 const About = () => {
     const aboutMe = data.aboutMe;
+    const containerRef = useRef(null);
+    const sectionsRef = useRef([]);
+    const [currentSectionIndex, setCurrentSectionIndex] = useState(0); // Track current section index
+
+    const [scrollDown, scrollUp] = ChooseSection(containerRef, sectionsRef, currentSectionIndex, setCurrentSectionIndex);
 
     return (
-        <StyledMain>
-            {aboutMe.map(about =>
+        <StyledMain ref={containerRef}>
+            {aboutMe.map((about, index) => (
                 <StyledArticle key={about.id} image={about.background}>
-                    <section>
+                    <section
+                        ref={(el) => (sectionsRef.current[index] = el)}
+                    >
                         <h1>{about.label}</h1>
                         <div className="about-info">
                             <p>
                                 {about.details.split('\n').map((line, index) => (
                                     <>
-                                    {line}
-                                    {index < about.details.split('\n').length - 1 && <br />}
+                                        {line}
+                                        {index < about.details.split('\n').length - 1 && <br />}
                                     </>
                                 ))}
                             </p>
@@ -83,11 +106,32 @@ const About = () => {
                                 alt={about.image}
                             />
                         </div>
+                        {/* Scroll Up and Scroll Down buttons */}
+                        {index === currentSectionIndex && (
+                            <div className="scroll-btns">
+                                {index > 0 && (
+                                    <button
+                                        className="scroll-btn"
+                                        onClick={scrollUp}
+                                    >
+                                        Scroll Up
+                                    </button>
+                                )}
+                                {index < aboutMe.length - 1 && (
+                                    <button
+                                        className="scroll-btn"
+                                        onClick={scrollDown}
+                                    >
+                                        Scroll Down
+                                    </button>
+                                )}
+                            </div>
+                        )}
                     </section>
                 </StyledArticle>
-            )}
+            ))}
         </StyledMain>
     );
-}
+};
 
 export default About;
