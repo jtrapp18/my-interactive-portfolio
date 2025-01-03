@@ -1,5 +1,6 @@
 // import React from 'react';
 import styled from "styled-components";
+import data from "../data";
 
 const StyledMain = styled.main`
     box-sizing: border-box;
@@ -8,7 +9,10 @@ const StyledMain = styled.main`
     justify-content: center;
     align-items: start;
     margin: 0;
-
+    background-image: url("images/birch_trees.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: calc(100vh - 5px);
@@ -25,21 +29,20 @@ const StyledArticle = styled.article`
     box-sizing: border-box;
     padding: 20px 100px 100px 100px;
     height: var(--size-body);
-    background: ${props => props.color ? props.color : null};
-    background-image: ${props => props.image ? `url(${props.image})` : null};
-    background-size: ${props => props.image ? "90%" : null};
-    background-repeat: no-repeat;
-    background-position: bottom;
 
     h1 {
         font-size: 75px;
         margin-bottom: 10px;
         animation: slideRight 1s;
         width: fit-content;
-        background: rgba(255, 255, 255, 0.5);
     }
 
-    div {
+    section {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 0px 20px 20px 20px;
+    }
+
+    .about-info {
         display: grid;
         width: 100%;
         max-height: 80%;
@@ -50,68 +53,39 @@ const StyledArticle = styled.article`
     img {
         width: 100%;
         max-width: 500px;
-        margin-left: 20px;
     }
     
     p {
-        font-size: 1.5vw;
-        padding: 20px;;
-        margin: 20px;
-        background: ${props => props.image ? "rgba(255, 255, 255, 0.9)" : null};
-        box-shadow: ${props => props.image ? "var(--shadow)" : null};
+        // font-size: 1.5vw;
     }
 `
 
 const About = () => {
+    const aboutMe = data.aboutMe;
 
     return (
         <StyledMain>
-            <StyledArticle image="/images/birch_trees.jpeg">
-                <h1>About Me</h1>
-                <div>
-                    <img
-                        src="/images/kev_and_me.jpg"
-                        alt="My boyfriend and me in Scotland"
-                    />
-                    <p>My name is Jacqueline and I am studying to be a Software Engineer.</p>
-                </div>
-            </StyledArticle>
-            <StyledArticle image="/images/leaf_painting.jpeg">
-                <h1>My Background</h1>
-                <div>
-                {/* <span></span> */}
-                    <p>
-                        I have spent my career as an actuary. I have worked in pension consulting, 
-                        life insurance, and currently as an auditor and consultant. During my first job, 
-                        I worked a lot in Excel and had to do a lot of repetitive processes. I started 
-                        playing around with VBA to try to automate some of my work and pretty much 
-                        immediately fell in love with programming. From that point on, I have tried 
-                        to incorporate programming into any project at work where I could find a use 
-                        for it. Before this bootcamp, that has mainly involved VBA and more recently, 
-                        Python.
-                    </p>
-                </div>
-            </StyledArticle>
-            <StyledArticle image="/images/tree_line_drawing.png">
-                <h1>My Hobbies</h1>
-                <div>
-                    <span></span>
-                    <p>
-                        Experienced Actuary and Full-Stack Developer with a background in 
-                        pension, life insurance, audit, and consulting.
-                        My recent experience spans experience study development using 
-                        machine learning techniques, data cleansing, data validation, user
-                        interface design, and dashboard development. I have led 
-                        initiatives to develop standardized processes for various 
-                        actuarial applications and developed user-friendly tools to 
-                        streamline client management and daily operations.
-                        Currently, I am enhancing my technical skill set through a Software 
-                        Engineering bootcamp. My goal is to bridge the gap between actuarial 
-                        science and technology by designing innovative, automated solutions 
-                        that save time and improve the efficiency of actuarial processes.
-                    </p>
-                </div>
-            </StyledArticle>
+            {aboutMe.map(about =>
+                <StyledArticle key={about.id} image={about.background}>
+                    <section>
+                        <h1>{about.label}</h1>
+                        <div className="about-info">
+                            <p>
+                                {about.details.split('\n').map((line, index) => (
+                                    <>
+                                    {line}
+                                    {index < about.details.split('\n').length - 1 && <br />}
+                                    </>
+                                ))}
+                            </p>
+                            <img
+                                src={about.image}
+                                alt={about.image}
+                            />
+                        </div>
+                    </section>
+                </StyledArticle>
+            )}
         </StyledMain>
     );
 }

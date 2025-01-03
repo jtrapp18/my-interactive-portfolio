@@ -1,5 +1,5 @@
 import WorkCard from "../components/WorkCard";
-import data from "../data"
+import data from "../data";
 import styled from "styled-components";
 import LanguageFilter from "../hooks/languageFilter";
 import SideBar from "../components/SideBar";
