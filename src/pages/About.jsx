@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import styled from "styled-components";
 import data from "../data";
 import ChooseSection from '../hooks/chooseSection';
+import ScrollButtons from '../components/ScrollButtons';
 
 const StyledMain = styled.main`
     box-sizing: border-box;
@@ -41,6 +42,7 @@ const StyledArticle = styled.article`
     section {
         background: rgba(255, 255, 255, 0.9);
         padding: 0px 20px 20px 20px;
+        position: relative;
     }
 
     .about-info {
@@ -54,25 +56,6 @@ const StyledArticle = styled.article`
     img {
         width: 100%;
         max-width: 500px;
-    }
-
-    .scroll-btns {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-    }
-
-    .scroll-btn {
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        cursor: pointer;
-        font-size: 16px;
-    }
-
-    .scroll-btn:hover {
-        background-color: #0056b3;
     }
 `;
 
@@ -106,28 +89,16 @@ const About = () => {
                                 alt={about.image}
                             />
                         </div>
-                        {/* Scroll Up and Scroll Down buttons */}
                         {index === currentSectionIndex && (
-                            <div className="scroll-btns">
-                                {index > 0 && (
-                                    <button
-                                        className="scroll-btn"
-                                        onClick={scrollUp}
-                                    >
-                                        Scroll Up
-                                    </button>
-                                )}
-                                {index < aboutMe.length - 1 && (
-                                    <button
-                                        className="scroll-btn"
-                                        onClick={scrollDown}
-                                    >
-                                        Scroll Down
-                                    </button>
-                                )}
-                            </div>
+                            <ScrollButtons
+                                index={index}
+                                pageCount={aboutMe.length}
+                                scrollDown={scrollDown}
+                                scrollUp={scrollUp}
+                            />
                         )}
                     </section>
+
                 </StyledArticle>
             ))}
         </StyledMain>
