@@ -11,7 +11,7 @@ const data = {
     projects: [
         {
             id: 1,
-            name: "Curriculum Management",
+            name: "Curriculum Management Dashboard",
             phase: "I",
             summary: "Single-page application designed to simplify the management of English study curriculums. Teachers can easily track assignments, grades, and student progress while curating their book lists.",
             languages: ["CSS", "HTML", "JavaScript"],
