@@ -7,7 +7,9 @@
   </head>
   <body>
     <script>
-      window.location.replace('/my-interactive-portfolio/');
+      // Capture the current path and append it to the base path
+      const path = window.location.pathname;
+      window.location.replace('/my-interactive-portfolio' + path);
     </script>
   </body>
 </html>
