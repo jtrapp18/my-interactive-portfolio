@@ -1,18 +1,13 @@
-import { StrictMode } from 'react'
+import React, { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import routes from "./routes";
+import './index.css';
+import { createHashRouter, RouterProvider } from 'react-router-dom'; // Import HashRouter
+import routes from './routes'; // Import your routes configuration
 
-// const router = createBrowserRouter(routes);
+// Create the hash-based router
+const router = createHashRouter(routes);
 
-const isProduction = process.env.NODE_ENV === 'production';
-const baseName = isProduction ? '/my-interactive-portfolio' : '/';
-
-const router = createBrowserRouter(routes, {
-  basename: baseName,
-});
-
+// Create the root and render the app with the router
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
