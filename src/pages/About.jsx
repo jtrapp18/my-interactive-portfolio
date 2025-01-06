@@ -3,6 +3,7 @@ import styled from "styled-components";
 import data from "../data";
 import ChooseSection from '../hooks/chooseSection';
 import ScrollButtons from '../components/ScrollButtons';
+import Languages from '../components/Languages';
 
 const StyledMain = styled.main`
     box-sizing: border-box;
@@ -75,6 +76,9 @@ const About = () => {
                         ref={(el) => (sectionsRef.current[index] = el)}
                     >
                         <h1>{about.label}</h1>
+                        {index===2 && (<Languages 
+                        languages={data.languages}
+                        />)}
                         <div className="about-info">
                             <p>
                                 {about.details.split('\n').map((line, index) => (
@@ -98,7 +102,6 @@ const About = () => {
                             />
                         )}
                     </section>
-
                 </StyledArticle>
             ))}
         </StyledMain>

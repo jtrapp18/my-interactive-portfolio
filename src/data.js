@@ -1,4 +1,13 @@
 const data = {
+    languages: [
+        'Python',
+        'JavaScript',
+        'React',
+        'SQL',
+        'CSS',
+        'HTML',
+        'VBA'
+    ],
     projects: [
         {
             id: 1,
@@ -171,29 +180,37 @@ const data = {
             image: "/images/kev_and_me.jpg",
             background: "images/birch_trees.jpeg",
             color: "",
-            details: `I have spent my career as an actuary, working in pension consulting, life insurance, and currently as an auditor and consultant for life insurance companies.
-
-            During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I began experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
+            details: `I'm a life insurance actuary who loves to code.
             
-            At work, this has mainly involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
+            Over the years, I’ve worked in pension consulting, life insurance, auditing, and general consulting. In every role, I’ve made it my mission to spot inefficiencies and build automated solutions to make processes smoother and more efficient.
             
-            To further develop my programming skills, I enrolled in a Software Engineering course. Through this course, I've learned to build applications using JavaScript, React, and Python.`
-                    },
+            My goal is to bridge the gap between actuarial work and technology, creating tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
+        },
         {
             id: 2,
             label: "My Background",
             image: null,
             background: "/images/leaf_painting.jpeg",
             color: null,
-            details: "I have spent my career as an actuary and have worked in pension consulting, life insurance, and currently work as an auditor and consultant for life insurance companies. \nDuring my first job I worked a lot in Excel and had to do a lot of repetitive processes. I started playing around with VBA to try to automate some of my work and pretty much immediately fell in love with programming. From that point on, I have tried to incorporate programming into any project at work where I could find a use for it. At work, that has mainly involved VBA and Python, but has also included some front-end design in Microsoft Access, Python Streamlit, and Power BI.\nTo further develop my programming skills, I started a Software Engineering course where I have learned how to build applications in JavaScript, React, and Python."
+            details: `I've been working as an actuary for about 10 years, and have worked in pension consulting, life insurance, and currently work as an auditor and consultant for life insurance companies.
+
+            During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
+            
+            At work, the majority of my programming experience involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
+            
+            Recently, I enrolled in a Software Engineering course at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
         },
         {
             id: 3,
-            label: "My Hobbies",
+            label: "Technical Skillset",
             image: null,
             background: "/images/tree_line_drawing.png",
             color: null,
-            details: ""
+            details: `Python Highlights: scikit-learn, pandas, NumPy, matplotlib, boto3, streamlit
+
+            VBA Highlights: forms, connection across various Microsoft tools (Excel, Access, Word, Outlook)
+
+            See the Projects page and/or Relevant Work page for details on how I used these tools.`
         }
     ],
     socials: [

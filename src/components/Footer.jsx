@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import ContactForm from './ContactForm';
 import FooterMain from './FooterMain';
 
-
 const StyledFooter = styled.footer`
     display: flex;
     flex-direction: column;

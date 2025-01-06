@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from "../data"
+import Languages from './Languages';
 
 const StyledSection = styled.section`
     position: absolute;
@@ -69,15 +70,6 @@ const FooterMain = () => {
                     </a>
                 )}
             </div>
-            <span>
-                <p>Python</p><p>|</p>  
-                <p>React</p><p>|</p>
-                <p>JavaScript</p><p>|</p>
-                <p>VBA</p><p>|</p>
-                <p>CSS</p><p>|</p>
-                <p>HTML</p><p>|</p>
-                <p>Power BI</p>
-            </span>
         </StyledSection>
     );
 }
