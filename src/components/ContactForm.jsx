@@ -36,9 +36,28 @@ function ContactForm() {
         setAttendee(event.target.value);
     }
 
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
+    function handleSubmit(event) {
+      event.preventDefault();
+    
+      // Send the form data to the backend
+      fetch("https://my-interactive-portfolio-be-production.up.railway.app/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData), // send form data as JSON
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          alert(data.message); // Display success message
+          setFormData(emptyObj);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+          alert("There was an error sending your message.");
+        });
+
+    }    
 
   return (
     <StyledSection>
