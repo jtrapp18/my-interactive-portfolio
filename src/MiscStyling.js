@@ -103,7 +103,7 @@ const CardStyling = css`
       }
   `
   const TypeAnimation = css`
-    animation: typing 2s steps(30) 1s 1 normal both;
+    animation: typing 3s steps(30) 1s 1 normal both;
     white-space: nowrap;
     overflow: hidden;
   `

@@ -14,19 +14,19 @@ const StyledDiv = styled.div`
     z-index: 1;
 
     h1, p {
-      font-family: 'Cascadia Code', sans-serif;;
+      font-family: 'Cascadia Code', sans-serif;
       color: white;
       text-shadow: 5px 7px 4px rgba(0, 0, 0, .7);
       text-align: center;
     }
 
     h1 {
-      ${TypeAnimation};        
+      ${TypeAnimation};
       font-size: clamp(1rem, calc(100vw / 15), 5rem);
     }
 
     strong {
-      color:rgb(255, 255, 157);
+      color: rgb(255, 255, 157);
     }
 
     h1:hover strong, p:hover strong {
@@ -38,10 +38,8 @@ const StyledDiv = styled.div`
     }
 
     p {
-      // opacity: 0;
-      animation: pauseShow 3s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
-      // animation-delay: 3s;
       font-size: clamp(.5rem, calc(100vw / 30), 2rem);
+      animation: pauseShow 3s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
     }
   }
 
@@ -62,13 +60,21 @@ const StyledDiv = styled.div`
 const Home = () => {
   const seasons = ["fall", "winter", "spring", "summer"];
   const [index, setIndex] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false); // Track image loading status
 
   useEffect(() => {
+    const firstImage = new Image();
+    firstImage.src = `${import.meta.env.BASE_URL}images/seasons/fall.jpg`; // Preload the first image
+    firstImage.onload = () => {
+      setImageLoaded(true); // Set state when the first image is loaded
+    };
+
     const changeSeason = () => {
       setIndex((prevIndex) => (prevIndex + 1) % seasons.length);
     };
+
     const intervalId = setInterval(changeSeason, 7000);
-    
+
     return () => clearInterval(intervalId);
   }, []);
 
@@ -79,13 +85,13 @@ const Home = () => {
           <h1>Hi, I'm <strong>Jacqueline</strong></h1>
           <p>I'm an <strong>Actuary</strong> and <strong>Full-Stack Developer</strong></p>
         </section>
-        
+
         {seasons.map((season, idx) => (
           <img
             key={season}
             src={`${import.meta.env.BASE_URL}images/seasons/${season}.jpg`}
             alt={season}
-            className={idx === index ? 'visible' : ''}
+            className={idx === index && imageLoaded ? 'visible' : ''}
           />
         ))}
       </StyledDiv>
