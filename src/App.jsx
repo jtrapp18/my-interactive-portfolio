@@ -12,6 +12,8 @@ const Loading = styled.p`
 
 function App() {
 
+  console.log('NODE_ENV in config:', process.env.NODE_ENV);
+
   return (
     <>
       <Headroom>
