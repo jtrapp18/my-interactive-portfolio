@@ -83,7 +83,7 @@ const Home = () => {
         {seasons.map((season, idx) => (
           <img
             key={season}
-            src={`/images/seasons/${season}.jpg`}
+            src={`${import.meta.env.BASE_URL}images/seasons/${season}.jpg`}
             alt={season}
             className={idx === index ? 'visible' : ''}
           />

@@ -31,7 +31,7 @@ function Logo() {
 
     const handleMouseEnter = (event) => {
       const catImage = event.target;
-      catImage.src = "/images/cat_walking_home.gif";
+      catImage.src = `${import.meta.env.BASE_URL}images/cat_walking_home.gif`;
     };
 
   return (
@@ -42,7 +42,7 @@ function Logo() {
           id="home"
           onClick={handleTabClick}
         >
-          <img src="/images/icons/cabin.png" alt="home icon"/>
+          <img src={`${import.meta.env.BASE_URL}images/icons/cabin.png`} alt="home icon"/>
         </NavLink>
         <img 
           id="cat" 

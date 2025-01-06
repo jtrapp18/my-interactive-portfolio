@@ -85,8 +85,8 @@ function ProjectCard({name, phase, summary, languages, collaborators,
       <StyledCard>
         <h2><a title={website_link} href={website_link} target="_blank">{name}</a></h2>
         <section className={isOpen ? "hide" : ""}>
-          <img src={image} alt={image} className="static" />
-          <img src={gif} alt={gif} className="animated" />
+          <img src={`${import.meta.env.BASE_URL}${image}`} alt={image} className="static" />
+          <img src={`${import.meta.env.BASE_URL}${gif}`} alt={gif} className="animated" />
         </section>
         
         <StyledDetails onToggle={handleToggle}>

@@ -31,7 +31,7 @@ function NavBar() {
         <Logo />
         <NavLinks />
       </article>
-      <StyledDivider src="/images/dividers/leaf_divider.png" />
+      <StyledDivider src={`${import.meta.env.BASE_URL}images/dividers/leaf_divider.png`} />
     </StyledNavBar>
   );
 };

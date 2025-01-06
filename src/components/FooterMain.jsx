@@ -63,7 +63,7 @@ const FooterMain = () => {
                     >
                         <img
                             className="logo"
-                            src={`images/logos/${social.image}`}
+                            src={`${import.meta.env.BASE_URL}images/logos/${social.image}`}
                             alt={social.name}
                         >
                     </img>
