@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path');
+import express from 'express';
 const app = express();
 
 // Serve static files from the 'dist' folder
