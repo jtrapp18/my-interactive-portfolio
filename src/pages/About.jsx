@@ -12,6 +12,7 @@ const StyledMain = styled.main`
     justify-content: center;
     align-items: start;
     margin: 0;
+    width: 100%;
     background-image: url("images/birch_trees.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,6 +45,7 @@ const StyledArticle = styled.article`
         background: rgba(255, 255, 255, 0.9);
         padding: 0px 20px 20px 20px;
         position: relative;
+        max-width: 90%;
     }
 
     .about-info {

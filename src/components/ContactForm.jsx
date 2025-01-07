@@ -8,6 +8,9 @@ const MessageLabel = styled.label`
 
 const StyledSection = styled.section`
     position: relative;
+    width: 600px;
+    max-width: 90%;
+    justify-items: center;
 `
 
 function ContactForm() {

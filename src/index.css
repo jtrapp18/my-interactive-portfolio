@@ -16,6 +16,12 @@
 }
 
 @font-face {
+  font-family: 'Cascadia';
+  src: url('/fonts/Cascadia.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
   font-family: 'Volkhov';
   src: url('/fonts/Volkhov-Regular.ttf') format('truetype');
   font-weight: normal;

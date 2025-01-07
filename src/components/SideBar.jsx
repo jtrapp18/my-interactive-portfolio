@@ -4,17 +4,12 @@ import styled from 'styled-components';
 const SidePanelContainer = styled.section`
     position:relative;
     padding: 20px;
-    min-width: 200px;
+    width: 200px;    
+    min-width: 5%;
     max-width: 20%;
-    width: 15%;
     display: flex;
     flex-direction: column;
-    // background-color: gray;
     border-right: 2px solid #C8C8C8;
-    // background: linear-gradient(to top, var(--light-green), white);
-    // background-image: url('/images/birch_paneling.jpeg');
-    // background-size: cover;
-    // opacity: 0.8;
     resize: horizontal;
 
     &input[type="checkbox"]:hover {

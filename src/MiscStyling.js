@@ -48,9 +48,7 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 20px;
-  width: 90%;
-  max-width: 700px;
-  min-width: 500px;
+  width: 100%;
   align-items: center;
 
   label {

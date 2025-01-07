@@ -14,7 +14,7 @@ const StyledDiv = styled.div`
     z-index: 1;
 
     h1, p {
-      font-family: 'Cascadia Code', sans-serif;
+      font-family: 'Cascadia Code', 'Cascadia', sans-serif;
       color: white;
       text-shadow: 5px 7px 4px rgba(0, 0, 0, .7);
       text-align: center;
