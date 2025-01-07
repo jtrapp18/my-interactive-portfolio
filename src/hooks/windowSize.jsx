@@ -9,7 +9,9 @@ const UseWindowWidth = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  return width;
+  const isMobile = width <= 768;  // You can adjust this value as needed
+
+  return isMobile;
 };
 
 export default UseWindowWidth;

@@ -83,6 +83,7 @@ const CardStyling = css`
     box-shadow: var(--shadow);
     border-radius: 10px;
     height: 450px;
+    max-height: 100%;
     overflow: hidden;
     margin: 20px;
     padding: 20px;

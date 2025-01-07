@@ -1,24 +1,53 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { handleTabClick } from "../helper";
+import { scrollToTop } from "../helper";
 import { useState } from "react";
 
 // Styled components
+
+const StyledDiv = styled.div`
+    height: 10vh;
+    position: relative;
+    // position: fixed;
+    border-bottom: 3px solid var(--green);
+    justify-content: left;
+    align-items: center;
+    // display: flex;
+`
 const LinkContainer = styled.div`
-  color: black;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
   margin: 25px;
   font-weight: bold;
   text-decoration: none;
   text-align: right;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: flex;
   background: white;
   border: 1px solid var(--gray);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Ensures smooth animation */
+  transform-origin: top; /* Animation starts at the top */
+  transform: scaleY(0); /* Initially collapsed */
+  transition: transform 0.3s ease-in-out; /* Smooth fold-out animation */
+
+  &.open {
+    transform: scaleY(1); /* Fully expanded */
+  }
+
+  &.closed {
+    transform: scaleY(0); /* Fully collapsed */
+  }
+
+  #exit {
+    background: var(--gray);
+    span {
+      cursor: pointer;
+      padding: 5px;
+    }
+  }
 
   @media (max-width: 768px) {
-    flex-direction: column;
     position: relative;
   }
 `;
@@ -26,8 +55,12 @@ const LinkContainer = styled.div`
 const StyledNavLink = styled(NavLink)`
   color: black;
   text-decoration: none;
-//   padding: 0px 10px 10px 10px;
-  border-bottom: 1px solid var(--gray);
+  border-top: 1px solid var(--gray);
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(20px, 4vw, 30px);
 
   &.active {
     text-decoration: overline;
@@ -51,7 +84,7 @@ const HamburgerButton = styled.button`
   background: transparent;
   border: none;
   color: black;
-  font-size: 30px;
+  font-size: clamp(40px, 4vw, 50px);
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -59,6 +92,7 @@ const HamburgerButton = styled.button`
   }
 `;
 
+// MobileNavBar Component
 const MobileNavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -66,29 +100,37 @@ const MobileNavBar = () => {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const handleClick = () => {
+    scrollToTop(); // Custom click handler
+    setIsMenuOpen(false); // Close menu after navigation
+  };
+
   return (
-    <div>
+    <StyledDiv>
       {/* Hamburger Button */}
-      <HamburgerButton onClick={toggleMenu}>
+      <HamburgerButton onClick={toggleMenu} aria-label="Toggle Menu">
         &#9776;
       </HamburgerButton>
 
-      {/* Links container with conditional rendering based on menu state */}
-      <LinkContainer style={{ display: isMenuOpen ? "flex" : "none" }}>
-        <StyledNavLink to="/" onClick={handleTabClick}>
+      {/* Links container with animation */}
+      <LinkContainer className={isMenuOpen ? "open" : "closed"}>
+        <div id="exit">
+          <span onClick={() => setIsMenuOpen(false)}>✖</span>
+        </div>
+        <StyledNavLink to="/" onClick={handleClick}>
           Home
         </StyledNavLink>
-        <StyledNavLink to="/about" onClick={handleTabClick}>
+        <StyledNavLink to="/about" onClick={handleClick}>
           About Me
         </StyledNavLink>
-        <StyledNavLink to="/projects" onClick={handleTabClick}>
+        <StyledNavLink to="/projects" onClick={handleClick}>
           Projects
         </StyledNavLink>
-        <StyledNavLink to="/relevant-work" onClick={handleTabClick}>
+        <StyledNavLink to="/relevant-work" onClick={handleClick}>
           Relevant Work
         </StyledNavLink>
       </LinkContainer>
-    </div>
+    </StyledDiv>
   );
 };
 

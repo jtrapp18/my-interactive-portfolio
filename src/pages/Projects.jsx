@@ -5,20 +5,23 @@ import styled from "styled-components";
 import { useEffect, useState } from "react";
 import LanguageFilter from "../hooks/languageFilter";
 import { StyledMain } from "../MiscStyling";
+import UseWindowWidth from "../hooks/windowSize";
 
 const CardContainer = styled.section`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 100%, 500px), 1fr));
 `
 
 const Projects = () => {
+    const isMobile = UseWindowWidth();
     const projects = data.projects;
     const [filters, setFilters, showProjects, selectAll, onSelectAll] = LanguageFilter(projects)
 
     return (
         <StyledMain>
-            <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>
+            {!isMobile && <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>}
             <div>
               <article>
                 <h3>Featured Projects</h3>

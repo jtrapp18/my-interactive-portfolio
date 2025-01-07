@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Tags from "./Tags";
 import { CardStyling } from "../MiscStyling";
 import { useRef, useEffect } from "react";
+import { scrollToTop } from "../helper";
 
 const StyledCard = styled.article`
     ${CardStyling}
@@ -27,11 +28,12 @@ const StyledCard = styled.article`
     &.expanded {
       position: absolute;
       bottom: 0px;
-      width: 50%;
+      width: 500px;
       left: 50%;
       height: 600px;
+      max-height: 80%;
       transform: translateX(-50%);
-      min-width: 500px;
+      max-width: 70%;
       z-index: 10;
     }
   `
@@ -61,6 +63,7 @@ function WorkCard({id, name, summary, languages, features,
 
   const handleClick = () => {
     setActiveProj(id);
+    scrollToTop();
   }
 
   let className

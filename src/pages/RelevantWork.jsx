@@ -5,21 +5,23 @@ import LanguageFilter from "../hooks/languageFilter";
 import SideBar from "../components/SideBar";
 import { useState } from "react";
 import { StyledMain } from "../MiscStyling";
+import UseWindowWidth from "../hooks/windowSize";
 
 const CardContainer = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 100%, 400px), 1fr));
 `
 
 const RelevantWork = () => {
+    const isMobile = UseWindowWidth();
     const relevantWork = data.relevantWork;
     const [activeProj, setActiveProj] = useState(null);
     const [filters, setFilters, showProjects, selectAll, onSelectAll] = LanguageFilter(relevantWork)
 
     return (
         <StyledMain>
-            <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>
+            {!isMobile && <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>}
             <div>
                 <article>
                   <h3>Relevant Work Experience</h3>
