@@ -2,14 +2,17 @@ import styled from "styled-components";
 
 const StyleScroll = styled.div`
     
-    position: absolute;
+    position: fixed;
     cursor: pointer;
     display: flex;
+    flex-direction: column;
     background-color: rgba(69, 99, 244, 0.5);
-    height: 90%;
+    justify-content: space-between;
+    height: 50%;
+    transform: translateY(-50%);
     width: 50px;
-    top: 5%;
-    right: 0;
+    top: 50%;
+    right: 5%;
 
     button {
         background-color: #007bff;
@@ -17,16 +20,7 @@ const StyleScroll = styled.div`
         border: none;
         cursor: pointer;
         font-size: 16px;
-        position: absolute;
         width: 100%;
-    }
-
-    .scroll-up {
-        top: 0px;
-    }
-
-    .scroll-down {
-        top: 100%;
     }
 
     // .scroll-btn:hover {
@@ -34,26 +28,46 @@ const StyleScroll = styled.div`
     // }
 `;
 
-const ScrollButtons = ({index, pageCount, scrollDown, scrollUp}) => {
+const ScrollButtons = ({containerRef, sectionsRef, setCurrentSectionIndex}) => {
+
+    const chooseIndex = (index) => {
+        const container = containerRef.current;
+        if (container) {
+            // Get the next section index
+            // const nextSectionIndex = currentSectionIndex + 1;
+            const section = sectionsRef.current[index];
+
+            // If the next section exists, scroll to it
+            if (section) {
+                const scrollDistance = section.offsetTop;
+                container.scrollTo({
+                    top: scrollDistance,
+                    behavior: 'smooth',
+                });
+
+                // Update the current section index
+                setCurrentSectionIndex(index);
+            }
+        }
+    };
 
     return (
             <StyleScroll>
-                {index > 0 && (
-                    <button
-                        className="scroll-up"
-                        onClick={scrollUp}
-                    >
-                        ▲
-                    </button>
-                )}
-                {index < pageCount - 1 && (
-                    <button
-                        className="scroll-down"
-                        onClick={scrollDown}
-                    >
-                        ▼
-                    </button>
-                )}
+                <button
+                    onClick={() => chooseIndex(0)}
+                >
+                    1
+                </button>
+                <button
+                    onClick={() => chooseIndex(1)}
+                >
+                    2
+                </button>
+                <button
+                    onClick={() => chooseIndex(2)}
+                >
+                    3
+                </button>
             </StyleScroll>
 )};
 

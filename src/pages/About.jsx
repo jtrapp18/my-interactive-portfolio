@@ -9,8 +9,8 @@ const StyledMain = styled.main`
     box-sizing: border-box;
     display: grid;
     position: relative;
-    justify-content: center;
-    align-items: start;
+    justify-items: center;
+    align-items: center;
     margin: 0;
     width: 100%;
     background-image: url("images/birch_trees.jpeg");
@@ -33,9 +33,10 @@ const StyledArticle = styled.article`
     box-sizing: border-box;
     padding: 20px 100px 100px 100px;
     height: var(--size-body);
+    width: 90%;
 
     h1 {
-        font-size: 75px;
+        font-size: clamp(1rem, calc(100vw / 15), 5rem);
         margin-bottom: 10px;
         animation: slideRight 1s;
         width: fit-content;
@@ -45,17 +46,28 @@ const StyledArticle = styled.article`
         background: rgba(255, 255, 255, 0.9);
         padding: 0px 20px 20px 20px;
         position: relative;
-        max-width: 90%;
+        width: 100%;
     }
 
     .about-info {
         display: grid;
         width: 100%;
-        max-height: 80%;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        max-height: 90%;
+        grid-template-columns: 1fr 1fr; /* Default two equal columns */
+        gap: 25px;
         animation: slideLeft 1s;
     }
 
+    .about-info > :only-child {
+        grid-column: span 2; /* Makes the single item take up both columns */
+    }
+
+    @media screen and (min-width: 600px) {
+        .about-info {
+            grid-template-columns: 2fr 1fr; /* For two items, first column takes 2 parts, second takes 1 part */
+        }
+    }
+        
     img {
         width: 100%;
         max-width: 500px;
@@ -68,7 +80,7 @@ const About = () => {
     const sectionsRef = useRef([]);
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0); // Track current section index
 
-    const [scrollDown, scrollUp] = ChooseSection(containerRef, sectionsRef, currentSectionIndex, setCurrentSectionIndex);
+    // const [scrollDown, scrollUp] = ChooseSection(containerRef, sectionsRef, currentSectionIndex, setCurrentSectionIndex);
 
     return (
         <StyledMain ref={containerRef}>
@@ -93,17 +105,14 @@ const About = () => {
                                 alt={about.image}
                             />)}
                         </div>
-                        {index === currentSectionIndex && (
-                            <ScrollButtons
-                                index={index}
-                                pageCount={aboutMe.length}
-                                scrollDown={scrollDown}
-                                scrollUp={scrollUp}
-                            />
-                        )}
                     </section>
                 </StyledArticle>
             ))}
+        <ScrollButtons
+            containerRef={containerRef}
+            sectionsRef={sectionsRef}
+            setCurrentSectionIndex={setCurrentSectionIndex}
+        />
         </StyledMain>
     );
 };

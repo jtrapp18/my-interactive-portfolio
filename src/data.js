@@ -194,7 +194,7 @@ const data = {
         {
             id: 1,
             label: "About Me",
-            image: "/images/kev_and_me.jpg",
+            image: "images/kev_and_me.jpg",
             background: "images/birch_trees.jpeg",
             color: "",
             details: `I'm a life insurance actuary who loves to code.
@@ -207,7 +207,7 @@ const data = {
             id: 2,
             label: "My Background",
             image: null,
-            background: "/images/leaf_painting.jpeg",
+            background: "images/leaf_painting.jpeg",
             color: null,
             details: `I've been working as an actuary for about 10 years, and have worked in pension consulting, life insurance, and currently work as an auditor and consultant for life insurance companies.
 
