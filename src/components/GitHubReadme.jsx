@@ -1,5 +1,13 @@
 import React, { useEffect, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import styled from "styled-components";
+import BookIcon from "./BookIcon"
+
+const StyledDiv = styled.div`
+  border: 1px solid var(--gray);
+  padding: 10px;
+  border-radius: 15px;
+`
 
 const GitHubReadme = ({readMeLink}) => {
   const [markdown, setMarkdown] = useState("");
@@ -21,9 +29,11 @@ const GitHubReadme = ({readMeLink}) => {
   }, []);
 
   return (
-    <div>
+    <StyledDiv>
+      <strong><BookIcon /> README</strong>
+      <hr />
       <ReactMarkdown>{markdown}</ReactMarkdown>
-    </div>
+    </StyledDiv>
   );
 };
 

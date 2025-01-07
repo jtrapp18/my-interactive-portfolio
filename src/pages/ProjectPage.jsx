@@ -19,7 +19,9 @@ const ProjectPage = () => {
         <StyledMain>
             <h3>{`Featured Project: ${project.name}`}</h3>
             <p>{`This project was developed for the end of Phase ${project.phase} assignment for the FlatIron School Software Engineering Bootcamp`}</p>
-            <hr />
+            <i><a title={project.repo_fe} href={project.repo_fe} target="_blank">Navigate to Github Repo</a></i>
+            <br />
+            <br />
             <GitHubReadme 
                 readMeLink={project.readme}
             />
