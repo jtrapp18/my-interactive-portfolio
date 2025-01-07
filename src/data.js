@@ -33,9 +33,12 @@ const data = {
                 "Allows simple drag and drop adding of books to the curriculum.",
                 "Features highly interactive forms for easy data manipulation."
             ],
+            technical: [
+            ],
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
             website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
+            readme: "https://raw.githubusercontent.com/jtrapp18/english-study-curriculum-mgmt/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/english-study-curriculum-mgmt",
             repo_be: "https://github.com/jtrapp18/english-study-curriculum-mgmt-be"
         },
@@ -60,9 +63,12 @@ const data = {
                 "Utilizes AcuWeather API to view weather forecast for upcoming trips.",
                 "Saves data to database stored in back-end API, hosted on Railway."
             ],
+            technical: [
+            ],
             image: "images/projects/wandr-personal-travel-journal.png",
             gif: "images/projects/wandr-personal-travel-journal.gif",
             website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
+            readme: "https://raw.githubusercontent.com/jtrapp18/wandr-personal-travel-journal/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/wandr-personal-travel-journal",
             repo_be: "https://github.com/jtrapp18/wandr-personal-travel-journal-be"
         },
@@ -87,9 +93,12 @@ const data = {
                 "Manages database interactions for creating, reading, updating, and deleting records, with SQL (SQLite or chosen database).",
                 "Ensures that only valid data is entered into the system with custom validation functions for key attributes."
             ],
+            technical: [
+            ],
             image: "images/projects/rental_management_tool.png",
             gif: "images/projects/rental_management_tool.gif",
             website_link: "https://github.com/jtrapp18/rental_management_tool",
+            readme: "https://raw.githubusercontent.com/jtrapp18/rental_management_tool/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/rental_management_tool",
             repo_be: null
         }
@@ -107,6 +116,8 @@ const data = {
                 "Filter and sort status tracking data based on multiple user-defined criteria.",
                 "Automate generation of mass emails for data requests and draft them in Outlook for review."
             ],
+            technical: [
+            ],
             year: 0,
             company: "The Benefit Practice",
             areas: ["Pension"],
@@ -120,6 +131,8 @@ const data = {
             features: [
                 "Project current and future pension liabilities for multiple plan types, including Unit Accrual, Final Average Salary, and Cash Balance plans.",
                 "Generate year-end FASB Disclosures for pension liabilities."
+            ],
+            technical: [
             ],
             year: 0,
             company: "The Benefit Practice",
@@ -154,6 +167,8 @@ const data = {
                 "Reads and writes client data to AWS S3 storage for secure and scalable access.",
                 "Utilizes Streamlit to present results and allows users to download reports directly from the interface."
             ],
+            technical: [
+            ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
             areas: ["Audit"],
@@ -166,6 +181,8 @@ const data = {
             languages: ["VBA", "SQL", "MS Access"],
             features: [
                 "Tracks actuarial assumptions across multiple life insurance models."
+            ],
+            technical: [
             ],
             year: 0,
             company: "Knights of Columbus",

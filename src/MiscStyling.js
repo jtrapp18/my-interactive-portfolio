@@ -89,6 +89,7 @@ const CardStyling = css`
     margin: 20px;
     padding: 20px;
     position: relative;
+    cursor: pointer;
 
     span {
         top: 75%;

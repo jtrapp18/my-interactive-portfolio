@@ -23,7 +23,7 @@ const Footer = () => {
 
     return (
         <StyledFooter>
-            <div><StyledDivider src={`${import.meta.env.BASE_URL}/images/dividers/split_leaf_divider.png`} /></div>
+            <div><StyledDivider src={`${import.meta.env.BASE_URL}images/dividers/split_leaf_divider.png`} /></div>
             <ContactForm />
             <FooterMain />
         </StyledFooter>
