@@ -78,9 +78,7 @@ const About = () => {
                         ref={(el) => (sectionsRef.current[index] = el)}
                     >
                         <h1>{about.label}</h1>
-                        {index===2 && (<Languages 
-                        languages={data.languages}
-                        />)}
+                        {index===2 && (<Languages languages={data.languages}/>)}
                         <div className="about-info">
                             <p>
                                 {about.details.split('\n').map((line, index) => (
@@ -90,10 +88,10 @@ const About = () => {
                                     </>
                                 ))}
                             </p>
-                            <img
-                                src={about.image}
+                            {about.image && (<img
+                                src={`${import.meta.env.BASE_URL}${about.image}`}
                                 alt={about.image}
-                            />
+                            />)}
                         </div>
                         {index === currentSectionIndex && (
                             <ScrollButtons
