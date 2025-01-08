@@ -8,6 +8,7 @@ import { useState } from "react";
 const StyledDiv = styled.div`
     height: 90px;
     position: relative;
+    background: white;
     display: flex;
     border-bottom: 3px solid var(--green);
     justify-content: right;
@@ -24,6 +25,7 @@ const LinkContainer = styled.div`
   text-align: right;
   background: white;
   border: 3px solid var(--green);
+  border-top: None;
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ensures smooth animation */
@@ -52,7 +54,7 @@ const LinkContainer = styled.div`
 const StyledNavLink = styled(NavLink)`
   color: black;
   text-decoration: none;
-  border-top: 1px solid var(--gray);
+  border-top: 3px solid var(--green);
   height: 10vh;
   display: flex;
   align-items: center;

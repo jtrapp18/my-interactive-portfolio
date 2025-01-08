@@ -53,7 +53,7 @@ function ContactForm() {
 
   return (
     <StyledForm onSubmit={handleSubmit}>
-      <h1>Send me a message!</h1>
+      <h1>Message Me!</h1>
       <label htmlFor="fullName">Name:</label>
       <input type="text" name="fullName" placeholder="Name" value={formData.fullName} onChange={handleChange}/>
       <br />

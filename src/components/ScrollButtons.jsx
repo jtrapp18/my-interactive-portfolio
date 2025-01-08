@@ -6,17 +6,16 @@ const StyleScroll = styled.div`
     cursor: pointer;
     box-shadow: var(--shadow);
     display: flex;
-    flex-direction: column;
     background-color: rgba(195, 236, 168, 0.9);
     overflow: hidden;
     border-radius: 20px;
     justify-content: space-between;
-    height: 200px;
-    max-height: 50%;
-    transform: translateY(-50%);
-    width: 30px;
-    top: calc(50% + 45px);
-    right: 8%;
+    height: 30px;
+    transform: translateX(-50%);
+    width: 200px;
+    max-width: 50%;
+    top: 95px;
+    left: 50%;
 
     button {
         color: gray;
@@ -25,7 +24,7 @@ const StyleScroll = styled.div`
         cursor: pointer;
         font-size: 16px;
         width: 100%;
-        padding: 20px 0px 20px 0px;
+        padding: 0px 20px 0px 20px;
     }
 
     button.active-section {

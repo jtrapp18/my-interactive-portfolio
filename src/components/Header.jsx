@@ -9,7 +9,9 @@ const Header = () => {
     
     return (
         isMobile ? (
+            <Headroom>
             <MobileNavBar />
+            </Headroom>
           ) : (
             <Headroom>
               <NavBar />

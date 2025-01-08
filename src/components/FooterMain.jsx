@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import data from "../data"
 
 const StyledSection = styled.section`
+    position: absolute;
+    bottom: 0;
+    
     p {
         text-align: center;
     }
@@ -47,7 +50,6 @@ const FooterMain = () => {
 
     return (
         <StyledSection>
-            <p>This is some basic information</p>
             <div id="socials-container">
                 {socials.map(social=>
                     <a 
@@ -65,6 +67,7 @@ const FooterMain = () => {
                     </a>
                 )}
             </div>
+            <p>© 2025 Jacqueline Trapp. All rights reserved.</p>
         </StyledSection>
     );
 }

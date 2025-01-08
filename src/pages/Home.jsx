@@ -61,12 +61,14 @@ const Home = () => {
   const seasons = ["fall", "winter", "spring", "summer"];
   const [index, setIndex] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false); // Track image loading status
+  const [showText, setShowText] = useState(false); // Control when to show text
 
   useEffect(() => {
     const firstImage = new Image();
     firstImage.src = `${import.meta.env.BASE_URL}images/seasons/fall.jpg`; // Preload the first image
     firstImage.onload = () => {
       setImageLoaded(true); // Set state when the first image is loaded
+      setShowText(true); // Start showing the text once the image is loaded
     };
 
     const changeSeason = () => {
@@ -81,10 +83,12 @@ const Home = () => {
   return (
     <main>
       <StyledDiv>
-        <section>
-          <h1>Hi, I'm <strong>Jacqueline</strong></h1>
-          <p>I'm an <strong>Actuary</strong> and <strong>Full-Stack Developer</strong></p>
-        </section>
+        {imageLoaded && showText && (
+          <section>
+            <h1>Hi, I'm <strong>Jacqueline</strong></h1>
+            <p>I'm an <strong>Actuary</strong> and <strong>Full-Stack Developer</strong></p>
+          </section>
+        )}
 
         {seasons.map((season, idx) => (
           <img

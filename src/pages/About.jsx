@@ -36,7 +36,7 @@ const StyledArticle = styled.article`
 
     h2 {
         font-size: clamp(1rem, calc(100vw / 15), 5rem);
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         margin-top: 10px;
         animation: slideRight 1s;
         width: fit-content;
@@ -66,7 +66,8 @@ const StyledArticle = styled.article`
 
     @media screen and (max-width: 768px) {
         .about-info {
-            grid-template-columns: 1fr; /* For two items, first column takes 2 parts, second takes 1 part */
+            grid-template-columns: 1fr;
+            gap: 0;
         }
     }
         
