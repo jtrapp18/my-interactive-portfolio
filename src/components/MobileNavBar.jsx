@@ -55,7 +55,7 @@ const StyledNavLink = styled(NavLink)`
   color: black;
   text-decoration: none;
   border-top: 3px solid var(--green);
-  height: 10vh;
+  height: 15vh;
   display: flex;
   align-items: center;
   justify-content: center;

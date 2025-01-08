@@ -2,6 +2,7 @@ import styled, {css} from "styled-components";
 
 const StyledMain = styled.main`
   display: flex;
+
   div {
     width: 100%;
   }
@@ -12,6 +13,10 @@ const StyledMain = styled.main`
 
     i {
       color: blue;
+    }
+
+    h1 {
+      margin: 0;
     }
   }
 `

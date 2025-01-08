@@ -5,8 +5,11 @@ import GitHubReadme from "../components/GitHubReadme";
 import styled from "styled-components";
 
 const StyledMain = styled.main`
-    // padding-top: 100px;
     margin: 50px;
+
+    h2 {
+        margin: 0;
+    }
 `
 
 const ProjectPage = () => {
@@ -17,7 +20,7 @@ const ProjectPage = () => {
 
     return (
         <StyledMain>
-            <h1>{`Featured Project: ${project.name}`}</h1>
+            <h2>{`Featured Project: ${project.name}`}</h2>
             <p>{`This project was developed for the end of Phase ${project.phase} assignment for the FlatIron School Software Engineering Bootcamp`}</p>
             <i><a title={project.repo_fe} href={project.repo_fe} target="_blank">Navigate to Github Repo</a></i>
             <br />

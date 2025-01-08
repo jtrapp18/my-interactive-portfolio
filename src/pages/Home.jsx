@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
     position: absolute;
     bottom: 50%;
     width: 100%;
-    z-index: 1;
+    z-index: 0;
 
     h1, p {
       font-family: 'Cascadia Code', 'Cascadia', sans-serif;
@@ -50,6 +50,7 @@ const StyledDiv = styled.div`
     object-fit: cover;
     transition: opacity 3s ease-in-out;
     opacity: 0;
+    z-index: -1;
   }
 
   .visible {
