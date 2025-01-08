@@ -2,15 +2,12 @@ import SideBar from "../components/SideBar";
 import ProjectCard from "../components/ProjectCard";
 import data from "../data";
 import styled from "styled-components";
-import { useEffect, useState } from "react";
 import LanguageFilter from "../hooks/languageFilter";
 import { StyledMain } from "../MiscStyling";
 import UseWindowWidth from "../hooks/windowSize";
 
 const CardContainer = styled.section`
   display: grid;
-  width: 100%;
-  // grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 100%, 500px), 1fr));
 `
 

@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react';
 import styled from "styled-components";
 import data from "../data";
-import ChooseSection from '../hooks/chooseSection';
 import ScrollButtons from '../components/ScrollButtons';
 import Languages from '../components/Languages';
 
@@ -111,6 +110,7 @@ const About = () => {
         <ScrollButtons
             containerRef={containerRef}
             sectionsRef={sectionsRef}
+            currentSectionIndex={currentSectionIndex}
             setCurrentSectionIndex={setCurrentSectionIndex}
         />
         </StyledMain>

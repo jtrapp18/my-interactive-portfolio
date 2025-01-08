@@ -13,6 +13,7 @@ const StyledFooter = styled.footer`
     background: linear-gradient(to bottom, var(--light-green), white);
     background-image: url(${import.meta.env.BASE_URL}images/birch_paneling.jpeg);
     background-size: cover;
+    border-top: 5px solid var(--green);
 `
 
 const StyledDivider = styled.img`

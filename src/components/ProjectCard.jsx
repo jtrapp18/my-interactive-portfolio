@@ -8,11 +8,6 @@ import { CardStyling } from "../MiscStyling";
 const StyledCard = styled.article`
     ${CardStyling}
 
-    h2:hover {
-      color: blue;
-      text-decoration: underline;
-    }
-
     section {
       height: 275px;
       left: 50%;
@@ -64,7 +59,7 @@ function ProjectCard({id, name, phase, summary, languages, collaborators,
   return(  
     
       <StyledCard onClick={handleClick}>
-        <h2><a title={website_link} href={website_link} target="_blank">{name}</a></h2>
+        <h2>{name}</h2>
         <section className={isOpen ? "hide" : ""}>
           <img src={`${import.meta.env.BASE_URL}${image}`} alt={image} className="static" />
           <img src={`${import.meta.env.BASE_URL}${gif}`} alt={gif} className="animated" />

@@ -2,17 +2,6 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import { StyledForm, StyledButton } from "../MiscStyling";
 
-const MessageLabel = styled.label`
-  padding-bottom: 200px;
-`
-
-const StyledSection = styled.section`
-    position: relative;
-    width: 600px;
-    max-width: 90%;
-    justify-items: center;
-`
-
 function ContactForm() {
 
   const emptyObj = {
@@ -63,33 +52,22 @@ function ContactForm() {
     }    
 
   return (
-    <StyledSection>
+    <StyledForm onSubmit={handleSubmit}>
       <h1>Send me a message!</h1>
-      <StyledForm onSubmit={handleSubmit}>
-        <label>
-            Name: 
-            <input type="text" name="fullName" placeholder="Name" value={formData.fullName} onChange={handleChange}/>
-        </label>
-        <br />
-        <label>
-            Email: 
-            <input type="text" name="emailAddress" placeholder="Email Address" value={formData.emailAddress} onChange={handleChange}/>
-        </label>
-        <br />
-        <label>
-            Topic: 
-            <input type="text" name="topic" placeholder="Topic" value={formData.topic} onChange={handleChange}/>
-        </label>
-        <br />
-        <MessageLabel>
-            Message: 
-            <textarea name="message" placeholder="Message" value={formData.message} onChange={handleChange}></textarea>
-        </MessageLabel>
-        <br />
-        <StyledButton type="submit">Send Message</StyledButton>
-        <br />
-      </StyledForm>
-    </StyledSection>
+      <label htmlFor="fullName">Name:</label>
+      <input type="text" name="fullName" placeholder="Name" value={formData.fullName} onChange={handleChange}/>
+      <br />
+      <label htmlFor="emailAddress">Email:</label>
+      <input type="text" name="emailAddress" placeholder="Email Address" value={formData.emailAddress} onChange={handleChange}/>
+      <br />
+      <label htmlFor="topic">Topic:</label>
+      <input type="text" name="topic" placeholder="Topic" value={formData.topic} onChange={handleChange}/>
+      <br />
+      <label htmlFor="message">Message:</label>
+      <textarea name="message" placeholder="Message" value={formData.message} onChange={handleChange}></textarea>
+      <br />
+      <StyledButton type="submit">SUBMIT</StyledButton>
+    </StyledForm>
   );
 }
 

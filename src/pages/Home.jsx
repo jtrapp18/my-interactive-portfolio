@@ -22,7 +22,7 @@ const StyledDiv = styled.div`
 
     h1 {
       ${TypeAnimation};
-      font-size: clamp(1rem, calc(100vw / 15), 5rem);
+      font-size: clamp(1rem, calc(100vw / 12), 6rem);
     }
 
     strong {
@@ -38,7 +38,7 @@ const StyledDiv = styled.div`
     }
 
     p {
-      font-size: clamp(.5rem, calc(100vw / 30), 2rem);
+      font-size: clamp(1rem, calc(100vw / 25), 2.5rem);
       animation: pauseShow 3s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
     }
   }

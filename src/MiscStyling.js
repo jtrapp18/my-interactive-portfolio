@@ -18,12 +18,12 @@ const StyledMain = styled.main`
 
 const ConditionalHighlight = css`
     &:hover {
-        background-color: var(--yellow);
+        background-color: var(--light-green);
     };
     
     &:focus {
         border: 3px solid var(--green);
-        background-color: var(--yellow);
+        background-color: var(--light-green);
     }
     `
 
@@ -34,7 +34,9 @@ const StyledButton = styled.button`
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
-    width: 200px;
+    width: 100%;
+    font-size: 20px;
+    font-family: 'Volkhov', sans-serif;
 
     &: hover {
       background: None;
@@ -45,27 +47,41 @@ const StyledButton = styled.button`
 `
 
 const StyledForm = styled.form`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  width: 100%;
+  width: 600px;
+  max-width: 90%;
   align-items: center;
+  background: white;
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid var(--gray);
+
+  h1 {
+    margin: 0;
+  }
 
   label {
     width: 100%;
-    position: relative;
-    display: flex;
+    padding: 5px;
   }
   
   input, textarea {
-    width: 80%;
-    position: absolute;
-    right: 0;
+    box-sizing: border-box;
+    width: calc(100% - 5px);
+    background: var(--light-gray);
+    border: 2px solid var(--gray);
+    margin-left: 5px;
+    font-family: 'Volkhov', sans-serif;
+    padding: 5px;
+    border-radius: 5px;
     ${ConditionalHighlight};
   }
 
   textarea {
-    height: 200px;
+    height: 150px;
+    max-height: 80%;
   }
 `
 

@@ -1,13 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from "../data"
-import Languages from './Languages';
 
 const StyledSection = styled.section`
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-
     p {
         text-align: center;
     }

@@ -7,28 +7,36 @@ const StyleScroll = styled.div`
     display: flex;
     flex-direction: column;
     background-color: rgba(69, 99, 244, 0.5);
+    overflow: hidden;
+    border-radius: 20px;
     justify-content: space-between;
-    height: 50%;
+    height: 200px;
+    max-height: 50%;
     transform: translateY(-50%);
-    width: 50px;
+    width: 30px;
     top: 50%;
     right: 5%;
 
     button {
-        background-color: #007bff;
         color: white;
+        background: None;
         border: none;
         cursor: pointer;
         font-size: 16px;
         width: 100%;
+        padding: 20px 0px 20px 0px;
     }
 
-    // .scroll-btn:hover {
-    //     background-color: #0056b3;
-    // }
+    button.active-section {
+        color: blue;
+    }
+
+    button:hover {
+        color: blue;
+    }
 `;
 
-const ScrollButtons = ({containerRef, sectionsRef, setCurrentSectionIndex}) => {
+const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex, setCurrentSectionIndex}) => {
 
     const chooseIndex = (index) => {
         const container = containerRef.current;
@@ -54,19 +62,22 @@ const ScrollButtons = ({containerRef, sectionsRef, setCurrentSectionIndex}) => {
     return (
             <StyleScroll>
                 <button
+                    className={currentSectionIndex===0 ? "active-section" : ""}
                     onClick={() => chooseIndex(0)}
                 >
-                    1
+                    ⬤
                 </button>
                 <button
+                    className={currentSectionIndex===1 ? "active-section" : ""}
                     onClick={() => chooseIndex(1)}
                 >
-                    2
+                    ⬤
                 </button>
                 <button
+                    className={currentSectionIndex===2 ? "active-section" : ""}
                     onClick={() => chooseIndex(2)}
                 >
-                    3
+                    ⬤
                 </button>
             </StyleScroll>
 )};
