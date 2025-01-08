@@ -9,7 +9,7 @@ const StyledFooter = styled.footer`
     position: relative;
     align-items: center;
     padding-top: 20px;
-    height: var(--size-body);
+    height: 100vh;
     background: linear-gradient(to bottom, var(--light-green), white);
     background-image: url(${import.meta.env.BASE_URL}images/birch_paneling.jpeg);
     background-size: cover;

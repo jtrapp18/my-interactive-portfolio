@@ -6,24 +6,24 @@ import { useState } from "react";
 // Styled components
 
 const StyledDiv = styled.div`
-    height: 10vh;
+    height: 90px;
     position: relative;
-    // position: fixed;
+    display: flex;
     border-bottom: 3px solid var(--green);
-    justify-content: left;
+    justify-content: right;
     align-items: center;
-    // display: flex;
 `
 const LinkContainer = styled.div`
   position: absolute;
-  top: 0;
+  top: 65px;
   z-index: 1000;
+  width: 90%;
   margin: 25px;
   font-weight: bold;
   text-decoration: none;
   text-align: right;
   background: white;
-  border: 1px solid var(--gray);
+  border: 3px solid var(--green);
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ensures smooth animation */
@@ -33,6 +33,7 @@ const LinkContainer = styled.div`
 
   &.open {
     transform: scaleY(1); /* Fully expanded */
+    // transform: translateY(50%);
   }
 
   &.closed {
@@ -45,10 +46,6 @@ const LinkContainer = styled.div`
       cursor: pointer;
       padding: 5px;
     }
-  }
-
-  @media (max-width: 768px) {
-    position: relative;
   }
 `;
 
@@ -107,16 +104,7 @@ const MobileNavBar = () => {
 
   return (
     <StyledDiv>
-      {/* Hamburger Button */}
-      <HamburgerButton onClick={toggleMenu} aria-label="Toggle Menu">
-        &#9776;
-      </HamburgerButton>
-
-      {/* Links container with animation */}
       <LinkContainer className={isMenuOpen ? "open" : "closed"}>
-        <div id="exit">
-          <span onClick={() => setIsMenuOpen(false)}>✖</span>
-        </div>
         <StyledNavLink to="/" onClick={handleClick}>
           Home
         </StyledNavLink>
@@ -130,6 +118,9 @@ const MobileNavBar = () => {
           Relevant Work
         </StyledNavLink>
       </LinkContainer>
+      <HamburgerButton onClick={toggleMenu} aria-label="Toggle Menu">
+        {isMenuOpen ? "✖" : "☰"}
+      </HamburgerButton>
     </StyledDiv>
   );
 };

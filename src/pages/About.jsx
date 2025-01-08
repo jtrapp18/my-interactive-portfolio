@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import styled from "styled-components";
 import data from "../data";
 import ScrollButtons from '../components/ScrollButtons';
@@ -11,14 +11,13 @@ const StyledMain = styled.main`
     justify-items: center;
     align-items: center;
     margin: 0;
-    width: 100%;
     background-image: url("images/birch_trees.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: top;
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
-    height: calc(100vh - 5px);
+    height: var(--size-body);
 
     ::-webkit-scrollbar {
         width: 0px;
@@ -28,15 +27,17 @@ const StyledMain = styled.main`
 
 const StyledArticle = styled.article`
     scroll-snap-align: start;
-    scroll-margin-top: 80px;
-    box-sizing: border-box;
-    padding: 20px 100px 100px 100px;
+    scroll-margin-top: 90px;
     height: var(--size-body);
-    width: 90%;
+    width: 85%;
+    transform: translateX(-5%);
+    align-items: center;
+    display: flex;
 
-    h1 {
+    h2 {
         font-size: clamp(1rem, calc(100vw / 15), 5rem);
         margin-bottom: 10px;
+        margin-top: 10px;
         animation: slideRight 1s;
         width: fit-content;
     }
@@ -44,15 +45,17 @@ const StyledArticle = styled.article`
     section {
         background: rgba(255, 255, 255, 0.9);
         padding: 0px 20px 20px 20px;
+        box-shadow: var(--shadow);
         position: relative;
         width: 100%;
+        border-radius: 20px;
     }
 
     .about-info {
         display: grid;
         width: 100%;
         max-height: 90%;
-        grid-template-columns: 1fr 1fr; /* Default two equal columns */
+        grid-template-columns: 2fr 1fr;
         gap: 25px;
         animation: slideLeft 1s;
     }
@@ -61,9 +64,9 @@ const StyledArticle = styled.article`
         grid-column: span 2; /* Makes the single item take up both columns */
     }
 
-    @media screen and (min-width: 600px) {
+    @media screen and (max-width: 768px) {
         .about-info {
-            grid-template-columns: 2fr 1fr; /* For two items, first column takes 2 parts, second takes 1 part */
+            grid-template-columns: 1fr; /* For two items, first column takes 2 parts, second takes 1 part */
         }
     }
         
@@ -79,17 +82,46 @@ const About = () => {
     const sectionsRef = useRef([]);
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0); // Track current section index
 
-    // const [scrollDown, scrollUp] = ChooseSection(containerRef, sectionsRef, currentSectionIndex, setCurrentSectionIndex);
+    // Update section index on scroll
+    useEffect(() => {
+        const handleScroll = () => {
+            const container = containerRef.current;
+
+            if (container) {
+                const scrollTop = container.scrollTop;
+                const sectionIndex = sectionsRef.current.findIndex((section, index) => {
+                    const nextSection = sectionsRef.current[index + 1];
+                    const top = section.offsetTop;
+                    const bottom = nextSection ? nextSection.offsetTop : container.scrollHeight;
+
+                    return scrollTop >= top && scrollTop < bottom;
+                });
+
+                if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
+                    setCurrentSectionIndex(sectionIndex);
+                }
+            }
+        };
+
+        const container = containerRef.current;
+        container.addEventListener('scroll', handleScroll);
+
+        return () => {
+            container.removeEventListener('scroll', handleScroll);
+        };
+    }, [currentSectionIndex]);
 
     return (
         <StyledMain ref={containerRef}>
             {aboutMe.map((about, index) => (
-                <StyledArticle key={about.id} image={about.background}>
-                    <section
-                        ref={(el) => (sectionsRef.current[index] = el)}
-                    >
-                        <h1>{about.label}</h1>
-                        {index===2 && (<Languages languages={data.languages}/>)}
+                <StyledArticle
+                    ref={(el) => (sectionsRef.current[index] = el)}
+                    key={about.id}
+                    image={about.background}
+                >
+                    <section>
+                        <h2>{about.label}</h2>
+                        {index === 2 && <Languages languages={data.languages} />}
                         <div className="about-info">
                             <p>
                                 {about.details.split('\n').map((line, index) => (
@@ -99,20 +131,21 @@ const About = () => {
                                     </>
                                 ))}
                             </p>
-                            {about.image && (<img
-                                src={`${import.meta.env.BASE_URL}${about.image}`}
-                                alt={about.image}
-                            />)}
+                            {about.image && (
+                                <img
+                                    src={`${import.meta.env.BASE_URL}${about.image}`}
+                                    alt={about.image}
+                                />
+                            )}
                         </div>
                     </section>
                 </StyledArticle>
             ))}
-        <ScrollButtons
-            containerRef={containerRef}
-            sectionsRef={sectionsRef}
-            currentSectionIndex={currentSectionIndex}
-            setCurrentSectionIndex={setCurrentSectionIndex}
-        />
+            <ScrollButtons
+                containerRef={containerRef}
+                sectionsRef={sectionsRef}
+                currentSectionIndex={currentSectionIndex}
+            />
         </StyledMain>
     );
 };

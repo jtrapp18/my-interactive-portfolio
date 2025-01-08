@@ -4,9 +4,10 @@ const StyleScroll = styled.div`
     
     position: fixed;
     cursor: pointer;
+    box-shadow: var(--shadow);
     display: flex;
     flex-direction: column;
-    background-color: rgba(69, 99, 244, 0.5);
+    background-color: rgba(195, 236, 168, 0.9);
     overflow: hidden;
     border-radius: 20px;
     justify-content: space-between;
@@ -14,11 +15,11 @@ const StyleScroll = styled.div`
     max-height: 50%;
     transform: translateY(-50%);
     width: 30px;
-    top: 50%;
-    right: 5%;
+    top: calc(50% + 45px);
+    right: 8%;
 
     button {
-        color: white;
+        color: gray;
         background: None;
         border: none;
         cursor: pointer;
@@ -28,21 +29,20 @@ const StyleScroll = styled.div`
     }
 
     button.active-section {
-        color: blue;
+        color: var(--green);
     }
 
     button:hover {
-        color: blue;
+        color: var(--light-green);
     }
 `;
 
-const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex, setCurrentSectionIndex}) => {
+const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex}) => {
 
     const chooseIndex = (index) => {
         const container = containerRef.current;
         if (container) {
             // Get the next section index
-            // const nextSectionIndex = currentSectionIndex + 1;
             const section = sectionsRef.current[index];
 
             // If the next section exists, scroll to it
@@ -52,9 +52,6 @@ const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex, setCurre
                     top: scrollDistance,
                     behavior: 'smooth',
                 });
-
-                // Update the current section index
-                setCurrentSectionIndex(index);
             }
         }
     };

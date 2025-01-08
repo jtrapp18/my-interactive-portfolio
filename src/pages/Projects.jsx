@@ -21,7 +21,7 @@ const Projects = () => {
             {!isMobile && <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>}
             <div>
               <article>
-                <h3>Featured Projects</h3>
+                <h1>Featured Projects</h1>
                 <p>During my Software Engineering course at Flatiron School, I completed a series of both group and solo projects, which are described below.</p>
                 <i>Click on any card for more details.</i>
               </article>
