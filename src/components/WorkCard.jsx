@@ -39,7 +39,7 @@ const StyledCard = styled.article`
   `
 
 function WorkCard({id, name, summary, languages, features, 
-  year, company, areas, image, activeProj, setActiveProj}) {
+  technical, company, areas, image, activeProj, setActiveProj}) {
 
   const cardRef = useRef(null); // Create a reference to the card element
 
@@ -87,11 +87,20 @@ function WorkCard({id, name, summary, languages, features,
         {className==="expanded" && (
           <section>
             <hr></hr>
-            <h3>Features</h3>
+            <h3>Key Features</h3>
             <ul>
               {features.map(feature=>(
                 <li key={feature}>
                   {feature}
+                </li>)
+              )}
+            </ul>
+            <hr></hr>
+            <h3>Technical Highlights</h3>
+            <ul>
+              {technical.map(bullet=>(
+                <li key={bullet}>
+                  {bullet}
                 </li>)
               )}
             </ul>

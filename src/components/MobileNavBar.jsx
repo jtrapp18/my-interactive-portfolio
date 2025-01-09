@@ -85,6 +85,7 @@ const HamburgerButton = styled.button`
   color: black;
   font-size: clamp(40px, 4vw, 50px);
   cursor: pointer;
+  padding-right: 15px;
 
   @media (max-width: 768px) {
     display: block;

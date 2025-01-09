@@ -7,7 +7,14 @@ const StyledDiv = styled.div`
   border: 1px solid var(--gray);
   padding: 10px;
   border-radius: 15px;
-`
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+`;
 
 const GitHubReadme = ({readMeLink}) => {
   const [markdown, setMarkdown] = useState("");

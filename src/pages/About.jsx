@@ -30,7 +30,7 @@ const StyledArticle = styled.article`
     scroll-margin-top: 90px;
     height: var(--size-body);
     width: 85%;
-    transform: translateX(-5%);
+    // transform: translateX(-5%);
     align-items: center;
     display: flex;
 
