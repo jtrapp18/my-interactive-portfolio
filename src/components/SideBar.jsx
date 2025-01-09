@@ -62,28 +62,16 @@ const SideBar = ({ filters, setFilters, selectAll, onSelectAll, projects }) => {
                 <strong>{selectAll ? "Deselect All" : "Select All"}</strong>
             </label>
             {Object.keys(filters).map(language => 
-                usedLanguages.has(language) ? ( // Only enable the checkbox if the language is used in projects
-                    <label key={language}>
-                        <input
-                            checked={filters[language]}
-                            type="checkbox"
-                            name={language}
-                            onChange={handleClick}
-                        />
-                        {language}
-                    </label>
-                ) : (
-                    <label key={language}>
-                        <input
-                            checked={filters[language]}
-                            type="checkbox"
-                            name={language}
-                            onChange={handleClick}
-                            disabled
-                        />
-                        {language}
-                    </label>
-                )
+                <label key={language}>
+                    <input
+                        checked={filters[language]}
+                        type="checkbox"
+                        name={language}
+                        onChange={handleClick}
+                        disabled={!usedLanguages.has(language)}  // Disable input if the language is not in usedLanguages
+                    />
+                    {language}
+                </label>
             )}
         </SidePanelContainer>
     );
