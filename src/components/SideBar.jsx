@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useState, useMemo } from 'react';
 import styled from 'styled-components';
 
 const SidePanelContainer = styled.section`
-    position:relative;
+    position: relative;
     padding: 20px;
-    width: 200px;    
+    width: 200px;
     min-width: 5%;
     max-width: 20%;
     display: flex;
@@ -30,14 +30,23 @@ const ClearFilter = styled.p`
     }
 `;
 
-const SideBar = ({filters, setFilters, selectAll, onSelectAll}) => {
-    
+const SideBar = ({ filters, setFilters, selectAll, onSelectAll, projects }) => {
     const handleClick = (event) => {
-        const name = event.target.name
-        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value
+        const name = event.target.name;
+        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
 
-        setFilters(prevFilters => ({...prevFilters, [name]: value}))
+        setFilters(prevFilters => ({ ...prevFilters, [name]: value }));
     }
+
+    // Ensure projects is defined and calculate the usedLanguages set
+    const usedLanguages = useMemo(() => {
+        // If there are no projects or languages, return an empty set
+        if (!projects || projects.length === 0) return new Set();
+
+        return new Set(
+            projects.flatMap(project => project.languages) // Collect languages from all projects
+        );
+    }, [projects]);
 
     return (
         <SidePanelContainer className="side-panel">
@@ -53,17 +62,29 @@ const SideBar = ({filters, setFilters, selectAll, onSelectAll}) => {
                 <strong>{selectAll ? "Deselect All" : "Select All"}</strong>
             </label>
             {Object.keys(filters).map(language => 
-                <label key={language}>
-                    <input
-                        checked={filters[language]}
-                        type="checkbox"
-                        name={language}
-                        onChange={handleClick}
-                    />
-                    {language}
-                </label>)
-            }
-
+                usedLanguages.has(language) ? ( // Only enable the checkbox if the language is used in projects
+                    <label key={language}>
+                        <input
+                            checked={filters[language]}
+                            type="checkbox"
+                            name={language}
+                            onChange={handleClick}
+                        />
+                        {language}
+                    </label>
+                ) : (
+                    <label key={language}>
+                        <input
+                            checked={filters[language]}
+                            type="checkbox"
+                            name={language}
+                            onChange={handleClick}
+                            disabled
+                        />
+                        {language}
+                    </label>
+                )
+            )}
         </SidePanelContainer>
     );
 }

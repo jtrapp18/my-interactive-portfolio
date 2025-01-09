@@ -21,11 +21,11 @@ const Languages = ({languages}) => {
     return (
             <StyledSpan>
                 {languages.map((language, index) =>
-                    <>
+                    <React.Fragment key={language}>
                         <p>{language}</p>
                         {index<languages.length - 1 &&
                         (<p>|</p>)}
-                    </>
+                    </React.Fragment>
                 )}
             </StyledSpan>
     );

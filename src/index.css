@@ -81,6 +81,10 @@ li {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
+i {
+  color: blue;
+}
+
 span {
   display: block;
 }

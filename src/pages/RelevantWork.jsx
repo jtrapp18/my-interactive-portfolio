@@ -21,7 +21,14 @@ const RelevantWork = () => {
 
     return (
         <StyledMain>
-            {!isMobile && <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>}
+            {!isMobile && 
+              <SideBar 
+                filters={filters} 
+                setFilters={setFilters} 
+                selectAll={selectAll} 
+                onSelectAll={onSelectAll} 
+                projects={relevantWork}
+              />}
             <div>
                 <article>
                   <h1>Relevant Work Experience</h1>

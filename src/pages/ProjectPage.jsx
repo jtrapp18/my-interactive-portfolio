@@ -10,6 +10,10 @@ const StyledMain = styled.main`
     h2 {
         margin: 0;
     }
+
+    article {
+        display: flex;
+    }
 `
 
 const ProjectPage = () => {
@@ -22,7 +26,10 @@ const ProjectPage = () => {
         <StyledMain>
             <h2>{`Featured Project: ${project.name}`}</h2>
             <p>{`This project was developed for the end of Phase ${project.phase} assignment for the FlatIron School Software Engineering Bootcamp`}</p>
-            <i><a title={project.repo_fe} href={project.repo_fe} target="_blank">Navigate to Github Repo</a></i>
+            <article>
+                <span><a title={project.repo_fe} href={project.repo_fe} target="_blank">Github Repo</a></span>
+                {project.website_link && (<span> | <a title={project.website_link} href={project.website_link} target="_blank">Deployed Project</a></span>)}
+            </article>
             <br />
             <br />
             <GitHubReadme 

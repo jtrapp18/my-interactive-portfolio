@@ -11,10 +11,6 @@ const StyledMain = styled.main`
     padding-top: 20px;
     margin: 20px;
 
-    i {
-      color: blue;
-    }
-
     h1 {
       margin: 0;
     }

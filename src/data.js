@@ -1,6 +1,7 @@
 const data = {
     languages: [
         'Python',
+        'Flask',
         'JavaScript',
         'React',
         'SQL',
@@ -199,7 +200,7 @@ const data = {
             color: "",
             details: `I'm a life insurance actuary who loves to code.
             
-            Over the years, I’ve worked in pension consulting, life insurance, auditing, and general consulting. In every role, I’ve made it my mission to spot inefficiencies and build automated solutions to make processes smoother and more efficient.
+            Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. In every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
             
             My goal is to bridge the gap between actuarial work and technology, creating tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
         },
@@ -209,25 +210,11 @@ const data = {
             image: null,
             background: "images/leaf_painting.jpeg",
             color: null,
-            details: `I've been working as an actuary for about 10 years, and have worked in pension consulting, life insurance, and currently work as an auditor and consultant for life insurance companies.
-
-            During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
+            details: `During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
             
-            At work, the majority of my programming experience involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
+            At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
             
-            Recently, I enrolled in a Software Engineering course at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
-        },
-        {
-            id: 3,
-            label: "Technical Skillset",
-            image: null,
-            background: "/images/tree_line_drawing.png",
-            color: null,
-            details: `Python Highlights: scikit-learn, pandas, NumPy, matplotlib, boto3, streamlit
-
-            VBA Highlights: forms, connection across various Microsoft tools (Excel, Access, Word, Outlook)
-
-            See the Projects page and/or Relevant Work page for details on how I used these tools.`
+            Recently, I enrolled in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
         }
     ],
     socials: [

@@ -18,7 +18,14 @@ const Projects = () => {
 
     return (
         <StyledMain>
-            {!isMobile && <SideBar filters={filters} setFilters={setFilters} selectAll={selectAll} onSelectAll={onSelectAll}/>}
+            {!isMobile && 
+              <SideBar 
+                filters={filters} 
+                setFilters={setFilters} 
+                selectAll={selectAll} 
+                onSelectAll={onSelectAll} 
+                projects={projects}
+              />}
             <div>
               <article>
                 <h1>Featured Projects</h1>

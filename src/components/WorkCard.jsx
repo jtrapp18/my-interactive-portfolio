@@ -50,13 +50,11 @@ function WorkCard({id, name, summary, languages, features,
   };
 
   useEffect(() => {
-    console.log("Event listener added");
     // Add event listener to detect clicks outside
     document.addEventListener("mousedown", handleClickOutside);
 
     // Cleanup the event listener on component unmount
     return () => {
-      console.log("Event listener removed");
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []); // Empty dependency array to run only on mount and unmount

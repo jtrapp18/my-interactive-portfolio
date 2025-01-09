@@ -3,6 +3,8 @@ import styled from "styled-components";
 import data from "../data";
 import ScrollButtons from '../components/ScrollButtons';
 import Languages from '../components/Languages';
+import { Link } from "react-router-dom";
+import TechnicalHighlights from '../components/TechnicalHighlights';
 
 const StyledMain = styled.main`
     box-sizing: border-box;
@@ -126,11 +128,17 @@ const About = () => {
                         <div className="about-info">
                             <p>
                                 {about.details.split('\n').map((line, index) => (
-                                    <>
+                                    <React.Fragment key={index}>
                                         {line}
                                         {index < about.details.split('\n').length - 1 && <br />}
-                                    </>
+                                    </React.Fragment>
                                 ))}
+                            {index === 2 && 
+                            <>
+                                For detailed examples of how I applied these tools, visit the{" "}
+                                <Link to="/projects">Projects</Link> or{" "}
+                                <Link to="/relevant-work">Relevant Work</Link> pages.
+                            </>}
                             </p>
                             {about.image && (
                                 <img
@@ -142,6 +150,9 @@ const About = () => {
                     </section>
                 </StyledArticle>
             ))}
+                <StyledArticle ref={(el) => (sectionsRef.current[2] = el)}>
+                    <TechnicalHighlights />
+                </StyledArticle>
             <ScrollButtons
                 containerRef={containerRef}
                 sectionsRef={sectionsRef}
