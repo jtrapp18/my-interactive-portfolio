@@ -6,7 +6,6 @@ const data = {
         'React',
         'SQL',
         'CSS',
-        'HTML',
         'VBA'
     ],
     projects: [
