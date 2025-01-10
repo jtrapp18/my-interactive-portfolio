@@ -194,22 +194,18 @@ const data = {
     aboutMe: [
         {
             id: 1,
-            label: "About Me",
-            image: "images/kev_and_me.jpg",
-            background: "images/birch_trees.jpeg",
-            color: "",
-            details: `I'm a life insurance actuary who loves to code.
-            
-            Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. In every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
+            label: "about",
+            image: "images/me_coding.jpg",
+            tagline: "I'm a life insurance actuary who loves to code.",
+            details: `Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. In every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
             
             My goal is to bridge the gap between actuarial work and technology, creating tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
         },
         {
             id: 2,
-            label: "My Background",
+            label: "background",
             image: null,
-            background: "images/leaf_painting.jpeg",
-            color: null,
+            tagline: null,
             details: `During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
             
             At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.

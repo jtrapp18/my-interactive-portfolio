@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 const LogoContainer = styled.div`
   text-align: left;
   height: 100%;
-  margin-left: 20px;
+  padding-left: 50px;
   position: relative;
 
   img {
@@ -18,7 +18,7 @@ const LogoContainer = styled.div`
     height: 90%;
     padding-left: 10px;
     position: absolute;
-    left: 60px;
+    left: 100px;
     bottom: -10px;
     transition: opacity 0.3s ease;
     visibility: hidden;

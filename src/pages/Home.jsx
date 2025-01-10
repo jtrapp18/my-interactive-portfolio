@@ -9,7 +9,8 @@ const StyledDiv = styled.div`
 
   section {
     position: absolute;
-    bottom: 50%;
+    top: 35%;
+    transform: translateY(-50%);
     width: 100%;
     z-index: 0;
 

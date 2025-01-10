@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import { scrollToTop } from "../helper";
 import { useState } from "react";
+import Socials from "./Socials";
 
 // Styled components
 
@@ -16,16 +17,15 @@ const StyledDiv = styled.div`
 `
 const LinkContainer = styled.div`
   position: absolute;
-  top: 65px;
+  top: 92px;
+  left:0;
   z-index: 1000;
-  width: 90%;
-  margin: 25px;
+  width: 100%;
   font-weight: bold;
   text-decoration: none;
   text-align: right;
   background: white;
-  border: 3px solid var(--green);
-  border-top: None;
+  border-bottom: 3px solid var(--green);
   display: flex;
   flex-direction: column;
   overflow: hidden; /* Ensures smooth animation */
@@ -35,7 +35,6 @@ const LinkContainer = styled.div`
 
   &.open {
     transform: scaleY(1); /* Fully expanded */
-    // transform: translateY(50%);
   }
 
   &.closed {
@@ -51,15 +50,20 @@ const LinkContainer = styled.div`
   }
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledMenuItem = css`
   color: black;
   text-decoration: none;
-  border-top: 3px solid var(--green);
+  border-top: 1px solid var(--light-green);
   height: 15vh;
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: center;
-  font-size: clamp(20px, 4vw, 30px);
+  font-size: clamp(10px, 4vw, 20px);
+`;
+
+const StyledNavLink = styled(NavLink)`
+  ${StyledMenuItem}
 
   &.active {
     text-decoration: overline;
@@ -71,12 +75,13 @@ const StyledNavLink = styled(NavLink)`
     color: white;
     background: var(--green);
   }
-
-  @media (max-width: 768px) {
-    padding: 10px 0;
-    text-align: center;
-  }
 `;
+
+const StyledSocials = styled.div`
+  ${StyledMenuItem}
+  height: 10vh;
+  background: var(--gray);
+`
 
 const HamburgerButton = styled.button`
   display: none;
@@ -86,10 +91,25 @@ const HamburgerButton = styled.button`
   font-size: clamp(40px, 4vw, 50px);
   cursor: pointer;
   padding-right: 15px;
+  transition: transform 1s ease;
 
   @media (max-width: 768px) {
     display: block;
   }
+
+  /* Rotate the button 180 degrees when the menu is open */
+  &.open {
+    transform: rotate(45deg);
+  }
+
+  .icon {
+    display: inline-block;
+    transition: transform 0.3s ease; /* Smooth transition for icon scale */
+
+    /* Scale the icon to create a smooth change from ☰ to ✖ */
+    &.open {
+      transform: scale(1.1) rotate(45deg); /* Scale and rotate for the "X" */
+    }
 `;
 
 // MobileNavBar Component
@@ -109,20 +129,28 @@ const MobileNavBar = () => {
     <StyledDiv>
       <LinkContainer className={isMenuOpen ? "open" : "closed"}>
         <StyledNavLink to="/" onClick={handleClick}>
-          Home
+          home
         </StyledNavLink>
         <StyledNavLink to="/about" onClick={handleClick}>
-          About Me
+          about me
         </StyledNavLink>
         <StyledNavLink to="/projects" onClick={handleClick}>
-          Projects
+          projects
         </StyledNavLink>
         <StyledNavLink to="/relevant-work" onClick={handleClick}>
-          Relevant Work
+          relevant work
         </StyledNavLink>
+        <StyledSocials>
+          <Socials />
+        </StyledSocials>
       </LinkContainer>
-      <HamburgerButton onClick={toggleMenu} aria-label="Toggle Menu">
-        {isMenuOpen ? "✖" : "☰"}
+      <HamburgerButton 
+        className={isMenuOpen ? "open" : ""} 
+        onClick={toggleMenu} 
+        aria-label="Toggle Menu">
+        <span className={`icon ${isMenuOpen ? "open" : ""}`}>
+          {isMenuOpen ? "✕" : "☰"}
+        </span>
       </HamburgerButton>
     </StyledDiv>
   );

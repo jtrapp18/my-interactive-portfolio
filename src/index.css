@@ -148,3 +148,12 @@ span {
     transform: translateX(0);
   }
 }
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

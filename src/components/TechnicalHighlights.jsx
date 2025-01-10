@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const TechnicalHighlights = () => {
     return (
         <section>
-            <h2>Technical Skillset</h2>
+            <h2>technical<strong>.</strong></h2>
             <Languages languages={data.languages} />
             <div className="about-info">
                 <p>

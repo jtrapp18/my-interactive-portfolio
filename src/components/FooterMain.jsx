@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import data from "../data"
+import Socials from './Socials';
 
 const StyledSection = styled.section`
     position: absolute;
@@ -50,23 +51,7 @@ const FooterMain = () => {
 
     return (
         <StyledSection>
-            <div id="socials-container">
-                {socials.map(social=>
-                    <a 
-                        href={social.link} 
-                        key={social.id}
-                        target="_blank"
-                        title={`Click to go to my ${social.name} page`} 
-                    >
-                        <img
-                            className="logo"
-                            src={`${import.meta.env.BASE_URL}images/logos/${social.image}`}
-                            alt={social.name}
-                        >
-                    </img>
-                    </a>
-                )}
-            </div>
+            <Socials />
             <p>© 2025 Jacqueline Trapp. All rights reserved.</p>
         </StyledSection>
     );

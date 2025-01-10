@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledSpan = styled.span`
     background-color: black;
     display: flex;
+    padding-left: 5px;
 
     p {
         color: white;

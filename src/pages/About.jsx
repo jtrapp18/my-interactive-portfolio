@@ -31,7 +31,8 @@ const StyledArticle = styled.article`
     scroll-snap-align: start;
     scroll-margin-top: 90px;
     height: var(--size-body);
-    width: 85%;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.9);
     // transform: translateX(-5%);
     align-items: center;
     display: flex;
@@ -42,12 +43,17 @@ const StyledArticle = styled.article`
         margin-top: 10px;
         animation: slideRight 1s;
         width: fit-content;
+        display: flex;
+        line-height: 1;
+
+        strong {
+            color: var(--green);
+            // font-size: clamp(2rem, calc(100vw / 10), 10rem);
+        }
     }
 
     section {
-        background: rgba(255, 255, 255, 0.9);
         padding: 0px 20px 20px 20px;
-        box-shadow: var(--shadow);
         position: relative;
         width: 100%;
         border-radius: 20px;
@@ -63,19 +69,28 @@ const StyledArticle = styled.article`
     }
 
     .about-info > :only-child {
-        grid-column: span 2; /* Makes the single item take up both columns */
+        grid-column: span 2;
+    }
+
+    img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 200px;
     }
 
     @media screen and (max-width: 768px) {
         .about-info {
             grid-template-columns: 1fr;
             gap: 0;
+            // justify-items: center;
         }
-    }
         
-    img {
-        width: 100%;
-        max-width: 500px;
+        width: 90%;
+
+        img {
+            width: 50%;
+            border-radius: 0px;
+        }
     }
 `;
 
@@ -123,8 +138,8 @@ const About = () => {
                     image={about.background}
                 >
                     <section>
-                        <h2>{about.label}</h2>
-                        {index === 2 && <Languages languages={data.languages} />}
+                        <h2>{about.label}<strong>.</strong></h2>
+                        {about.tagline && (<h3>{about.tagline}</h3>)}
                         <div className="about-info">
                             <p>
                                 {about.details.split('\n').map((line, index) => (
@@ -133,12 +148,6 @@ const About = () => {
                                         {index < about.details.split('\n').length - 1 && <br />}
                                     </React.Fragment>
                                 ))}
-                            {index === 2 && 
-                            <>
-                                For detailed examples of how I applied these tools, visit the{" "}
-                                <Link to="/projects">Projects</Link> or{" "}
-                                <Link to="/relevant-work">Relevant Work</Link> pages.
-                            </>}
                             </p>
                             {about.image && (
                                 <img
