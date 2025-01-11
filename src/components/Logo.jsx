@@ -18,7 +18,7 @@ const LogoContainer = styled.div`
     height: 90%;
     padding-left: 10px;
     position: absolute;
-    left: 100px;
+    left: 140px;
     bottom: -10px;
     transition: opacity 0.3s ease;
     visibility: hidden;
@@ -31,13 +31,11 @@ const LogoContainer = styled.div`
 `;
 
 function Logo() {
-  const [catLoaded, setCatLoaded] = useState(false);
 
   useEffect(() => {
     // Preload the cat GIF when the component mounts
     const catImage = new Image();
     catImage.src = `${import.meta.env.BASE_URL}images/cat_walking_home.gif`;
-    catImage.onload = () => setCatLoaded(true); // Set state when it's loaded
   }, []);
 
   return (
@@ -48,9 +46,8 @@ function Logo() {
         id="home"
         onClick={scrollToTop}
       >
-        <img src={`${import.meta.env.BASE_URL}images/icons/cabin.png`} alt="home icon" />
+        <img src={`${import.meta.env.BASE_URL}images/icons/cabin.jpeg`} alt="home icon" />
       </NavLink>
-      {/* The cat image will be shown on hover, but not reloaded each time */}
       <img
         id="cat"
         src={`${import.meta.env.BASE_URL}images/cat_walking_home.gif`} // Use the preloaded image URL

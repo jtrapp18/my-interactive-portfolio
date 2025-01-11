@@ -1,82 +1,52 @@
-import { NavLink } from "react-router-dom";
-import styled from "styled-components";
-import {scrollToTop} from "../helper"
+import { StyledNavLink, StyledLink } from "../MiscStyling";
 
-const LinkContainer = styled.div`
-  color: black;
-  margin: 25px;
-  padding-right: 50px;
-  text-decoration: none;
-  text-align: right;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  display: flex;
-`
+function NavLinks({handleClick}) {
 
-const StyledNavLink = styled(NavLink)`
-    color: black;
-    text-decoration: none;
-    // text-align: center;
-    position: relative;
-    padding: 0px 10px 10px 10px;
-
-    div {
-      position: absolute;
-      top: 30%;
-      left: 0%;
-      z-index: 1;
-      height: 60%;
-      width: 85%;
-    }
-
-    span {
-      position: relative;
-      z-index: 2;
-    }
-
-    &.active {
-        text-decoration: overline;
-        text-decoration-thickness: 2px;
-
-        div {
-          background: var(--striped);;
-        }
-    }
-
-    &:hover {
-      color: var(--green);
-    }
-`
-
-function NavLinks() {
   return (
-    <LinkContainer>
+    <>
       <StyledNavLink
         to="/about"
         className="nav-link"
-        onClick={scrollToTop}
+        onClick={handleClick}
       >
-        <span>about me</span>
-        <div></div>
+        <div className="tab-name">
+          <span>about me</span>
+          <div className="backdrop"></div>
+        </div>
       </StyledNavLink>
       <StyledNavLink
         to="/projects"
         className="nav-link"
-        onClick={scrollToTop}
+        onClick={handleClick}
       >
-        <span>projects</span>
-        <div></div>
+        <div className="tab-name">
+          <span>projects</span>
+          <div className="backdrop"></div>
+        </div>
       </StyledNavLink>
       <StyledNavLink
         to="/relevant-work"
         className="nav-link"
-        onClick={scrollToTop}
+        onClick={handleClick}
       >
-        <span>relevant work</span>
-        <div></div>
+        <div className="tab-name">
+          <span>relevant work</span>
+          <div className="backdrop"></div>
+        </div>
       </StyledNavLink>
-    </LinkContainer>
+      <StyledLink
+        to="footer"
+        smooth={true}
+        duration={500}
+        className="nav-link"
+        onClick={handleClick}
+      >
+        <div className="tab-name">
+          <span>contact</span>
+          <div className="backdrop"></div>
+        </div>
+      </StyledLink>
+    </>
   );
 };
 

@@ -1,4 +1,58 @@
+import { NavLink } from "react-router-dom";
 import styled, {css} from "styled-components";
+import { Link } from "react-scroll";
+
+const StyledMenuItem = css`
+  color: black;
+  text-decoration: none;
+  position: relative;
+  padding: 0px 10px 10px 10px;
+  cursor: pointer;
+`;
+
+const StyledNavigation = css`
+  ${StyledMenuItem}
+
+  .tab-name {
+    position: relative;
+    display: flex;
+
+    .backdrop {
+      position: absolute;
+      top: 30%;
+      left: -10%;
+      z-index: 1;
+      height: 100%;
+      width: 100%;
+    }
+
+    span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &.active {
+    text-decoration: overline;
+    text-decoration-thickness: 2px;
+
+    .backdrop {
+      background: var(--striped);;
+    }
+  }
+
+  &:hover {
+    color: var(--green);
+  }
+`;
+
+const StyledNavLink = styled(NavLink)`
+  ${StyledNavigation}
+`
+
+const StyledLink = styled(Link)`
+  ${StyledNavigation}
+`
 
 const StyledMain = styled.main`
   display: flex;
@@ -120,9 +174,9 @@ const CardStyling = css`
       }
   `
   const TypeAnimation = css`
-    animation: typing 3s steps(30) 1s 1 normal both;
+    animation: typing 2s steps(30) 1s 1 normal both;
     white-space: nowrap;
     overflow: hidden;
   `
 
-export { StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }
+export { StyledMenuItem, StyledNavLink, StyledLink, StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }

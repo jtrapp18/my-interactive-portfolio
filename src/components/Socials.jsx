@@ -4,15 +4,25 @@ import data from "../data"
 
 const StyledDiv = styled.div`
     display: flex;
-    
-    .logo {
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+
+    a {
         width: 40px;
-        margin: 20px;
-    }
-    
-    .logo:hover {
-        width: 50px;
-        cursor: pointer;
+        margin: 0px 20px 0px 20px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+
+        .logo {
+            width: 100%;
+        }
+        
+        .logo:hover {
+            cursor: pointer;
+        }
     }
 `
 

@@ -18,18 +18,6 @@ const SidePanelContainer = styled.section`
 }
 `;
 
-const ClearFilter = styled.p`
-    font-style: italic;
-    color: gray;
-    size: 10px;
-
-    &:hover {
-        font-weight: bold;
-        cursor: pointer;
-        color: red;
-    }
-`;
-
 const SideBar = ({ filters, setFilters, selectAll, onSelectAll, projects }) => {
     const handleClick = (event) => {
         const name = event.target.name;

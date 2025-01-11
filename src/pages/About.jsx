@@ -38,13 +38,12 @@ const StyledArticle = styled.article`
     display: flex;
 
     h2 {
-        font-size: clamp(1rem, calc(100vw / 15), 5rem);
+        font-size: clamp(3rem, calc(100vw / 8), 7rem);
         margin-bottom: 0px;
         margin-top: 10px;
         animation: slideRight 1s;
         width: fit-content;
         display: flex;
-        line-height: 1;
 
         strong {
             color: var(--green);
@@ -52,8 +51,12 @@ const StyledArticle = styled.article`
         }
     }
 
+    h3 {
+        margin: 0;
+    }
+
     section {
-        padding: 0px 20px 20px 20px;
+        padding: 0px 30px 0px 30px;
         position: relative;
         width: 100%;
         border-radius: 20px;
@@ -88,7 +91,7 @@ const StyledArticle = styled.article`
         width: 90%;
 
         img {
-            width: 50%;
+            width: 70%;
             border-radius: 0px;
         }
     }

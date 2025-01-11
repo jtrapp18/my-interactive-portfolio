@@ -23,8 +23,12 @@ const StyledDivider = styled.img`
 const Footer = () => {
 
     return (
-        <StyledFooter>
-            <div><StyledDivider src={`${import.meta.env.BASE_URL}images/dividers/split_leaf_divider.png`} /></div>
+        <StyledFooter id="footer">
+            <div>
+                <StyledDivider 
+                    src={`${import.meta.env.BASE_URL}images/dividers/split_leaf_divider.png`} 
+                />
+            </div>
             <ContactForm />
             <FooterMain />
         </StyledFooter>

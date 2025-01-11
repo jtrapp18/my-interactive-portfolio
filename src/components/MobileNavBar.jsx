@@ -3,6 +3,8 @@ import styled, {css} from "styled-components";
 import { scrollToTop } from "../helper";
 import { useState } from "react";
 import Socials from "./Socials";
+import { StyledNavLink, StyledMenuItem } from "../MiscStyling";
+import NavLinks from "./NavLinks";
 
 // Styled components
 
@@ -21,7 +23,6 @@ const LinkContainer = styled.div`
   left:0;
   z-index: 1000;
   width: 100%;
-  font-weight: bold;
   text-decoration: none;
   text-align: right;
   background: white;
@@ -32,6 +33,15 @@ const LinkContainer = styled.div`
   transform-origin: top; /* Animation starts at the top */
   transform: scaleY(0); /* Initially collapsed */
   transition: transform 0.3s ease-in-out; /* Smooth fold-out animation */
+
+  a {
+    // border-top: 1px solid var(--light-green);
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(10px, 4vw, 20px);
+  }
 
   &.open {
     transform: scaleY(1); /* Fully expanded */
@@ -50,37 +60,13 @@ const LinkContainer = styled.div`
   }
 `;
 
-const StyledMenuItem = css`
-  color: black;
-  text-decoration: none;
-  border-top: 1px solid var(--light-green);
-  height: 15vh;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(10px, 4vw, 20px);
-`;
-
-const StyledNavLink = styled(NavLink)`
-  ${StyledMenuItem}
-
-  &.active {
-    text-decoration: overline;
-    text-decoration-thickness: 2px;
-    background: var(--striped);
-  }
-
-  &:hover {
-    color: white;
-    background: var(--green);
-  }
-`;
-
 const StyledSocials = styled.div`
   ${StyledMenuItem}
   height: 10vh;
-  background: var(--gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--light-green);
 `
 
 const HamburgerButton = styled.button`
@@ -128,18 +114,17 @@ const MobileNavBar = () => {
   return (
     <StyledDiv>
       <LinkContainer className={isMenuOpen ? "open" : "closed"}>
-        <StyledNavLink to="/" onClick={handleClick}>
-          home
+        <StyledNavLink
+          to="/"
+          className="nav-link"
+          onClick={handleClick}
+        >
+          <div className="tab-name">
+            <span>home</span>
+            <div className="backdrop"></div>
+          </div>
         </StyledNavLink>
-        <StyledNavLink to="/about" onClick={handleClick}>
-          about me
-        </StyledNavLink>
-        <StyledNavLink to="/projects" onClick={handleClick}>
-          projects
-        </StyledNavLink>
-        <StyledNavLink to="/relevant-work" onClick={handleClick}>
-          relevant work
-        </StyledNavLink>
+        <NavLinks handleClick={handleClick}/>
         <StyledSocials>
           <Socials />
         </StyledSocials>

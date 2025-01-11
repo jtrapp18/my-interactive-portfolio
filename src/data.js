@@ -2,10 +2,11 @@ const data = {
     languages: [
         'Python',
         'Flask',
-        'JavaScript',
         'React',
+        'JavaScript',
         'SQL',
         'CSS',
+        'HTML',
         'VBA'
     ],
     projects: [
@@ -216,7 +217,7 @@ const data = {
         {
             id: 1,
             name: "LinkedIn",
-            image: "LI-In-Bug.png",
+            image: "LI-Black.png",
             link: "https://www.linkedin.com/in/jacqueline-trapp-065a936b"
         },
         {
@@ -228,7 +229,7 @@ const data = {
         {
             id: 3,
             name: "Hashnode",
-            image: "hashnode.png",
+            image: "hashnode_black.png",
             link: "https://hashnode.com/672903e59b3903ff579fbdcd/dashboard"
         }
     ]
