@@ -38,7 +38,7 @@ const StyledArticle = styled.article`
     display: flex;
 
     h2 {
-        font-size: clamp(3rem, calc(100vw / 8), 7rem);
+        font-size: clamp(3rem, calc(100vw / 8), 5rem);
         margin-bottom: 0px;
         margin-top: 10px;
         animation: slideRight 1s;

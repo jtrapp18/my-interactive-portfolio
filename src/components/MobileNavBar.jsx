@@ -40,7 +40,7 @@ const LinkContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: clamp(10px, 4vw, 20px);
+    font-size: clamp(1.5rem, 3vw, 1.75rem);
   }
 
   &.open {
@@ -74,9 +74,9 @@ const HamburgerButton = styled.button`
   background: transparent;
   border: none;
   color: black;
-  font-size: clamp(40px, 4vw, 50px);
+  font-size: clamp(2rem, 4vw, 3rem);
   cursor: pointer;
-  padding-right: 15px;
+  padding-right: 30px;
   transition: transform 1s ease;
 
   @media (max-width: 768px) {

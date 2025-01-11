@@ -10,7 +10,7 @@ import UseWindowWidth from "../hooks/windowSize";
 const CardContainer = styled.div`
   display: grid;
   width: 100%;
-  grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 100%, 400px), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 100%, 350px), 1fr));
 `
 
 const RelevantWork = () => {

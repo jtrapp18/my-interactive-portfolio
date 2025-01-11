@@ -7,26 +7,30 @@ import { CardStyling } from "../MiscStyling";
 
 const StyledCard = styled.article`
     ${CardStyling}
+    padding: 0;
+    
+    h2 {
+      margin: 20px;
+    }
 
-    section {
+    .proj-img {
+      width: 100%;
+      position: relative;
       height: 275px;
-      left: 50%;
-      transform: translateX(-50%);
 
       img {
         position: absolute;
-        top: 0px;
-        box-shadow: var(--shadow);
+        top: 0;
         width: 100%;
         height: 100%;
         object-fit: cover;
         overflow: hidden;
-        border-radius: 5px;
       }
+    }
 
-      &.hide {
-        display: None;
-      }
+    .language-tags {
+      bottom: 75px;
+      height: 20px;
     }
 
     .animated {
@@ -43,14 +47,8 @@ const StyledCard = styled.article`
   }
   `
 
-function ProjectCard({id, name, phase, summary, languages, collaborators, 
-  description, image, gif, website_link, repo_fe, repo_be}) {
-  const [isOpen, setIsOpen] = useState(false);
+function ProjectCard({id, name, languages, image, gif}) {
   const navigate = useNavigate();
-
-  const handleToggle = (e) => {
-    setIsOpen(e.target.open);
-  };
 
   function handleClick() {
     navigate(`/projects/${id}`);
@@ -60,12 +58,14 @@ function ProjectCard({id, name, phase, summary, languages, collaborators,
     
       <StyledCard onClick={handleClick}>
         <h2>{name}</h2>
-        <section className={isOpen ? "hide" : ""}>
+        <section className="proj-img">
           <img src={`${import.meta.env.BASE_URL}${image}`} alt={image} className="static" />
           <img src={`${import.meta.env.BASE_URL}${gif}`} alt={gif} className="animated" />
         </section>
-        <hr></hr>
-        <Tags tags={languages} tagType="Languages Used"/>
+        <section className="language-tags" >
+          <hr></hr>
+          <Tags tags={languages} tagType="Languages Used"/>
+        </section>
       </StyledCard>
   );
 };

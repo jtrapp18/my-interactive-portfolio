@@ -9,7 +9,7 @@ const StyledCard = styled.article`
     ${CardStyling}
     cursor: pointer;
 
-    section {
+    .proj-details {
       overflow-Y: scroll;
     }
 
@@ -35,6 +35,11 @@ const StyledCard = styled.article`
       transform: translateX(-50%);
       max-width: 70%;
       z-index: 10;
+    }
+
+    .language-tags {
+      bottom: 0px;
+      height: 150px;
     }
   `
 
@@ -83,7 +88,7 @@ function WorkCard({id, name, summary, languages, features,
         <h3>{`For ${company}`}</h3>
         <p>{summary}</p>
         {className==="expanded" && (
-          <section>
+          <section className="proj-details">
             <hr></hr>
             <h3>Key Features</h3>
             <ul>
@@ -104,9 +109,11 @@ function WorkCard({id, name, summary, languages, features,
             </ul>
           </section>
         )}
-        <hr></hr>
-        <Tags tags={areas} tagType="Areas of Practice"/>
-        <Tags tags={languages} tagType="Languages Used"/>
+        <section className="language-tags" >
+          <hr></hr>
+          <Tags tags={areas} tagType="Areas of Practice"/>
+          <Tags tags={languages} tagType="Languages Used"/>
+        </section>
       </StyledCard>
   );
 };

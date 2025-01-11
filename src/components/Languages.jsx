@@ -5,7 +5,7 @@ const StyledSpan = styled.span`
     background-color: black;
     display: flex;
     flex-wrap: wrap;
-    padding: 5px 0px 5px 0px;
+    padding: 5px;
 
     p {
         color: white;

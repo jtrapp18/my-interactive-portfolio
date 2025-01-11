@@ -6,7 +6,7 @@ const StyleScroll = styled.div`
     cursor: pointer;
     box-shadow: var(--shadow);
     display: flex;
-    background-color: rgba(195, 236, 168, 0.9);
+    background-color: rgba(246, 196, 146, 0.7);
     overflow: hidden;
     border-radius: 20px;
     justify-content: space-between;
@@ -28,11 +28,11 @@ const StyleScroll = styled.div`
     }
 
     button.active-section {
-        color: var(--green);
+        color: var(--dark-green);
     }
 
     button:hover {
-        color: var(--light-green);
+        color: var(--green);
     }
 `;
 

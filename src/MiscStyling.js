@@ -73,7 +73,7 @@ const StyledMain = styled.main`
 
 const ConditionalHighlight = css`
     &:hover {
-        background-color: var(--light-green);
+        background-color: var(--light-peach);
     };
     
     &:focus {
@@ -110,8 +110,9 @@ const StyledForm = styled.form`
   align-items: center;
   background: white;
   padding: 30px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 1px solid var(--gray);
+  box-shadow: var(--shadow);
 
   h1 {
     margin: 0;
@@ -142,7 +143,17 @@ const StyledForm = styled.form`
 
 const CardHover = css`
     &:hover {
-        --background: var(--light-green);
+        --background: var(--light-gray);
+        
+        color: var(--dark-green);
+
+        h2 {
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+        }
+
+        * {
+            color: inherit;
+        }
         // --primary: gray;
         // --h3: var(--light-gray);
         // --font-color: black;
@@ -150,6 +161,7 @@ const CardHover = css`
 `
 
 const CardStyling = css`
+    ${CardHover};
     background: var(--background);
     box-shadow: var(--shadow);
     border-radius: 10px;
@@ -161,17 +173,16 @@ const CardStyling = css`
     position: relative;
     cursor: pointer;
 
+    .language-tags {
+      width: 90%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
     span {
         top: 75%;
     }
-
-    ${CardHover};
-
-    section {
-      bottom: 0px;
-      height: 50%;
-      position: relative;
-      }
   `
   const TypeAnimation = css`
     animation: typing 2s steps(30) 1s 1 normal both;
