@@ -1,8 +1,10 @@
 :root {
-  --green: #0b7c21;
+  /* --green: #0b7c21; */
+  --green: #4E7839;
   --light-green: #9DC183;
   --light-peach: #fae9d8;
-  --dark-green: #06402B;
+  /* --dark-green: #06402B; */
+  --dark-green: #334F26;
   --light-gray: #c5cbc2;
   --gray: #d1d1d1; 
   --yellow: #FFFDD0;
@@ -152,5 +154,18 @@ span {
   }
   to {
     transform: translateX(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+      transform: scale(1); /* Normal size */
+  }
+  50% {
+      transform: scale(1.1); /* Slightly larger */
+      color: var(--green);
+  }
+  100% {
+      transform: scale(1); /* Back to normal */
   }
 }

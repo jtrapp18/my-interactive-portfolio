@@ -37,11 +37,24 @@ const StyledArticle = styled.article`
     align-items: center;
     display: flex;
 
+    &.active h2 {
+        animation: pop 1.5s;
+    }
+
+    h2:hover {
+        zoom: 1.1;
+        color: var(--green);
+
+        strong {
+            color: black;
+        }
+    }
+
     h2 {
         font-size: clamp(3rem, calc(100vw / 8), 5rem);
         margin-bottom: 0px;
         margin-top: 10px;
-        animation: slideRight 1s;
+        // animation: slideRight 1s;
         width: fit-content;
         display: flex;
 
@@ -68,7 +81,7 @@ const StyledArticle = styled.article`
         max-height: 90%;
         grid-template-columns: 2fr 1fr;
         gap: 25px;
-        animation: slideLeft 1s;
+        // animation: slideLeft 1s;
     }
 
     .about-info > :only-child {
@@ -139,9 +152,12 @@ const About = () => {
                     ref={(el) => (sectionsRef.current[index] = el)}
                     key={about.id}
                     image={about.background}
+                    className={currentSectionIndex === index ? 'active' : ''}
                 >
                     <section>
-                        <h2>{about.label}<strong>.</strong></h2>
+                        <h2>
+                            {about.label}<strong>.</strong>
+                        </h2>
                         {about.tagline && (<h3>{about.tagline}</h3>)}
                         <div className="about-info">
                             <p>
@@ -162,7 +178,10 @@ const About = () => {
                     </section>
                 </StyledArticle>
             ))}
-                <StyledArticle ref={(el) => (sectionsRef.current[2] = el)}>
+                <StyledArticle 
+                    ref={(el) => (sectionsRef.current[aboutMe.length] = el)}
+                    className={currentSectionIndex === aboutMe.length ? 'active' : ''}
+                >
                     <TechnicalHighlights />
                 </StyledArticle>
             <ScrollButtons

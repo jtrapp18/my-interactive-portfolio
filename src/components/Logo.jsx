@@ -8,6 +8,7 @@ const LogoContainer = styled.div`
   height: 100%;
   padding-left: 50px;
   position: relative;
+  width: 200px;
 
   img {
     height: 85%;

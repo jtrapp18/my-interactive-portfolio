@@ -12,7 +12,7 @@ const StyleScroll = styled.div`
     justify-content: space-between;
     height: 30px;
     transform: translateX(-50%);
-    width: 200px;
+    width: 210px;
     max-width: 50%;
     top: 95px;
     left: 50%;
@@ -57,24 +57,14 @@ const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex}) => {
 
     return (
             <StyleScroll>
-                <button
-                    className={currentSectionIndex===0 ? "active-section" : ""}
-                    onClick={() => chooseIndex(0)}
+                {[0, 1, 2, 3].map(index =>
+                    <button
+                    className={currentSectionIndex===index ? "active-section" : ""}
+                    onClick={() => chooseIndex(index)}
                 >
                     ⬤
-                </button>
-                <button
-                    className={currentSectionIndex===1 ? "active-section" : ""}
-                    onClick={() => chooseIndex(1)}
-                >
-                    ⬤
-                </button>
-                <button
-                    className={currentSectionIndex===2 ? "active-section" : ""}
-                    onClick={() => chooseIndex(2)}
-                >
-                    ⬤
-                </button>
+                </button>                    
+                )}
             </StyleScroll>
 )};
 

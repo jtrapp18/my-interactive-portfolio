@@ -40,7 +40,7 @@ const StyledDiv = styled.div`
 
     p {
       font-size: clamp(1rem, calc(100vw / 25), 2.5rem);
-      animation: pauseShow 3s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
+      animation: pauseShow 3.5s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
     }
   }
 

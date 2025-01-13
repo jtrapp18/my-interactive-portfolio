@@ -2,7 +2,6 @@ import { useParams, useOutletContext } from "react-router-dom";
 import { useNavigate} from "react-router-dom";
 import styled from "styled-components";
 import Tags from "./Tags";
-import { useState } from "react";
 import { CardStyling } from "../MiscStyling";
 import { useWindowWidth } from "../context/WindowWidthProvider";
 
@@ -22,7 +21,7 @@ const StyledCard = styled.section`
         position: absolute;
         top: 0;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         object-fit: cover;
         overflow: hidden;
       }

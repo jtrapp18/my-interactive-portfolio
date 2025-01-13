@@ -3,23 +3,27 @@ import styled, {css} from "styled-components";
 import { Link } from "react-scroll";
 
 const mobileTheme = {
-  background: 'black',
-  cardBackground: '#333333',
-  h1: '#DDA334',
-  h2: 'white',
+  background: '#333333',
+  cardBackground: 'black',
+  cardHover: 'var(--light-gray)',
+  h1: 'white',
+  h2: '#F0F0F0',
   h3: '#27AE60',
-  p: '#7D8187',
-  i: '#2980B9'
+  p: '#FFF8C2',
+  i: '#99D9EA',
+  label: '#F0FFDB',
 }
 
 const windowTheme = {
   background: 'var(--background)',
   cardBackground: 'var(--background)',
+  cardHover: 'var(--light-gray)',
   h1: 'var(--font-color-1)',
   h2: 'var(--font-color-2)',
   h3: 'var(--font-color-1)',
   p: 'var(--font-color-2)',
-  i: 'blue'
+  i: 'blue',
+  label: 'var(--green)'
 }
 
 const StyledMenuItem = css`
@@ -76,22 +80,27 @@ const StyledLink = styled(Link)`
 
 const StyledMain = styled.main`
   display: flex;
-  background: ${(props) => props.isMobile ? mobileTheme.background : windowTheme.background};
+  background: ${(props) => props.theme.background};
+
   h1 {
-    color: ${(props) => (props.isMobile ? mobileTheme.h1 : windowTheme.h1)};
+    color: ${(props) => (props.theme.h1)};
   }
   h2 {
-    color: ${(props) => (props.isMobile ? mobileTheme.h2 : windowTheme.h2)};
+    color: ${(props) => (props.theme.h2)};
   }
   h3 {
-    color: ${(props) => (props.isMobile ? mobileTheme.h3 : windowTheme.h3)};
+    color: ${(props) => (props.theme.h3)};
   }
   p {
-    color: ${(props) => (props.isMobile ? mobileTheme.p : windowTheme.p)};
+    color: ${(props) => (props.theme.p)};
   }
 
   i {
-    color: ${(props) => (props.isMobile ? mobileTheme.i : windowTheme.i)};
+    color: ${(props) => (props.theme.i)};
+  }
+
+  label {
+    color: ${(props) => (props.theme.label)};
   }
 
   .main-content {
@@ -180,7 +189,7 @@ const StyledForm = styled.form`
 
 const CardHover = css`
     &:hover {
-        --background: var(--light-gray);
+        background: ${(props) => props.theme.cardHover};
         
         color: var(--dark-green);
 
@@ -199,7 +208,7 @@ const CardStyling = css`
     border-radius: ${(props) => props.isMobile ? '0px' : '10px'};
     width: ${(props) => props.isMobile ? '100%' : 'auto'};
     margin: ${(props) => props.isMobile ? '5px 0px 5px 0px' : '5px'};
-    background: ${(props) => props.isMobile ? mobileTheme.cardBackground : windowTheme.cardBackground};
+    background: ${(props) => props.theme.cardBackground};
 
     padding: 0;
     box-shadow: var(--shadow);
@@ -214,7 +223,9 @@ const CardStyling = css`
     }
 
     .language-tags {
+      background: inherit;
       width: 90%;
+      padding: 0 5% 0 5%;
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
@@ -225,9 +236,9 @@ const CardStyling = css`
     }
   `
   const TypeAnimation = css`
-    animation: typing 2.5s steps(30) 1s 1 normal both;
+    animation: typing 3s steps(30) 1s 1 normal both;
     white-space: nowrap;
     overflow: hidden;
   `
 
-export { StyledMenuItem, StyledNavLink, StyledLink, StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }
+export { mobileTheme, windowTheme, StyledMenuItem, StyledNavLink, StyledLink, StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }

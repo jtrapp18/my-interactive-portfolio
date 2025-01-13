@@ -211,6 +211,17 @@ const data = {
             At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
             
             Recently, I enrolled in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
+        },
+        {
+            id: 3,
+            label: "test",
+            image: null,
+            tagline: null,
+            details: `During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
+            
+            At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
+            
+            Recently, I enrolled in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
         }
     ],
     socials: [
