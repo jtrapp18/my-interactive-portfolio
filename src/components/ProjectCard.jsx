@@ -4,19 +4,19 @@ import styled from "styled-components";
 import Tags from "./Tags";
 import { useState } from "react";
 import { CardStyling } from "../MiscStyling";
+import { useWindowWidth } from "../context/WindowWidthProvider";
 
-const StyledCard = styled.article`
+const StyledCard = styled.section`
     ${CardStyling}
-    padding: 0;
     
     h2 {
-      margin: 20px;
+      height: 10%;
     }
 
     .proj-img {
       width: 100%;
+      height: 70%;
       position: relative;
-      height: 275px;
 
       img {
         position: absolute;
@@ -29,8 +29,8 @@ const StyledCard = styled.article`
     }
 
     .language-tags {
-      bottom: 75px;
-      height: 20px;
+      bottom: 0%;
+      height: 15%;
     }
 
     .animated {
@@ -49,6 +49,7 @@ const StyledCard = styled.article`
 
 function ProjectCard({id, name, languages, image, gif}) {
   const navigate = useNavigate();
+  const isMobile = useWindowWidth();
 
   function handleClick() {
     navigate(`/projects/${id}`);
@@ -56,7 +57,7 @@ function ProjectCard({id, name, languages, image, gif}) {
 
   return(  
     
-      <StyledCard onClick={handleClick}>
+      <StyledCard isMobile={isMobile} onClick={handleClick}>
         <h2>{name}</h2>
         <section className="proj-img">
           <img src={`${import.meta.env.BASE_URL}${image}`} alt={image} className="static" />

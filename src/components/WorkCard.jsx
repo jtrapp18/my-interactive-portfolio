@@ -4,10 +4,10 @@ import Tags from "./Tags";
 import { CardStyling } from "../MiscStyling";
 import { useRef, useEffect } from "react";
 import { scrollToTop } from "../helper";
+import { useWindowWidth } from "../context/WindowWidthProvider";
 
-const StyledCard = styled.article`
+const StyledCard = styled.section`
     ${CardStyling}
-    cursor: pointer;
 
     .proj-details {
       overflow-Y: scroll;
@@ -27,13 +27,11 @@ const StyledCard = styled.article`
 
     &.expanded {
       position: absolute;
-      bottom: 0px;
-      width: 500px;
+      bottom: 1%;
+      width: 70%;
       left: 50%;
-      height: 600px;
-      max-height: 80%;
+      height: 90%;
       transform: translateX(-50%);
-      max-width: 70%;
       z-index: 10;
     }
 
@@ -47,6 +45,7 @@ function WorkCard({id, name, summary, languages, features,
   technical, company, areas, image, activeProj, setActiveProj}) {
 
   const cardRef = useRef(null); // Create a reference to the card element
+  const isMobile = useWindowWidth();
 
   const handleClickOutside = (e) => {
     if (cardRef.current && !cardRef.current.contains(e.target)) {
@@ -82,7 +81,7 @@ function WorkCard({id, name, summary, languages, features,
   }
 
   return(  
-      <StyledCard ref={cardRef} className={className} onClick={handleClick}>
+      <StyledCard isMobile={isMobile} ref={cardRef} className={className} onClick={handleClick}>
         {className==="expanded" && <span className="close" onClick={()=>setActiveProj(null)}>✖</span>}
         <h2>{name}</h2>
         <h3>{`For ${company}`}</h3>

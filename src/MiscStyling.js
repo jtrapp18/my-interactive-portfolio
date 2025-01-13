@@ -2,6 +2,26 @@ import { NavLink } from "react-router-dom";
 import styled, {css} from "styled-components";
 import { Link } from "react-scroll";
 
+const mobileTheme = {
+  background: 'black',
+  cardBackground: '#333333',
+  h1: '#DDA334',
+  h2: 'white',
+  h3: '#27AE60',
+  p: '#7D8187',
+  i: '#2980B9'
+}
+
+const windowTheme = {
+  background: 'var(--background)',
+  cardBackground: 'var(--background)',
+  h1: 'var(--font-color-1)',
+  h2: 'var(--font-color-2)',
+  h3: 'var(--font-color-1)',
+  p: 'var(--font-color-2)',
+  i: 'blue'
+}
+
 const StyledMenuItem = css`
   color: black;
   text-decoration: none;
@@ -56,14 +76,31 @@ const StyledLink = styled(Link)`
 
 const StyledMain = styled.main`
   display: flex;
-
-  div {
-    width: 100%;
+  background: ${(props) => props.isMobile ? mobileTheme.background : windowTheme.background};
+  h1 {
+    color: ${(props) => (props.isMobile ? mobileTheme.h1 : windowTheme.h1)};
+  }
+  h2 {
+    color: ${(props) => (props.isMobile ? mobileTheme.h2 : windowTheme.h2)};
+  }
+  h3 {
+    color: ${(props) => (props.isMobile ? mobileTheme.h3 : windowTheme.h3)};
+  }
+  p {
+    color: ${(props) => (props.isMobile ? mobileTheme.p : windowTheme.p)};
   }
 
-  article {
-    padding-top: 20px;
-    margin: 20px;
+  i {
+    color: ${(props) => (props.isMobile ? mobileTheme.i : windowTheme.i)};
+  }
+
+  .main-content {
+    width: 100%;
+    margin: ${(props) => props.isMobile ? '0px' : '20px'};
+  }
+
+  .page-header {
+    padding: 10px;
 
     h1 {
       margin: 0;
@@ -154,24 +191,27 @@ const CardHover = css`
         * {
             color: inherit;
         }
-        // --primary: gray;
-        // --h3: var(--light-gray);
-        // --font-color: black;
     }
 `
 
 const CardStyling = css`
     ${CardHover};
-    background: var(--background);
+    border-radius: ${(props) => props.isMobile ? '0px' : '10px'};
+    width: ${(props) => props.isMobile ? '100%' : 'auto'};
+    margin: ${(props) => props.isMobile ? '5px 0px 5px 0px' : '5px'};
+    background: ${(props) => props.isMobile ? mobileTheme.cardBackground : windowTheme.cardBackground};
+
+    padding: 0;
     box-shadow: var(--shadow);
-    border-radius: 10px;
-    height: 450px;
+    height: 500px;
     max-height: 100%;
     overflow: hidden;
-    margin: 20px;
-    padding: 20px;
     position: relative;
     cursor: pointer;
+
+    h2, h3, p {
+      margin: 2.5% 2.5% 0px 2.5%;
+    }
 
     .language-tags {
       width: 90%;
@@ -185,7 +225,7 @@ const CardStyling = css`
     }
   `
   const TypeAnimation = css`
-    animation: typing 2s steps(30) 1s 1 normal both;
+    animation: typing 2.5s steps(30) 1s 1 normal both;
     white-space: nowrap;
     overflow: hidden;
   `

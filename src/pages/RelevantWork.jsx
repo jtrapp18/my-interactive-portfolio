@@ -5,22 +5,21 @@ import LanguageFilter from "../hooks/languageFilter";
 import SideBar from "../components/SideBar";
 import { useState } from "react";
 import { StyledMain } from "../MiscStyling";
-import UseWindowWidth from "../hooks/windowSize";
+import { useWindowWidth } from "../context/WindowWidthProvider";
 
-const CardContainer = styled.div`
+const CardContainer = styled.article`
   display: grid;
-  width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(clamp(300px, 100%, 350px), 1fr));
 `
 
 const RelevantWork = () => {
-    const isMobile = UseWindowWidth();
+    const isMobile = useWindowWidth();
     const relevantWork = data.relevantWork;
     const [activeProj, setActiveProj] = useState(null);
     const [filters, setFilters, showProjects, selectAll, onSelectAll] = LanguageFilter(relevantWork)
 
     return (
-        <StyledMain>
+        <StyledMain isMobile={isMobile}>
             {!isMobile && 
               <SideBar 
                 filters={filters} 
@@ -29,11 +28,12 @@ const RelevantWork = () => {
                 onSelectAll={onSelectAll} 
                 projects={relevantWork}
               />}
-            <div>
-                <article>
+            <div className='main-content'>
+                <article className='page-header'>
                   <h1>Relevant Work Experience</h1>
                   <p>Throughout my career as an actuary, I have worked on a variety of projects that required proficiency in coding and data management, utilizing tools and languages such as VBA, Microsoft Access, SQL, and Python. Below are some key highlights of my work.</p>
                   <i>Click on any card for more details.</i>
+                  <hr />
                 </article>
                 <CardContainer>
                     {showProjects.map(work=>

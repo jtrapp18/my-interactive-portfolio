@@ -10,16 +10,16 @@ const LogoContainer = styled.div`
   position: relative;
 
   img {
-    height: 100%;
+    height: 85%;
   }
 
   #cat {
     opacity: 0;
-    height: 90%;
+    height: 80%;
     padding-left: 10px;
     position: absolute;
-    left: 140px;
-    bottom: -10px;
+    left: 150px;
+    bottom: 0px;
     transition: opacity 0.3s ease;
     visibility: hidden;
   }

@@ -9,12 +9,13 @@ import NavLinks from "./NavLinks";
 // Styled components
 
 const StyledDiv = styled.div`
+    justify-content: right;
     height: 90px;
     position: relative;
     background: white;
     display: flex;
     border-bottom: 3px solid var(--green);
-    justify-content: right;
+    // justify-content: right;
     align-items: center;
 `
 const LinkContainer = styled.div`

@@ -7,9 +7,8 @@
   --gray: #d1d1d1; 
   --yellow: #FFFDD0;
   --background: white;
-  --primary: var(--green);
-  --h3: var(--green);
-  --font-color: black;
+  --font-color-1: var(--green);
+  --font-color-2: black;
   /* --striped: repeating-linear-gradient(-45deg, var(--light-gray),var(--light-gray) 2px, white 2px, white 10px); */
   --striped: repeating-linear-gradient(-45deg, white, white 3px, var(--light-peach) 3px, var(--light-peach) 6px);
   --padding-top: 75px;
@@ -58,7 +57,7 @@ h1, h2, h3 {
 }
 
 h1, h3 {
-  color: var(--primary);
+  color: var(--font-color-1);
 }
 
 h1 {
@@ -67,7 +66,7 @@ h1 {
 
 h2 {
   color: black;
-  font-size: clamp(1.5rem, 3vw, 1.75rem);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
 }
 
 h3 {
@@ -75,16 +74,12 @@ h3 {
 }
 
 p {
-  color: var(--font-color);  
+  color: var(--font-color-2);  
   font-size: clamp(0.8rem, 1.5vw, 1rem);
 }
 
 li {
   font-size: clamp(0.8rem, 1.5vw, 1rem);
-}
-
-i {
-  color: blue;
 }
 
 span {
