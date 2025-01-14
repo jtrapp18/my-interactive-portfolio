@@ -13,7 +13,7 @@ const StyleScroll = styled.div`
     height: 30px;
     transform: translateX(-50%);
     width: 210px;
-    max-width: 50%;
+    max-width: 75%;
     top: calc(var(--height-header) + 5px);
     left: 50%;
 

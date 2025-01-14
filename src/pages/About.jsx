@@ -27,8 +27,10 @@ const StyledMain = styled.main`
 
 const StyledArticle = styled.article`
     scroll-snap-align: start;
-    scroll-margin-top: 90px;
+    scroll-margin-top: var(--height-header);
+    // scroll-margin-top: 0;
     height: var(--size-body);
+    margin: 0;
     width: 65%;
     background: rgba(255, 255, 255, 0.9);
     align-items: center;
@@ -160,7 +162,6 @@ const About = () => {
         };
     }, [currentSectionIndex]);
 
-    // Effect to rotate images every 3 seconds
     useEffect(() => {
         if (aboutMe[currentSectionIndex]?.images?.length > 1) {
             const interval = setInterval(() => {
