@@ -198,7 +198,7 @@ const data = {
         {
             id: 1,
             label: "about",
-            image: "images/me_coding.jpg",
+            images: ["images/me_coding.jpg"],
             tagline: "I'm a life insurance actuary who loves to code.",
             details: `Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. In every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
             
@@ -207,7 +207,7 @@ const data = {
         {
             id: 2,
             label: "background",
-            image: null,
+            images: [],
             tagline: null,
             details: `During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
             
@@ -217,14 +217,10 @@ const data = {
         },
         {
             id: 3,
-            label: "test",
-            image: null,
+            label: "what else..",
+            images: ["images/me_coding.jpg", "images/selfie2.jpg"],
             tagline: null,
-            details: `During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
-            
-            At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
-            
-            Recently, I enrolled in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
+            details: `When I'm not coding, you might find me doing arts and crafts, snowmobiling, camping, or just hanging out with my cats and watching stand-up comedy.`
         }
     ],
     socials: [
