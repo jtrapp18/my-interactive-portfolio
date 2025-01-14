@@ -31,7 +31,6 @@ const Projects = () => {
                 <h1>Featured Projects</h1>
                 <p>During my Software Engineering course at Flatiron School, I completed a series of both group and solo projects, which are described below.</p>
                 <i>Click on any card for more details.</i>
-                <hr />
               </article>
               <CardContainer>
                   {showProjects.map(project=>

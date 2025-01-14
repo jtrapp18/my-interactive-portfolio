@@ -9,6 +9,30 @@ import { useWindowWidth } from "../context/WindowWidthProvider";
 const StyledCard = styled.section`
     ${CardStyling}
 
+    height: 400px;
+
+    section {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proj-title {
+      height: 50%;
+      justify-content: end;
+      display: flex;
+    }
+
+    .proj-summary {
+      height: 40%;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .language-tags {
+      height: 20%;
+    }
+
     .proj-details {
       overflow-Y: scroll;
     }
@@ -26,13 +50,14 @@ const StyledCard = styled.section`
     }
 
     &.expanded {
-      position: absolute;
-      bottom: 1%;
-      width: 70%;
+      position: fixed;
       left: 50%;
-      height: 90%;
       transform: translateX(-50%);
       z-index: 10;
+
+      top: ${(props) => props.isMobile ? '0' : '5%'};
+      width: ${(props) => props.isMobile ? '100%' : '60%'};
+      height: ${(props) => props.isMobile ? '100%' : '80%'};      
     }
 
     .language-tags {
@@ -65,7 +90,6 @@ function WorkCard({id, name, summary, languages, features,
 
   const handleClick = () => {
     setActiveProj(id);
-    scrollToTop();
   }
 
   let className
@@ -83,9 +107,13 @@ function WorkCard({id, name, summary, languages, features,
   return(  
       <StyledCard isMobile={isMobile} ref={cardRef} className={className} onClick={handleClick}>
         {className==="expanded" && <span className="close" onClick={()=>setActiveProj(null)}>✖</span>}
-        <h2>{name}</h2>
-        <h3>{`For ${company}`}</h3>
-        <p>{summary}</p>
+        <section className="proj-title">
+          <h2>{name}</h2>
+          <h3>{`For ${company}`}</h3>
+        </section>
+        <section className="proj-summary">
+          <p>{summary}</p>
+        </section>
         {className==="expanded" && (
           <section className="proj-details">
             <hr></hr>

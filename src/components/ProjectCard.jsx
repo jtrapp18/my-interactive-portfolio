@@ -8,14 +8,17 @@ import { useWindowWidth } from "../context/WindowWidthProvider";
 const StyledCard = styled.section`
     ${CardStyling}
 
+    height: 600px;
+
     section {
       margin: 0;
+      display: flex;
+      flex-direction: column;
     }
     
     .proj-title {
       height: 10%;
-      align-items: end;
-      display: flex;
+      justify-content: end;
     }
 
     .proj-img {
@@ -44,7 +47,6 @@ const StyledCard = styled.section`
     }
 
     .language-tags {
-      bottom: 0%;
       height: 15%;
     }
 

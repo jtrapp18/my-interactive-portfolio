@@ -14,7 +14,7 @@ const data = {
             id: 1,
             name: "Curriculum Management Dashboard",
             phase: "I",
-            summary: "Single-page application designed to simplify the management of English study curriculums. Teachers can easily track assignments, grades, and student progress while curating their book lists.",
+            summary: "Single-page vanilla Javascript app designed to simplify the management of English study curriculums. Teachers can track assignments and grades, while curating their book lists.",
             languages: ["CSS", "HTML", "JavaScript"],
             collaborators: [
                 {
@@ -47,7 +47,7 @@ const data = {
             id: 2,
             name: "Wandr Personal Travel Journal",
             phase: "II",
-            summary: "A React-based application designed for documenting travels, creating itineraries, leaving reviews, and tracking visited destinations.",
+            summary: "React-based application designed for documenting travels, creating itineraries, leaving reviews, and tracking visited destinations.",
             languages: ["CSS", "React"],
             collaborators: [
                 {
@@ -77,7 +77,7 @@ const data = {
             id: 3,
             name: "Rental Management Tool",
             phase: "III",
-            summary: ".",
+            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.",
             languages: ["Python"],
             collaborators: [
             ],
@@ -109,7 +109,7 @@ const data = {
             id: 1,
             name: "Project Management Tool 'Portal'",
             summary: "A management tool utilized by the company on a daily basis to track task progress, view client and plan information, and automate mass data requests.",
-            languages: ["SQL", "MS Access", "VBA"],
+            languages: ["SQL", "VBA"],
             features: [
                 "Manage client information, including contact details and plan specifics.",
                 "Track and manage plan details and their status updates.",
@@ -128,7 +128,7 @@ const data = {
             id: 2,
             name: "Pension Liability Valution",
             summary: "In-house pension funding valuation tool built in Excel, utilizing VBA to generate both current and projected pension liabilities on an individual basis for a given year.",
-            languages: ["VBA", "MS Excel"],
+            languages: ["VBA"],
             features: [
                 "Project current and future pension liabilities for multiple plan types, including Unit Accrual, Final Average Salary, and Cash Balance plans.",
                 "Generate year-end FASB Disclosures for pension liabilities."
@@ -147,6 +147,9 @@ const data = {
             languages: ["Python"],
             features: [
                 "Calculate rollforward projections for multiple investment accounts within a hypothetical 401(k) plan."
+            ],
+            technical: [
+
             ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
@@ -179,7 +182,7 @@ const data = {
             id: 5,
             name: "Assumption Inventory",
             summary: "MS Access-based database with custom front-end functionality to track and manage actuarial assumptions for life insurance models, improving accuracy and accessibility.",
-            languages: ["VBA", "SQL", "MS Access"],
+            languages: ["VBA", "SQL"],
             features: [
                 "Tracks actuarial assumptions across multiple life insurance models."
             ],

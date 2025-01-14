@@ -8,7 +8,7 @@ const mobileTheme = {
   cardHover: 'var(--light-gray)',
   h1: 'white',
   h2: '#F0F0F0',
-  h3: '#27AE60',
+  h3: '#F0FFDB',
   p: '#E3E3E3',
   i: '#84F5EB',
   label: '#F0FFDB',
@@ -218,7 +218,7 @@ const CardStyling = css`
     border-radius: 10px;
     padding: 0;
     box-shadow: var(--shadow);
-    height: 500px;
+    // height: 500px;
     max-height: 100%;
     overflow: hidden;
     position: relative;

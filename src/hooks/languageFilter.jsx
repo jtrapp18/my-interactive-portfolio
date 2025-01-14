@@ -3,19 +3,23 @@ import { useState, useEffect } from "react";
 const LanguageFilter = (projects) => {
 
 const allFilters = {
-    "Python": true, 
+    "Python": true,
+    "Flask": true,
     "React": true, 
     "JavaScript": true, 
-    "CSS": true, 
+    "CSS": true,
+    "SQL": true,
     "HTML": true, 
     "VBA": true  
 }
 
 const noFilters = {
     "Python": false, 
+    "Flask": true,
     "React": false, 
     "JavaScript": false, 
     "CSS": false, 
+    "SQL": false,
     "HTML": false, 
     "VBA": false  
 }
