@@ -581,7 +581,7 @@ Error generating stack: `+m.message+`
     height: 30px;
     transform: translateX(-50%);
     width: 210px;
-    max-width: 50%;
+    max-width: 75%;
     top: calc(var(--height-header) + 5px);
     left: 50%;
 
@@ -639,8 +639,10 @@ Error generating stack: `+m.message+`
     }
 `,$h=Qe.article`
     scroll-snap-align: start;
-    scroll-margin-top: 90px;
+    scroll-margin-top: var(--height-header);
+    // scroll-margin-top: 0;
     height: var(--size-body);
+    margin: 0;
     width: 65%;
     background: rgba(255, 255, 255, 0.9);
     align-items: center;
