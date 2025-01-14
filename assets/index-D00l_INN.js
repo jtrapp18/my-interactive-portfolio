@@ -602,7 +602,7 @@ Error generating stack: `+m.message+`
     button:hover {
         color: var(--green);
     }
-`,wx=({containerRef:t,sectionsRef:r,currentSectionIndex:i})=>{const l=a=>{const u=t.current;if(u){const c=r.current[a];if(c){const f=c.offsetTop;u.scrollTo({top:f,behavior:"smooth"})}}};return j.jsx(vx,{children:[0,1,2,3].map(a=>j.jsx("button",{className:i===a?"active-section":"",onClick:()=>l(a),children:"⬤"}))})},xx=Qe.span`
+`,wx=({containerRef:t,sectionsRef:r,currentSectionIndex:i})=>{const l=a=>{const u=t.current;if(u){const c=r.current[a];if(c){const f=c.offsetTop;a===r.current.length-1?u.scrollTo({top:u.scrollHeight-u.clientHeight,behavior:"smooth"}):u.scrollTo({top:f,behavior:"smooth"})}}};return j.jsx(vx,{children:[0,1,2,3].map(a=>j.jsx("button",{className:i===a?"active-section":"",onClick:()=>l(a),children:"⬤"}))})},xx=Qe.span`
     background-color: black;
     display: flex;
     flex-wrap: wrap;
@@ -640,13 +640,16 @@ Error generating stack: `+m.message+`
 `,$h=Qe.article`
     scroll-snap-align: start;
     scroll-margin-top: var(--height-header);
-    // scroll-margin-top: 0;
     height: var(--size-body);
     margin: 0;
     width: 65%;
     background: rgba(255, 255, 255, 0.9);
     align-items: center;
     display: flex;
+
+    &.technical {
+        padding-bottom: var(--height-header);
+    }
 
     &.active h2 {
         animation: pop 1.5s;
@@ -697,14 +700,16 @@ Error generating stack: `+m.message+`
     }
 
     @media screen and (max-width: 768px) {
+        width: 90%;
         .about-info {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 0;
         }
-
-        width: 90%;
     }
-`,Cx=Qe.div`
+`;Qe.article`
+    var(--height-header);
+`;const Cx=Qe.div`
     position: relative;
     height: 0;
 
@@ -732,10 +737,11 @@ Error generating stack: `+m.message+`
     @media screen and (max-width: 768px) {
         width: 70%;
         border-radius: 0px;
+        padding-top: 70%;
     }
 `,_x=()=>{const t=Yi.aboutMe,r=ee.useRef(null),i=ee.useRef([]),[l,a]=ee.useState(0),[u,c]=ee.useState(0);return ee.useEffect(()=>{const f=()=>{const h=r.current;if(h){const g=h.scrollTop,y=i.current.findIndex((w,v)=>{const E=i.current[v+1],S=w.offsetTop,P=E?E.offsetTop:h.scrollHeight;return g>=S&&g<P});y!==-1&&y!==l&&a(y)}},p=r.current;return p.addEventListener("scroll",f),()=>{p.removeEventListener("scroll",f)}},[l]),ee.useEffect(()=>{var f,p;if(((p=(f=t[l])==null?void 0:f.images)==null?void 0:p.length)>1){const h=setInterval(()=>{c(g=>(g+1)%t[l].images.length)},5e3);return()=>clearInterval(h)}},[l,t]),j.jsxs(Ex,{ref:r,children:[t.map((f,p)=>j.jsx($h,{ref:h=>i.current[p]=h,image:f.background,className:l===p?"active":"",children:j.jsxs("section",{children:[j.jsxs("h2",{children:[f.label,j.jsx("strong",{children:"."})]}),f.tagline&&j.jsx("h3",{children:f.tagline}),j.jsxs("div",{className:"about-info",children:[j.jsx("p",{children:f.details.split(`
 `).map((h,g)=>j.jsxs(zr.Fragment,{children:[h,g<f.details.split(`
-`).length-1&&j.jsx("br",{})]},g))}),f.images&&f.images.length>0&&j.jsx(Cx,{children:f.images.map((h,g)=>j.jsx("img",{src:`/my-interactive-portfolio/${h}`,alt:`Image ${g+1}`,className:u===g||g===0?"active":""},g))})]})]})},f.id)),j.jsx($h,{ref:f=>i.current[t.length]=f,className:l===t.length?"active":"",children:j.jsx(kx,{})}),j.jsx(wx,{containerRef:r,sectionsRef:i,currentSectionIndex:l})]})},Px=()=>j.jsx("main",{children:"There was an error!"}),bx=Qe.section`
+`).length-1&&j.jsx("br",{})]},g))}),f.images&&f.images.length>0&&j.jsx(Cx,{children:f.images.map((h,g)=>j.jsx("img",{src:`/my-interactive-portfolio/${h}`,alt:`Image ${g+1}`,className:u===g||g===0?"active":""},g))})]})]})},f.id)),j.jsx($h,{ref:f=>i.current[t.length]=f,className:l===t.length?"active technical":"technical",children:j.jsx(kx,{})}),j.jsx(wx,{containerRef:r,sectionsRef:i,currentSectionIndex:l})]})},Px=()=>j.jsx("main",{children:"There was an error!"}),bx=Qe.section`
     position: relative;
     padding: 20px;
     width: 200px;
