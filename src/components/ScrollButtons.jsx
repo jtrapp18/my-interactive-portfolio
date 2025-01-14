@@ -14,7 +14,7 @@ const StyleScroll = styled.div`
     transform: translateX(-50%);
     width: 210px;
     max-width: 50%;
-    top: 95px;
+    top: calc(var(--height-header) + 5px);
     left: 50%;
 
     button {

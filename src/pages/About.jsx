@@ -82,12 +82,6 @@ const StyledArticle = styled.article`
         grid-column: span 2;
     }
 
-    img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 200px;
-    }
-
     @media screen and (max-width: 768px) {
         .about-info {
             grid-template-columns: 1fr;
@@ -95,18 +89,18 @@ const StyledArticle = styled.article`
         }
 
         width: 90%;
-
-        img {
-            width: 70%;
-            border-radius: 0px;
-        }
     }
 `;
 
 const ImageContainer = styled.div`
     position: relative;
+    height: 0;
+
     width: 100%;
-    height: 'auto';
+    padding-top: 100%;
+    max-width: 500px;
+    border-radius: 200px;
+    overflow: hidden;
 
     img {
         position: absolute;
@@ -124,12 +118,8 @@ const ImageContainer = styled.div`
     }
 
     @media screen and (max-width: 768px) {
-        padding-top: 56.25%;
-        overflow: hidden;
-        
-        img {
-            width: 70%
-        }
+        width: 70%;
+        border-radius: 0px;
     }
 `;
 
