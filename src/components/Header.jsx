@@ -9,6 +9,7 @@ const StyledHeader = styled(Headroom)`
   padding: 0;
   margin: 0;
   animation: slideDown 1s;
+  height: var(--height-header);
 `
 
 const Header = () => {

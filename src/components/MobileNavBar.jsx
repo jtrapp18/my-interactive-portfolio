@@ -10,7 +10,7 @@ import NavLinks from "./NavLinks";
 
 const StyledDiv = styled.div`
     justify-content: right;
-    height: 90px;
+    height: 100%;
     position: relative;
     background: white;
     display: flex;

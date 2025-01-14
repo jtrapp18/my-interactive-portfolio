@@ -5,7 +5,7 @@ import {scrollToTop} from "../helper"
 
 const StyledNavBar = styled.nav`
   width: 100%;
-  height: 90px;
+  height: var(--height-header);
   background: white;
   border-bottom: 3px solid var(--green);
 `;

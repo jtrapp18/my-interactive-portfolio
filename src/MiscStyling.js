@@ -3,14 +3,14 @@ import styled, {css} from "styled-components";
 import { Link } from "react-scroll";
 
 const mobileTheme = {
-  background: '#333333',
-  cardBackground: 'black',
+  background: '#1F1F1F',
+  cardBackground: '#262626',
   cardHover: 'var(--light-gray)',
   h1: 'white',
   h2: '#F0F0F0',
   h3: '#27AE60',
-  p: '#FFF8C2',
-  i: '#99D9EA',
+  p: 'white',
+  i: '#84F5EB',
   label: '#F0FFDB',
 }
 
@@ -30,7 +30,7 @@ const StyledMenuItem = css`
   color: black;
   text-decoration: none;
   position: relative;
-  padding: 0px 10px 10px 10px;
+  padding: 0px 10px 0px 10px;
   cursor: pointer;
 `;
 
@@ -81,6 +81,10 @@ const StyledLink = styled(Link)`
 const StyledMain = styled.main`
   display: flex;
   background: ${(props) => props.theme.background};
+
+  hr {
+    border: ${(props) => props.isMobile ? 'solid .1px #383838' : ''};
+  }
 
   h1 {
     color: ${(props) => (props.theme.h1)};
@@ -205,11 +209,13 @@ const CardHover = css`
 
 const CardStyling = css`
     ${CardHover};
-    border-radius: ${(props) => props.isMobile ? '0px' : '10px'};
-    width: ${(props) => props.isMobile ? '100%' : 'auto'};
-    margin: ${(props) => props.isMobile ? '5px 0px 5px 0px' : '5px'};
-    background: ${(props) => props.theme.cardBackground};
 
+    width: ${(props) => props.isMobile ? '100%' : 'auto'};
+    margin: ${(props) => props.isMobile ? '5px 0px 5px 0px' : '10px'};
+    background: ${(props) => props.theme.cardBackground};
+    border: ${(props) => props.isMobile ? '1px solid #383838' : ''};
+
+    border-radius: 10px;
     padding: 0;
     box-shadow: var(--shadow);
     height: 500px;
@@ -217,18 +223,17 @@ const CardStyling = css`
     overflow: hidden;
     position: relative;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 
     h2, h3, p {
-      margin: 2.5% 2.5% 0px 2.5%;
+      margin: .5% 2.5% 0 2.5%;
     }
 
     .language-tags {
       background: inherit;
-      width: 90%;
-      padding: 0 5% 0 5%;
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
+      width: 95%;
+      padding: 0 2.5% 0 2.5%;
     }
 
     span {

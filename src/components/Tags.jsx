@@ -16,7 +16,7 @@ const StyledTag = styled.div`
         color: white;
         border: 2px solid var(--dark-green);
         border-radius: 5px;
-        font-size: 15px;
+        font-size: clamp(0.8rem, 1.5vw, 1rem);
     }
 `
 const Tags = ({tags, tagType}) => {
