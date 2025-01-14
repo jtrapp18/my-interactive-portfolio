@@ -313,7 +313,7 @@ Error generating stack: `+m.message+`
   width: 100%;
   height: 100%;
   background-color: ${({opacity:t})=>`rgba(0, 0, 0, ${t||.8})`};
-  z-index: 1; /* Below active card */
+  z-index: 1;
   pointer-events: none;
   opacity: ${({isVisible:t})=>t?1:0};
   transition: opacity 0.5s ease-in-out;
@@ -780,14 +780,13 @@ Error generating stack: `+m.message+`
   ${ag}
 
   height: 500px;
-  z-index: 1;
 
   section {
     margin: 0;
   }
 
-  &.active {
-    z-index: 10;
+  &.focused {
+    z-index: 2;
   }
 
   .proj-title {
