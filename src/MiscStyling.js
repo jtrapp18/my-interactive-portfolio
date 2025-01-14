@@ -9,7 +9,7 @@ const mobileTheme = {
   h1: 'white',
   h2: '#F0F0F0',
   h3: '#27AE60',
-  p: 'white',
+  p: '#E3E3E3',
   i: '#84F5EB',
   label: '#F0FFDB',
 }

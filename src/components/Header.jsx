@@ -17,7 +17,7 @@ const Header = () => {
     
     return (
         <StyledHeader>
-          {isMobile ? <MobileNavBar /> : (<NavBar />)}
+          {isMobile ? <MobileNavBar /> : <NavBar />}
         </StyledHeader>
     );
 }

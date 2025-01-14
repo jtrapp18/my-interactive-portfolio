@@ -10,18 +10,17 @@ import NavLinks from "./NavLinks";
 
 const StyledDiv = styled.div`
     justify-content: right;
-    height: 100%;
+    height: var(--height-header);
     position: relative;
     background: white;
     display: flex;
     border-bottom: 3px solid var(--green);
-    // justify-content: right;
     align-items: center;
 `
 const LinkContainer = styled.div`
   position: absolute;
-  top: 92px;
-  left:0;
+  top: calc(var(--height-header) + 3px);
+  left: 0;
   z-index: 1000;
   width: 100%;
   text-decoration: none;
@@ -75,7 +74,7 @@ const HamburgerButton = styled.button`
   background: transparent;
   border: none;
   color: black;
-  font-size: clamp(2rem, 4vw, 3rem);
+  font-size: clamp(1.5rem, 4vw, 3rem);
   cursor: pointer;
   padding-right: 30px;
   transition: transform 1s ease;
@@ -84,7 +83,6 @@ const HamburgerButton = styled.button`
     display: block;
   }
 
-  /* Rotate the button 180 degrees when the menu is open */
   &.open {
     transform: rotate(45deg);
   }
