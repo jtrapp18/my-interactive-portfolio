@@ -27,17 +27,12 @@ const StyledMain = styled.main`
 
 const StyledArticle = styled.article`
     scroll-snap-align: start;
-    scroll-margin-top: var(--height-header);
     height: var(--size-body);
     margin: 0;
     width: 65%;
     background: rgba(255, 255, 255, 0.9);
     align-items: center;
     display: flex;
-
-    &.technical {
-        padding-bottom: var(--height-header);
-    }
 
     &.active h2 {
         animation: pop 1.5s;
@@ -97,10 +92,6 @@ const StyledArticle = styled.article`
     }
 `;
 
-const BlankArticle = styled.article`
-    var(--height-header);
-`;
-
 const ImageContainer = styled.div`
     position: relative;
     height: 0;
@@ -141,30 +132,36 @@ const About = () => {
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-    // Update section index on scroll
     useEffect(() => {
         const handleScroll = () => {
             const container = containerRef.current;
-
+    
             if (container) {
                 const scrollTop = container.scrollTop;
+                const containerHeight = container.offsetHeight;
+                const scrollBottom = scrollTop + containerHeight;
+    
                 const sectionIndex = sectionsRef.current.findIndex((section, index) => {
-                    const nextSection = sectionsRef.current[index + 1];
                     const top = section.offsetTop;
-                    const bottom = nextSection ? nextSection.offsetTop : container.scrollHeight;
-
+                    const bottom = section.offsetTop + section.offsetHeight;
+    
+                    // For the last section, ensure it stays active when scrolled to the bottom
+                    if (index === sectionsRef.current.length - 1) {
+                        return scrollBottom >= top;
+                    }
+    
                     return scrollTop >= top && scrollTop < bottom;
                 });
-
+    
                 if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
                     setCurrentSectionIndex(sectionIndex);
                 }
             }
         };
-
+    
         const container = containerRef.current;
         container.addEventListener('scroll', handleScroll);
-
+    
         return () => {
             container.removeEventListener('scroll', handleScroll);
         };
