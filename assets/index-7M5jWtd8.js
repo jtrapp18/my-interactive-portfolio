@@ -582,7 +582,7 @@ Error generating stack: `+m.message+`
     transform: translateX(-50%);
     width: 210px;
     max-width: 50%;
-    top: 95px;
+    top: calc(var(--height-header) + 5px);
     left: 50%;
 
     button {
@@ -694,12 +694,6 @@ Error generating stack: `+m.message+`
         grid-column: span 2;
     }
 
-    img {
-        width: 100%;
-        max-width: 500px;
-        border-radius: 200px;
-    }
-
     @media screen and (max-width: 768px) {
         .about-info {
             grid-template-columns: 1fr;
@@ -707,16 +701,16 @@ Error generating stack: `+m.message+`
         }
 
         width: 90%;
-
-        img {
-            width: 70%;
-            border-radius: 0px;
-        }
     }
 `,Cx=Qe.div`
     position: relative;
+    height: 0;
+
     width: 100%;
-    height: 'auto';
+    padding-top: 100%;
+    max-width: 500px;
+    border-radius: 200px;
+    overflow: hidden;
 
     img {
         position: absolute;
@@ -734,12 +728,8 @@ Error generating stack: `+m.message+`
     }
 
     @media screen and (max-width: 768px) {
-        padding-top: 56.25%;
-        overflow: hidden;
-        
-        img {
-            width: 70%
-        }
+        width: 70%;
+        border-radius: 0px;
     }
 `,_x=()=>{const t=Yi.aboutMe,r=ee.useRef(null),i=ee.useRef([]),[l,a]=ee.useState(0),[u,c]=ee.useState(0);return ee.useEffect(()=>{const f=()=>{const h=r.current;if(h){const g=h.scrollTop,y=i.current.findIndex((w,v)=>{const E=i.current[v+1],S=w.offsetTop,P=E?E.offsetTop:h.scrollHeight;return g>=S&&g<P});y!==-1&&y!==l&&a(y)}},p=r.current;return p.addEventListener("scroll",f),()=>{p.removeEventListener("scroll",f)}},[l]),ee.useEffect(()=>{var f,p;if(((p=(f=t[l])==null?void 0:f.images)==null?void 0:p.length)>1){const h=setInterval(()=>{c(g=>(g+1)%t[l].images.length)},5e3);return()=>clearInterval(h)}},[l,t]),j.jsxs(Ex,{ref:r,children:[t.map((f,p)=>j.jsx($h,{ref:h=>i.current[p]=h,image:f.background,className:l===p?"active":"",children:j.jsxs("section",{children:[j.jsxs("h2",{children:[f.label,j.jsx("strong",{children:"."})]}),f.tagline&&j.jsx("h3",{children:f.tagline}),j.jsxs("div",{className:"about-info",children:[j.jsx("p",{children:f.details.split(`
 `).map((h,g)=>j.jsxs(zr.Fragment,{children:[h,g<f.details.split(`
