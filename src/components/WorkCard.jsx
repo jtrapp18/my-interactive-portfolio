@@ -1,9 +1,7 @@
-import { useParams, useOutletContext } from "react-router-dom";
 import styled from "styled-components";
 import Tags from "./Tags";
 import { CardStyling } from "../MiscStyling";
 import { useRef, useEffect } from "react";
-import { scrollToTop } from "../helper";
 import { useWindowWidth } from "../context/WindowWidthProvider";
 
 const StyledCard = styled.section`
@@ -16,7 +14,7 @@ const StyledCard = styled.section`
     }
 
     .proj-title {
-      height: 50%;
+      height: 40%;
       display: flex;
       flex-direction: column;
       justify-content: end;
@@ -24,13 +22,13 @@ const StyledCard = styled.section`
     }
 
     .proj-summary {
-      height: 40%;
+      height: 30%;
       width: 100%;
       justify-content: center;
     }
 
     .language-tags {
-      height: 20%;
+      height: 30%;
     }
 
     .proj-details {
@@ -41,12 +39,6 @@ const StyledCard = styled.section`
       position: absolute;
       right: 10px;
       top: 10px;
-
-    }
-
-    &.collapsed {
-      opacity: .3;
-      pointer-events: none;
     }
 
     &.expanded {
@@ -58,11 +50,6 @@ const StyledCard = styled.section`
       top: ${(props) => props.isMobile ? '0' : '5%'};
       width: ${(props) => props.isMobile ? '100%' : '60%'};
       height: ${(props) => props.isMobile ? '100%' : '80%'};      
-    }
-
-    .language-tags {
-      bottom: 0px;
-      height: 150px;
     }
   `
 
@@ -88,24 +75,15 @@ function WorkCard({id, name, summary, languages, features,
     };
   }, []); // Empty dependency array to run only on mount and unmount
 
-  const handleClick = () => {
-    setActiveProj(id);
-  }
-
-  let className
-  switch (activeProj) {
-    case null:
-      className = "";
-      break;
-    case id:
-      className = "expanded";
-      break;
-    default:
-      className = "collapsed";
-  }
+  const className = activeProj==id ? "expanded" : ""
 
   return(  
-      <StyledCard isMobile={isMobile} ref={cardRef} className={className} onClick={handleClick}>
+      <StyledCard 
+        isMobile={isMobile} 
+        ref={cardRef} 
+        className={className}
+        onClick={()=>setActiveProj(id)}
+      >
         {className==="expanded" && <span className="close" onClick={()=>setActiveProj(null)}>✖</span>}
         <section className="proj-title">
           <h2>{name}</h2>

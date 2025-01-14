@@ -244,4 +244,17 @@ const CardStyling = css`
     overflow: hidden;
   `
 
-export { mobileTheme, windowTheme, StyledMenuItem, StyledNavLink, StyledLink, StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation }
+const Overlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${({ opacity }) => `rgba(0, 0, 0, ${opacity || 0.8})`};
+  z-index: 1; /* Below active card */
+  pointer-events: none;
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
+  transition: opacity 0.5s ease-in-out;
+`;
+
+export { mobileTheme, windowTheme, StyledMenuItem, StyledNavLink, StyledLink, StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation, Overlay }

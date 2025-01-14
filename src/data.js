@@ -200,26 +200,28 @@ const data = {
             label: "about",
             images: ["images/me_coding.jpg"],
             tagline: "I'm a life insurance actuary who loves to code.",
-            details: `Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. In every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
+            details: `I have worked as an actuary for 10 years, and in every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
             
-            My goal is to bridge the gap between actuarial work and technology, creating tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
+            My focus is to create tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
         },
         {
             id: 2,
             label: "background",
             images: [],
-            tagline: null,
-            details: `During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for programming. From that point, I sought to incorporate programming into every project where it could be useful.
+            tagline: "Actuary, auditor, consultant, coder",
+            details: `Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. 
+            
+            During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for coding. From that point, I sought to incorporate programming into every project where it could be useful.
             
             At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
             
-            Recently, I enrolled in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
+            From there, I decided to enroll in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
         },
         {
             id: 3,
             label: "what else..",
             images: ["images/me_coding.jpg", "images/selfie2.jpg"],
-            tagline: null,
+            tagline: "Cat mom, outdoor enthusiast, amatuer artist",
             details: `When I'm not coding, you might find me doing arts and crafts, snowmobiling, camping, or just hanging out with my cats and watching stand-up comedy.`
         }
     ],
