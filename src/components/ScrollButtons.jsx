@@ -41,16 +41,25 @@ const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex}) => {
     const chooseIndex = (index) => {
         const container = containerRef.current;
         if (container) {
-            // Get the next section index
+            // Get the section to scroll to
             const section = sectionsRef.current[index];
-
-            // If the next section exists, scroll to it
+    
+            // If the section exists, scroll to it
             if (section) {
                 const scrollDistance = section.offsetTop;
-                container.scrollTo({
-                    top: scrollDistance,
-                    behavior: 'smooth',
-                });
+    
+                // Make sure scrollDistance doesn't exceed the last section
+                if (index === sectionsRef.current.length - 1) {
+                    container.scrollTo({
+                        top: container.scrollHeight - container.clientHeight,
+                        behavior: 'smooth',
+                    });
+                } else {
+                    container.scrollTo({
+                        top: scrollDistance,
+                        behavior: 'smooth',
+                    });
+                }
             }
         }
     };

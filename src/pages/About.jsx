@@ -28,13 +28,16 @@ const StyledMain = styled.main`
 const StyledArticle = styled.article`
     scroll-snap-align: start;
     scroll-margin-top: var(--height-header);
-    // scroll-margin-top: 0;
     height: var(--size-body);
     margin: 0;
     width: 65%;
     background: rgba(255, 255, 255, 0.9);
     align-items: center;
     display: flex;
+
+    &.technical {
+        padding-bottom: var(--height-header);
+    }
 
     &.active h2 {
         animation: pop 1.5s;
@@ -85,13 +88,17 @@ const StyledArticle = styled.article`
     }
 
     @media screen and (max-width: 768px) {
+        width: 90%;
         .about-info {
-            grid-template-columns: 1fr;
+            display: flex;
+            flex-direction: column;
             gap: 0;
         }
-
-        width: 90%;
     }
+`;
+
+const BlankArticle = styled.article`
+    var(--height-header);
 `;
 
 const ImageContainer = styled.div`
@@ -122,6 +129,7 @@ const ImageContainer = styled.div`
     @media screen and (max-width: 768px) {
         width: 70%;
         border-radius: 0px;
+        padding-top: 70%;
     }
 `;
 
@@ -215,7 +223,7 @@ const About = () => {
             ))}
             <StyledArticle 
                 ref={(el) => (sectionsRef.current[aboutMe.length] = el)}
-                className={currentSectionIndex === aboutMe.length ? 'active' : ''}
+                className={currentSectionIndex === aboutMe.length ? 'active technical' : 'technical'}
             >
                 <TechnicalHighlights />
             </StyledArticle>
