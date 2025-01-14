@@ -218,7 +218,6 @@ const CardStyling = css`
     border-radius: 10px;
     padding: 0;
     box-shadow: var(--shadow);
-    // height: 500px;
     max-height: 100%;
     overflow: hidden;
     position: relative;

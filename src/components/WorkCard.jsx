@@ -13,12 +13,12 @@ const StyledCard = styled.section`
 
     section {
       margin: 0;
-      display: flex;
-      flex-direction: column;
     }
 
     .proj-title {
       height: 50%;
+      display: flex;
+      flex-direction: column;
       justify-content: end;
       display: flex;
     }

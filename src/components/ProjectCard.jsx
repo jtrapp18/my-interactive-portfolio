@@ -8,26 +8,27 @@ import { useWindowWidth } from "../context/WindowWidthProvider";
 const StyledCard = styled.section`
     ${CardStyling}
 
-    height: 600px;
+    height: 500px;
 
     section {
       margin: 0;
-      display: flex;
-      flex-direction: column;
     }
     
     .proj-title {
       height: 10%;
       justify-content: end;
+      display: flex;
+      flex-direction: column;
     }
 
     .proj-img {
       width: 100%;
-      height: 65%;
+      height: 60%;
       position: relative;
       overflow: hidden;
       border-top: double 3px var(--green);
       border-bottom: double 3px var(--green);
+      background: black;
 
       img {
         position: absolute;
@@ -35,14 +36,14 @@ const StyledCard = styled.section`
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
         object-position: top;
         z-index: 0;
       }
     }
     
     .proj-summary {
-      height: 10%;
+      height: 15%;
       width: 100%;
     }
 
