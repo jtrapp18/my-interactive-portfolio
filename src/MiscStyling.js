@@ -210,7 +210,6 @@ const CardHover = css`
 const CardStyling = css`
     ${CardHover};
 
-    width: ${(props) => props.isMobile ? '100%' : 'auto'};
     margin: ${(props) => props.isMobile ? '5px 0px 5px 0px' : '10px'};
     background: ${(props) => props.theme.cardBackground};
     border: ${(props) => props.isMobile ? '1px solid #383838' : ''};
