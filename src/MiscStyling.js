@@ -251,7 +251,7 @@ const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background-color: ${({ opacity }) => `rgba(0, 0, 0, ${opacity || 0.8})`};
-  z-index: 1; /* Below active card */
+  z-index: 1;
   pointer-events: none;
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;

@@ -8,14 +8,13 @@ const StyledCard = styled.section`
   ${CardStyling}
 
   height: 500px;
-  z-index: 1;
 
   section {
     margin: 0;
   }
 
-  &.active {
-    z-index: 10;
+  &.focused {
+    z-index: 2;
   }
 
   .proj-title {
