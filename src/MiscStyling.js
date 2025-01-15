@@ -3,8 +3,8 @@ import styled, {css} from "styled-components";
 import { Link } from "react-scroll";
 
 const mobileTheme = {
-  background: '#1F1F1F',
-  cardBackground: '#262626',
+  background: '#0A0A0A',
+  cardBackground: '#1E1E1E',
   cardHover: 'var(--light-gray)',
   h1: 'white',
   h2: '#F0F0F0',
@@ -12,6 +12,7 @@ const mobileTheme = {
   p: '#E3E3E3',
   i: '#84F5EB',
   label: '#F0FFDB',
+  li: 'white'
 }
 
 const windowTheme = {
@@ -23,7 +24,8 @@ const windowTheme = {
   h3: 'var(--font-color-1)',
   p: 'var(--font-color-2)',
   i: 'blue',
-  label: 'var(--green)'
+  label: 'var(--green)',
+  li: 'var(--font-color-2'
 }
 
 const StyledMenuItem = css`
@@ -105,6 +107,10 @@ const StyledMain = styled.main`
 
   label {
     color: ${(props) => (props.theme.label)};
+  }
+
+  li {
+    color: ${(props) => (props.theme.li)};
   }
 
   .main-content {

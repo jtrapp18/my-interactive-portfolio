@@ -67,7 +67,8 @@ const ScrollButtons = ({containerRef, sectionsRef, currentSectionIndex}) => {
     return (
             <StyleScroll>
                 {[0, 1, 2, 3].map(index =>
-                    <button
+                <button
+                    key = {index}
                     className={currentSectionIndex===index ? "active-section" : ""}
                     onClick={() => chooseIndex(index)}
                 >
