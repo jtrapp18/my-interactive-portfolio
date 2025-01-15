@@ -15,7 +15,7 @@
   --striped: repeating-linear-gradient(-45deg, white, white 3px, var(--light-peach) 3px, var(--light-peach) 6px);
   --padding-top: 75px;
   --height-header: clamp(1rem, 10vw, 5rem);
-  --size-body: calc(100vh - var(--height-header));
+  --size-body: calc(100vh - var(--height-header) - 3px);
   /* --size-body: 100vh; */
   --shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }

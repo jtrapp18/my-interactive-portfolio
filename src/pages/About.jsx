@@ -138,19 +138,12 @@ const About = () => {
     
             if (container) {
                 const scrollTop = container.scrollTop;
-                const containerHeight = container.offsetHeight;
-                const scrollBottom = scrollTop + containerHeight;
     
-                const sectionIndex = sectionsRef.current.findIndex((section, index) => {
-                    const top = section.offsetTop;
-                    const bottom = section.offsetTop + section.offsetHeight;
+                const sectionIndex = sectionsRef.current.findIndex((section) => {
+                    const { top, bottom } = section.getBoundingClientRect();
     
-                    // For the last section, ensure it stays active when scrolled to the bottom
-                    if (index === sectionsRef.current.length - 1) {
-                        return scrollBottom >= top;
-                    }
-    
-                    return scrollTop >= top && scrollTop < bottom;
+                    // Check if the section is currently in view
+                    return top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2;
                 });
     
                 if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
@@ -165,7 +158,7 @@ const About = () => {
         return () => {
             container.removeEventListener('scroll', handleScroll);
         };
-    }, [currentSectionIndex]);
+    }, [currentSectionIndex]);    
 
     useEffect(() => {
         if (aboutMe[currentSectionIndex]?.images?.length > 1) {
