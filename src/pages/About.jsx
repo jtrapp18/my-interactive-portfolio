@@ -60,7 +60,7 @@ const StyledArticle = styled.article`
 
     h3 {
         margin: 0;
-        font-size: clamp(1rem, calc(100vw / 10), 1.5rem);
+        font-size: clamp(1rem, 2vw, 1.4rem);
     }
 
     section {
