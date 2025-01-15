@@ -21,6 +21,10 @@
   --shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
+body {
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: 'Cascadia';
   src: url('/fonts/Cascadia.ttf') format('truetype');
