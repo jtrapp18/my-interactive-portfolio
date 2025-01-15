@@ -77,7 +77,7 @@ const data = {
             id: 3,
             name: "Rental Management Tool",
             phase: "III",
-            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.",
+            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.)",
             languages: ["Python"],
             collaborators: [
             ],
@@ -276,7 +276,7 @@ const data = {
             tagline: "I'm a life insurance actuary who loves to code.",
             details: `I have worked as an actuary for 10 years, and in every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
             
-            My focus is to create tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
+            I aim to create tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
         },
         {
             id: 2,

@@ -39,7 +39,7 @@ const StyledDiv = styled.div`
     }
 
     p {
-      font-size: clamp(1rem, calc(100vw / 25), 2.5rem);
+      font-size: clamp(1.2rem, calc(100vw / 20), 2.5rem);
       animation: pauseShow 3.5s ease-in-out 0s forwards, fadeIn 3s ease 3s forwards;
     }
   }
@@ -88,7 +88,7 @@ const Home = () => {
         {imageLoaded && showText && (
           <section>
             <h1>Hi, I'm <strong>Jacqueline</strong></h1>
-            <p>I'm an <strong>Actuary</strong> and <strong>Full-Stack Developer</strong></p>
+            <p>I'm a <strong>Full-Stack Developer</strong></p>
           </section>
         )}
 

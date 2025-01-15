@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled, {css} from "styled-components";
 import { scrollToTop } from "../helper";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Socials from "./Socials";
 import { StyledNavLink, StyledMenuItem } from "../MiscStyling";
 import NavLinks from "./NavLinks";
@@ -100,6 +100,13 @@ const HamburgerButton = styled.button`
 // MobileNavBar Component
 const MobileNavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const cardRef = useRef(null); // Create a reference to the card element
+
+  const handleClickOutside = (e) => {
+    if (isMenuOpen && cardRef.current && !cardRef.current.contains(e.target)) {
+      setIsMenuOpen(false);
+    }
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -110,9 +117,22 @@ const MobileNavBar = () => {
     setIsMenuOpen(false); // Close menu after navigation
   };
 
+  useEffect(() => {
+    // Add event listener to detect clicks outside
+    document.addEventListener("mousedown", handleClickOutside);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
   return (
     <StyledDiv>
-      <LinkContainer className={isMenuOpen ? "open" : "closed"}>
+      <LinkContainer 
+        className={isMenuOpen ? "open" : "closed"}
+        ref={cardRef}
+      >
         <StyledNavLink
           to="/"
           className="nav-link"
