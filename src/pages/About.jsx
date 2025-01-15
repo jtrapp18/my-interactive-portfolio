@@ -35,11 +35,11 @@ const StyledArticle = styled.article`
     display: flex;
 
     &.active h2 {
-        animation: pop 1.5s;
+        animation: pop 2s;
     }
 
-    &.active h3, &.active p {
-        animation: fade 1.5s;
+    &.active .about-info {
+        animation: fade 2.1s;
     }
 
     h2 {
@@ -60,7 +60,7 @@ const StyledArticle = styled.article`
 
     h3 {
         margin: 0;
-        font-size: clamp(1rem, 2vw, 1.5rem);
+        font-size: clamp(1rem, calc(100vw / 10), 1.5rem);
     }
 
     section {
