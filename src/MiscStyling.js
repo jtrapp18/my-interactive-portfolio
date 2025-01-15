@@ -5,21 +5,23 @@ import { Link } from "react-scroll";
 const mobileTheme = {
   background: '#0A0A0A',
   cardBackground: '#1E1E1E',
-  cardHover: 'var(--light-gray)',
-  h1: 'white',
-  h2: '#F0F0F0',
-  h3: '#F0FFDB',
-  p: '#E3E3E3',
-  i: '#84F5EB',
+  cardHover: '#2C2C2C',
+  hoverText: '#F5F5F5',
+  h1: '#D3D3D3',
+  h2: '#D3D3D3',
+  h3: '#778899',
+  p: '#D3D3D3',
+  i: '#FFD700',
   label: '#F0FFDB',
-  span: 'white',
-  li: 'white'
+  span: '#D3D3D3',
+  li: '#D3D3D3'
 }
 
 const windowTheme = {
   background: 'var(--background)',
   cardBackground: 'var(--background)',
   cardHover: 'var(--light-gray)',
+  hoverText: 'var(--dark-green)',
   h1: 'var(--font-color-1)',
   h2: 'var(--font-color-2)',
   h3: 'var(--font-color-1)',
@@ -205,7 +207,7 @@ const CardHover = css`
     &:hover {
         background: ${(props) => props.theme.cardHover};
         
-        color: var(--dark-green);
+        color: ${(props) => props.theme.hoverText};
 
         h2 {
           text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
