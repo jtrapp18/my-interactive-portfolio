@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Tags from "./Tags";
-import { CardStyling } from "../MiscStyling";
+import { CardStyling, CardHover } from "../MiscStyling";
 import { useRef, useEffect } from "react";
 import { useWindowWidth } from "../context/WindowWidthProvider";
 
@@ -27,12 +27,13 @@ const StyledCard = styled.section`
       justify-content: center;
     }
 
-    .language-tags {
-      height: 30%;
-    }
-
     .proj-details {
       overflow-Y: scroll;
+      height: 0;
+    }
+
+    .language-tags {
+      height: 30%;
     }
 
     .close {
@@ -46,10 +47,27 @@ const StyledCard = styled.section`
       left: 50%;
       transform: translateX(-50%);
       z-index: 10;
+      padding: 1vh 1vw 1vh 1vw;
 
       top: ${(props) => props.isMobile ? '0' : '5%'};
-      width: ${(props) => props.isMobile ? '100%' : '60%'};
-      height: ${(props) => props.isMobile ? '100%' : '80%'};      
+      width: ${(props) => props.isMobile ? '96vw' : '80%'};
+      height: ${(props) => props.isMobile ? '96vh' : '90%'};  
+      
+      .proj-title {
+        height: 10%;
+      }
+
+      .proj-summary {
+        height: 10%;
+      }
+
+      .proj-details {
+        height: 65%;
+      }
+
+      .language-tags {
+        height: 10%;
+      }
     }
   `
 
@@ -92,28 +110,26 @@ function WorkCard({id, name, summary, languages, features,
         <section className="proj-summary">
           <p>{summary}</p>
         </section>
-        {className==="expanded" && (
-          <section className="proj-details">
-            <hr></hr>
-            <h3>Key Features</h3>
-            <ul>
-              {features.map(feature=>(
-                <li key={feature}>
-                  {feature}
-                </li>)
-              )}
-            </ul>
-            <hr></hr>
-            <h3>Technical Highlights</h3>
-            <ul>
-              {technical.map(bullet=>(
-                <li key={bullet}>
-                  {bullet}
-                </li>)
-              )}
-            </ul>
-          </section>
-        )}
+        <section className="proj-details">
+          <hr></hr>
+          <h3>Key Features</h3>
+          <ul>
+            {features.map(feature=>(
+              <li key={feature}>
+                {feature}
+              </li>)
+            )}
+          </ul>
+          <hr></hr>
+          <h3>Technical Highlights</h3>
+          <ul>
+            {technical.map(bullet=>(
+              <li key={bullet}>
+                {bullet}
+              </li>)
+            )}
+          </ul>
+        </section>
         <section className="language-tags" >
           <hr></hr>
           <Tags tags={areas} tagType="Areas of Practice"/>

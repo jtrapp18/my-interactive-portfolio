@@ -5,8 +5,17 @@ import GitHubReadme from "../components/GitHubReadme";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const StyledLink = styled(Link)`
+  font-size: var(--default-font-size);
+`
+
 const StyledMain = styled.main`
     margin: 5%;
+
+    .page-header {
+        display: flex;
+        flex-direction: column;
+    }
 
     h2 {
         margin: 0;
@@ -26,7 +35,8 @@ const ProjectPage = () => {
     return (
         <StyledMain>
             <article className='page-header'>
-                <Link to="/projects">Back</Link>
+                <StyledLink to="/projects">Back</StyledLink>
+                <br />
                 <h2>{`Featured Project: ${project.name}`}</h2>
                 <p>{`This project was developed for the end of Phase ${project.phase} assignment for the FlatIron School Software Engineering Bootcamp`}</p>
             </article>

@@ -12,6 +12,7 @@ const mobileTheme = {
   p: '#E3E3E3',
   i: '#84F5EB',
   label: '#F0FFDB',
+  span: 'white',
   li: 'white'
 }
 
@@ -25,6 +26,7 @@ const windowTheme = {
   p: 'var(--font-color-2)',
   i: 'blue',
   label: 'var(--green)',
+  span: 'var(--font-color-2)',
   li: 'var(--font-color-2'
 }
 
@@ -84,6 +86,14 @@ const StyledMain = styled.main`
   display: flex;
   background: ${(props) => props.theme.background};
 
+  .main-content {
+    margin: ${(props) => props.isMobile ? '0' : '20px'};
+  }
+
+  .page-header {
+    margin: 10px;
+  }
+
   hr {
     border: ${(props) => props.isMobile ? 'solid .1px #383838' : ''};
   }
@@ -91,12 +101,15 @@ const StyledMain = styled.main`
   h1 {
     color: ${(props) => (props.theme.h1)};
   }
+
   h2 {
     color: ${(props) => (props.theme.h2)};
   }
+
   h3 {
     color: ${(props) => (props.theme.h3)};
   }
+
   p {
     color: ${(props) => (props.theme.p)};
   }
@@ -109,23 +122,14 @@ const StyledMain = styled.main`
     color: ${(props) => (props.theme.label)};
   }
 
+  span {
+    color: ${(props) => (props.theme.span)};
+  }
+
   li {
     color: ${(props) => (props.theme.li)};
   }
-
-  .main-content {
-    width: 100%;
-    margin: ${(props) => props.isMobile ? '0px' : '20px'};
-  }
-
-  .page-header {
-    padding: 10px;
-
-    h1 {
-      margin: 0;
-    }
-  }
-`
+`;
 
 const ConditionalHighlight = css`
     &:hover {
@@ -218,7 +222,10 @@ const CardStyling = css`
 
     margin: ${(props) => props.isMobile ? '5px 0px 5px 0px' : '10px'};
     background: ${(props) => props.theme.cardBackground};
-    border: ${(props) => props.isMobile ? '1px solid #383838' : ''};
+
+    // h2 {
+    //   text-shadow: 2px 2px 2px rgba(0, 0, 0, 1);
+    // }
 
     border-radius: 10px;
     padding: 0;
@@ -256,11 +263,13 @@ const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: ${({ opacity }) => `rgba(0, 0, 0, ${opacity || 0.8})`};
   z-index: 1;
   pointer-events: none;
-  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
   transition: opacity 0.5s ease-in-out;
+
+  background-color: ${({ opacity }) => `rgba(0, 0, 0, ${opacity || 0.8})`};
+  opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
 `;
 
-export { mobileTheme, windowTheme, StyledMenuItem, StyledNavLink, StyledLink, StyledMain, StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation, Overlay }
+export { mobileTheme, windowTheme, StyledMenuItem, StyledNavLink, StyledLink, StyledMain, 
+  StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation, Overlay }

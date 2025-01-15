@@ -107,37 +107,154 @@ const data = {
     relevantWork: [
         {
             id: 1,
-            name: "Project Management Tool 'Portal'",
-            summary: "A management tool utilized by the company on a daily basis to track task progress, view client and plan information, and automate mass data requests.",
-            languages: ["SQL", "VBA"],
+            name: "VA Lapse Experience Study for Audit",
+            summary: "Led a team to develop a fully automated system for generating and analyzing VA lapse experience studies, aimed at assessing client lapse assumptions for year-end audits. The system streamlines data validation, model selection, and reporting, improving audit efficiency and accuracy.",
+            languages: ["Python"],
             features: [
-                "Manage client information, including contact details and plan specifics.",
-                "Track and manage plan details and their status updates.",
-                "Link and track individual user tasks, including regular updates and task status.",
-                "Filter and sort status tracking data based on multiple user-defined criteria.",
-                "Automate generation of mass emails for data requests and draft them in Outlook for review."
+                "Automates the data cleaning and validation process, standardizing client data across multiple audit clients with consistent column names and value ranges.",
+                "Uses scikit-learn to fit client data to logistic regression, random forest, and neural network models, selecting the best model based on pre-determined AUC test metrics.",
+                "Generates exploratory analysis graphs (e.g., lift charts, ROC charts) to visually assess client data quality and model performance.",
+                "Compares client results to PwC benchmarks, generating visualization tools to highlight discrepancies.",
+                "Fully automates the experience study process, running multiple models and selecting the optimal one without manual intervention.",
+                "Saves exploratory analysis and final report data (including graphs and findings) to AWS S3 and generates standardized PDF reports automatically.",
+                "Provides a user interface using Streamlit for audit teams to access results quickly, with the ability to download reports and data stored in AWS S3.",
+                "Joblib files are used to store results, allowing for fast retrieval and sharing of graphical data and study results directly from AWS S3."
             ],
             technical: [
+                "Led the development of a Python-based system utilizing scikit-learn for model selection and evaluation.",
+                "Streamlined data validation and processing pipelines using custom Python scripts to ensure standardized inputs across audit clients.",
+                "Implemented AWS S3 integration for secure data storage and retrieval, facilitating seamless access to reports and results.",
+                "Utilized joblib to store pre-computed results, allowing for faster access to generated graphs and model results.",
+                "Designed and deployed a user interface using Streamlit, enabling users to interact with results and download reports with minimal latency.",
+                "Integrated automated PDF generation for reports that include comprehensive visualizations, providing auditors with clear and actionable insights.",
+                "Collaborated with audit teams to uncover insights from client data, identifying discrepancies and suggesting modifications based on audit results."
+            ],
+            year: 2023,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["Audit", "Life Insurance"],
+            image: "images/projects/curriculum-mgmt.png"
+        },
+        {
+            id: 2,
+            name: "Streamlit Tool for Quarterly Audit: FAS 60 & FAS 97 Disclosures",
+            summary: "Built a Streamlit tool to automate the quarterly audit process for FAS 60 and FAS 97 disclosures, improving efficiency and reducing manual data processing.",
+            languages: ["Python"],
+            features: [
+                "Streamlined the audit process by automating data access, calculation, and visualization for FAS 60 and FAS 97 disclosures.",
+                "Implemented dynamic filtering in the user interface, allowing users to filter by year, FAS type, cohort group, or individual cohorts.",
+                "Utilized Python formulas in Pandas and NumPy to curate and manipulate data for cohort-level analysis.",
+                "Created multiple tabs for displaying rollforwards, assumption graphs, and waterfall charts, providing comprehensive insights.",
+                "Automatically generates two types of reports: a PDF report with graphical representations of aggregated results, and an Excel report with pre-formatted results for further analysis and observations.",
+                "Integrated with AWS S3 to securely store and retrieve reports for audit teams.",
+                "Significantly reduced manual data cleaning efforts, allowing the audit team to focus on analysis and insights generation."
+            ],
+            technical: [
+                "Built with Streamlit for the user interface, enabling easy interaction and visualization of data.",
+                "Used Pandas and NumPy for data manipulation, curating cohort-level calculations and rollforward analysis.",
+                "Generated PDF reports and Excel reports using Python libraries to automate the report creation process.",
+                "Stored reports in AWS S3 for secure and scalable data storage, with direct access to audit teams.",
+                "Ensured user-friendly navigation with filtering options for year, FAS type, and cohort groups to tailor data presentation."
             ],
             year: 0,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["Audit", "Life Insurance"],
+            image: null
+        },
+        {
+            id: 3,
+            name: "Pension Liability Valuation Tool",
+            summary: "Developed a VBA-based pension liability valuation tool to automate complex actuarial calculations, enhance data accuracy, and improve user experience. This tool streamlined the generation of year-end financial disclosures and facilitated participant-level liability analysis.",
+            languages: ["VBA"],
+            features: [
+                "Automated the calculation of pension liabilities for multiple plan types, including Unit Accrual, Final Average Salary, and Cash Balance plans.",
+                "Integrated user-friendly VBA forms to manage workflows, such as loading prior year data, running calculations, and generating regulatory attachments.",
+                "Enabled users to identify and address missing inputs directly through dynamic error-checking forms with dropdown selections.",
+                "Streamlined the generation of year-end FASB Disclosures, including customizable options for discount rates, mortality assumptions, and cash flow outputs.",
+                "Provided detailed participant-level liability breakdowns with flexible calculation scenarios and override options.",
+                "Facilitated regulatory reporting by automating the creation of attachments for 5500 filings and other documentation."
+            ],
+            technical: [
+                "Implemented VBA logic for individual participant-level liability calculations, supporting actuarial assumptions like salary scales, lump-sum election percentages, and generational mortality tables.",
+                "Designed an intuitive control panel with options for clearing calculations, toggling worksheet visibility, and running liability projections.",
+                "Built robust error-handling and validation mechanisms, ensuring accurate data inputs and providing real-time feedback to users.",
+                "Automated the loading of prior year data and calculations, reducing manual data entry and minimizing errors.",
+                "Developed a comprehensive 23-page user guide detailing tool functionality, enhancements, and user instructions."
+            ],
+            year: 2023,
             company: "The Benefit Practice",
-            areas: ["Pension"],
+            areas: ["Pension", "Consulting"],
+            image: null
+        },
+        {
+            id: 4,
+            name: "Project Management Tool 'Portal'",
+            summary: "Developed a comprehensive project management tool using VBA and MS Access to automate task tracking, manage client and plan data, and improve communication within the organization. The tool significantly streamlined administrative processes and enhanced data management and accessibility.",
+            languages: ["SQL", "VBA"],
+            features: [
+                "Automated client and plan data management, enabling quick access to critical contact and plan details.",
+                "Streamlined task tracking by associating user-specific tasks with detailed status updates, which were dynamically updated in the system.",
+                "Enabled users to filter and sort tasks based on multiple criteria, allowing for better prioritization and management.",
+                "Integrated mass email generation for data requests, automatically drafting emails in Outlook with the correct recipients (client contacts, financial advisors, internal team members).",
+                "Facilitated communication across teams by providing a centralized platform for managing and tracking plan details, thus eliminating bottlenecks and increasing task transparency.",
+                "Tracked and organized onboarding information for new clients, replacing outdated Excel processes.",
+                "Provided a centralized repository for company links and other frequently referenced resources, improving efficiency."
+            ],
+            technical: [
+                "Designed and implemented a robust user interface using MS Access forms for seamless interaction with complex data sets.",
+                "Leveraged SQL queries to manage and associate client, plan, and task data, ensuring that all relationships between entities were tracked and easily accessible.",
+                "Developed a VBA control panel that allowed users to manage workflows, including running reports, filtering data, and sending mass emails without leaving the application.",
+                "Implemented a validation system that prompted users to fill in required information before running key calculations, enhancing data integrity and preventing errors.",
+                "Built automation for mass email generation and Outlook integration, simplifying communication and reducing the need for manual data entry."
+            ],
+            year: 2023,
+            company: "The Benefit Practice",
+            areas: ["Pension", "Consulting"],
+            image: null
+        },
+        {
+            id: 5,
+            name: "Assumption Inventory",
+            summary: "Developed an MS Access-based database with custom front-end functionality to track and manage metadata related to actuarial assumptions for life insurance models, centralizing key details such as assumption names, locations, and review schedules for improved accessibility and coordination.",
+            languages: ["SQL", "VBA"],
+            features: [
+                "Centralized tracking of metadata related to actuarial assumptions, such as assumption name, ID, summary, last updated date, and file locations.",
+                "Created custom MS Access Forms to provide users with an intuitive interface for managing and editing assumption-related information.",
+                "Implemented SQL queries and tables to efficiently store and retrieve metadata about assumptions, ensuring consistent and accessible data management.",
+                "Enabled users to easily access and update the locations of related documents such as ADDTs and assumption files.",
+                "Developed functionality to track the schedule of upcoming ARC (Assumption Review Committee) meetings, improving planning and coordination for assumption reviews.",
+                "Streamlined the process of managing assumption-related documentation, ensuring all key details are readily available for internal and regulatory purposes."
+            ],
+            technical: [
+                "Designed and developed an MS Access database with SQL queries and tables to store and manage metadata related to actuarial assumptions.",
+                "Built custom MS Access Forms for a user-friendly interface, allowing users to view and edit assumption-related metadata efficiently.",
+                "Used VBA to add dynamic and interactive features to the database, including validation and workflows for updating assumption metadata.",
+                "Implemented a scheduling feature for ARC meetings to streamline communication and ensure timely reviews of assumptions."
+            ],
+            year: 2020,
+            company: "Knights of Columbus",
+            areas: ["Life Insurance"],
+            image: "images/projects/curriculum-mgmt.png"
+        }        
+    ],
+    otherContributions: [
+        {
+            id: 1,
+            name: "Proxy Model Development for Client",
+            summary: "Contributed to the development of a scalable proxy model for projecting income statements, combining actuarial model results with a machine learning approach to estimate future liabilities, improving the model's precision.",
+            languages: ["Python"],
+            year: 0,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["Consulting", "Actuarial", "Machine Learning"],
             image: null
         },
         {
             id: 2,
-            name: "Pension Liability Valution",
-            summary: "In-house pension funding valuation tool built in Excel, utilizing VBA to generate both current and projected pension liabilities on an individual basis for a given year.",
-            languages: ["VBA"],
-            features: [
-                "Project current and future pension liabilities for multiple plan types, including Unit Accrual, Final Average Salary, and Cash Balance plans.",
-                "Generate year-end FASB Disclosures for pension liabilities."
-            ],
-            technical: [
-            ],
+            name: "Recalculation of Client Logistic Regression Model",
+            summary: "Recreated a client's logistic regression model in Python to validate their assumption development process for audit, identifying potential discrepancies and providing insights into model reliability.",
+            languages: ["Python"],
             year: 0,
-            company: "The Benefit Practice",
-            areas: ["Pension"],
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["Audit", "Actuarial", "Consulting"],
             image: null
         },
         {
@@ -145,54 +262,11 @@ const data = {
             name: "Projected Pension Liabilities",
             summary: "Project seriatim-level projected 401-k expenses for hypothetical client retirement plan",
             languages: ["Python"],
-            features: [
-                "Calculate rollforward projections for multiple investment accounts within a hypothetical 401(k) plan."
-            ],
-            technical: [
-
-            ],
             year: 0,
             company: "PriceWaterhouseCoopers, LLC",
             areas: ["Consulting"],
-            image: "images/projects/curriculum-mgmt.png"
-        },
-        {
-            id: 4,
-            name: "VA Lapse Experience Study for Audit",
-            summary: "Generates a VA lapse experience study based on actual client data to assess the reasonability of client lapse assumptions for year-end audits.",
-            languages: ["Python"],
-            features: [
-                "Uses scikit-learn to fit client data to logistic regression, random forest, and neural network models.",
-                "Evaluates and compares models to select the best-performing one based on pre-determined metrics.",
-                "Performs comprehensive data validation and diagnostic checks on client experience data.",
-                "Generates exploratory analysis graphs to visually assess client data quality.",
-                "Compares client data to PwC-produced benchmarks using visualization tools.",
-                "Automates PDF report generation, consolidating graphs and findings into a standardized format.",
-                "Reads and writes client data to AWS S3 storage for secure and scalable access.",
-                "Utilizes Streamlit to present results and allows users to download reports directly from the interface."
-            ],
-            technical: [
-            ],
-            year: 0,
-            company: "PriceWaterhouseCoopers, LLC",
-            areas: ["Audit"],
-            image: "images/projects/curriculum-mgmt.png"
-        },
-        {
-            id: 5,
-            name: "Assumption Inventory",
-            summary: "MS Access-based database with custom front-end functionality to track and manage actuarial assumptions for life insurance models, improving accuracy and accessibility.",
-            languages: ["VBA", "SQL"],
-            features: [
-                "Tracks actuarial assumptions across multiple life insurance models."
-            ],
-            technical: [
-            ],
-            year: 0,
-            company: "Knights of Columbus",
-            areas: ["Life Insurance"],
-            image: "images/projects/curriculum-mgmt.png"
-        },
+            image: null
+        }
     ],
     aboutMe: [
         {

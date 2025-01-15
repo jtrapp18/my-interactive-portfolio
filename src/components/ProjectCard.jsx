@@ -10,7 +10,7 @@ const StyledCard = styled.section`
   height: 500px;
 
   section {
-    margin: 0;
+    // margin: 0;
   }
 
   &.focused {

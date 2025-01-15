@@ -3,7 +3,7 @@ import data from "../data";
 import styled from "styled-components";
 import LanguageFilter from "../hooks/languageFilter";
 import SideBar from "../components/SideBar";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StyledMain, Overlay } from "../MiscStyling";
 import { useWindowWidth } from "../context/WindowWidthProvider";
 
@@ -21,6 +21,18 @@ const RelevantWork = () => {
   const relevantWork = data.relevantWork;
   const [activeProj, setActiveProj] = useState(null);
   const [filters, setFilters, showProjects, selectAll, onSelectAll] = LanguageFilter(relevantWork);
+
+  // Disable scrolling when there's an active project
+  useEffect(() => {
+    if (activeProj !== null) {
+      document.body.style.overflow = "hidden"; // Disable scrolling
+    } else {
+      document.body.style.overflow = "auto"; // Enable scrolling
+    }
+    return () => {
+      document.body.style.overflow = "auto"; // Clean up when component unmounts or activeProj changes
+    };
+  }, [activeProj]);
 
   return (
     <StyledMain isMobile={isMobile}>
