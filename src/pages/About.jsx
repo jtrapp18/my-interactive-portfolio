@@ -16,7 +16,7 @@ const StyledMain = styled.main`
     background-repeat: no-repeat;
     background-position: top;
     scroll-snap-type: y mandatory;
-    overflow-y: scroll;
+    overflow-y: auto;
     height: var(--size-body);
 
     ::-webkit-scrollbar {

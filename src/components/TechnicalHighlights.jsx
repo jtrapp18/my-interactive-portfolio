@@ -1,7 +1,5 @@
-import React, { useRef, useState, useEffect } from 'react';
-import styled from "styled-components";
+import React from 'react';
 import data from "../data";
-import ScrollButtons from '../components/ScrollButtons';
 import Languages from '../components/Languages';
 import { Link } from "react-router-dom";
 
