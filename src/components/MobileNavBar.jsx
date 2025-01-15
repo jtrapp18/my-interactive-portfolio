@@ -36,7 +36,7 @@ const LinkContainer = styled.div`
 
   a {
     // border-top: 1px solid var(--light-green);
-    height: 10vh;
+    height: 16vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,7 +62,7 @@ const LinkContainer = styled.div`
 
 const StyledSocials = styled.div`
   ${StyledMenuItem}
-  height: 10vh;
+  height: 8vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -128,10 +128,11 @@ const MobileNavBar = () => {
   }, [isMenuOpen]);
 
   return (
-    <StyledDiv>
+    <StyledDiv
+      ref={cardRef}
+    >
       <LinkContainer 
         className={isMenuOpen ? "open" : "closed"}
-        ref={cardRef}
       >
         <StyledNavLink
           to="/"

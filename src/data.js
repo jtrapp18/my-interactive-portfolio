@@ -136,7 +136,7 @@ const data = {
         },
         {
             id: 2,
-            name: "Streamlit Tool for Quarterly Audit: FAS 60 & FAS 97 Disclosures",
+            name: "Streamlit App for Quarterly Life Insurance Audit",
             summary: "Built a Streamlit tool to automate the quarterly audit process for FAS 60 and FAS 97 disclosures, improving efficiency and reducing manual data processing.",
             languages: ["Python"],
             features: [

@@ -18,7 +18,7 @@ const StyledMain = styled.main`
     scroll-snap-type: y mandatory;
     overflow-y: auto;
     height: var(--size-body);
-
+    
     ::-webkit-scrollbar {
         width: 0px;
         height: 0px;
@@ -138,7 +138,7 @@ const About = () => {
     
             if (container) {
                 const scrollTop = container.scrollTop;
-    
+
                 const sectionIndex = sectionsRef.current.findIndex((section) => {
                     const { top, bottom } = section.getBoundingClientRect();
     

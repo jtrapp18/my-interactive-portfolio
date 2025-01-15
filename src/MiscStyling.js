@@ -7,8 +7,9 @@ const mobileTheme = {
   cardBackground: '#1E1E1E',
   cardHover: '#2C2C2C',
   hoverText: '#F5F5F5',
-  h1: '#D3D3D3',
-  h2: '#D3D3D3',
+  hoverTextH3: 'var(--light-peach)',
+  h1: '#778899',
+  h2: 'var(--light-peach)',
   h3: '#778899',
   p: '#D3D3D3',
   i: '#FFD700',
@@ -22,6 +23,7 @@ const windowTheme = {
   cardBackground: 'var(--background)',
   cardHover: 'var(--light-gray)',
   hoverText: 'var(--dark-green)',
+  hoverTextH3: 'black',
   h1: 'var(--font-color-1)',
   h2: 'var(--font-color-2)',
   h3: 'var(--font-color-1)',
@@ -89,7 +91,7 @@ const StyledMain = styled.main`
   background: ${(props) => props.theme.background};
 
   .main-content {
-    margin: ${(props) => props.isMobile ? '0' : '20px'};
+    margin: ${(props) => props.isMobile ? '0 0 20px 0' : '20px'};
   }
 
   .page-header {
@@ -211,6 +213,10 @@ const CardHover = css`
 
         h2 {
           text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+        }
+
+        h3 {
+          color: ${(props) => props.theme.hoverTextH3};
         }
 
         * {
