@@ -21,9 +21,14 @@
   --shadow: 0px 4px 8px rgba(0, 0, 0, 0.7);
 }
 
-body {
+#root {
   overflow-x: hidden;
   overflow-y: auto;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+
 }
 
 @font-face {
@@ -70,7 +75,7 @@ h1, h3 {
 }
 
 h1 {
-  font-size: clamp(1.1rem, 3.5vw, 2rem);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
 }
 
 h2 {

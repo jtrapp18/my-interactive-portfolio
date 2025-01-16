@@ -3,17 +3,17 @@ import styled, {css} from "styled-components";
 import { Link } from "react-scroll";
 
 const mobileTheme = {
-  background: '#0A0A0A',
-  cardBackground: '#1E1E1E',
-  cardHover: '#2C2C2C',
+  background: '#0C0C13',
+  cardBackground: '#16161D',
+  cardHover: '#212D40',
   hoverText: '#F5F5F5',
-  hoverTextH3: 'var(--light-peach)',
-  h1: 'var(--light-peach)',
-  h2: 'var(--light-peach)',
-  h3: '#778899',
-  p: '#D3D3D3',
+  hoverTextH3: '#D66853',
+  h1: '#C0C0C0',
+  h2: '#D66853',
+  h3: '#C0C0C0',
+  p: 'white',
   i: '#FFD700',
-  label: '#F0FFDB',
+  label: '#D3D3D3',
   span: '#D3D3D3',
   li: '#D3D3D3'
 }

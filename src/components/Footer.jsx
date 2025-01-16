@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
     align-items: center;
     height: 100vh;
     border-top: 5px solid var(--green);
-    z-index: 1000;
+    z-index: 100;
 
     #footer-background {
         position: absolute;

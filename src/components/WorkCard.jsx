@@ -9,6 +9,14 @@ const StyledCard = styled.section`
 
     height: 400px;
 
+    h2 {
+      font-size: clamp(1.5rem, 3.4vw, 1.8rem);
+    }
+
+    h3 {
+      font-size: clamp(1.2rem, 3vw, 1.2rem);
+    }
+
     section {
       margin: 0;
     }
@@ -19,6 +27,11 @@ const StyledCard = styled.section`
       flex-direction: column;
       justify-content: end;
       display: flex;
+    }
+      
+    .line-break {
+      border-top: 1px solid #E0E1DD;
+      width: 90%;    
     }
 
     .proj-summary {
@@ -106,6 +119,9 @@ function WorkCard({id, name, summary, languages, features,
         <section className="proj-title">
           <h2>{name}</h2>
           <h3>{`For ${company}`}</h3>
+        </section>
+        <section className="line-break">
+          <br />
         </section>
         <section className="proj-summary">
           <p>{summary}</p>

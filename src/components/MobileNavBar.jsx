@@ -5,6 +5,7 @@ import { useState, useRef, useEffect } from "react";
 import Socials from "./Socials";
 import { StyledNavLink, StyledMenuItem } from "../MiscStyling";
 import NavLinks from "./NavLinks";
+import useScrollLock from "../hooks/useScrollLock";
 
 // Styled components
 
@@ -20,6 +21,8 @@ const StyledDiv = styled.div`
 const LinkContainer = styled.div`
   position: absolute;
   top: calc(var(--height-header) + 3px);
+  // scroll-y: none;
+  
   left: 0;
   z-index: 1000;
   width: 100%;
@@ -116,6 +119,8 @@ const MobileNavBar = () => {
     scrollToTop(); // Custom click handler
     setIsMenuOpen(false); // Close menu after navigation
   };
+
+  useScrollLock(isMenuOpen);
 
   useEffect(() => {
     // Add event listener to detect clicks outside

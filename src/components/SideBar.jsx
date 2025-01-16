@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const SidePanelContainer = styled.section`
     position: relative;
     padding: 20px;
-    width: 200px;
+    width: 300px;
     min-width: 5%;
     max-width: 20%;
     display: flex;
