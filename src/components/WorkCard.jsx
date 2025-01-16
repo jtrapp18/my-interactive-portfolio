@@ -31,7 +31,7 @@ const StyledCard = styled.section`
       
     .line-break {
       border-top: 1px solid #E0E1DD;
-      width: 90%;    
+      width: 90%; 
     }
 
     .proj-summary {
@@ -50,6 +50,7 @@ const StyledCard = styled.section`
     }
 
     .close {
+      font-size: clamp(1.5rem, 4vw, 2rem);
       position: absolute;
       right: 10px;
       top: 10px;
@@ -71,11 +72,14 @@ const StyledCard = styled.section`
       }
 
       .proj-summary {
-        height: 10%;
+        height: 12%;
       }
 
       .proj-details {
-        height: 65%;
+        height: 55%;
+        padding: 1%;
+        margin: 2.5%;
+        border: 3px double #C0C0C0;
       }
 
       .language-tags {
@@ -127,7 +131,6 @@ function WorkCard({id, name, summary, languages, features,
           <p>{summary}</p>
         </section>
         <section className="proj-details">
-          <hr></hr>
           <h3>Key Features</h3>
           <ul>
             {features.map(feature=>(
