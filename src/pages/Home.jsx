@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { TypeAnimation } from '../MiscStyling';
+import Loading from './Loading';
 
 const StyledDiv = styled.div`
   display: grid;
@@ -81,6 +82,8 @@ const Home = () => {
 
     return () => clearInterval(intervalId);
   }, []);
+
+  if (!imageLoaded) {return <Loading />}
 
   return (
     <main>
