@@ -104,10 +104,10 @@ const data = {
             repo_be: null
         },
         {
-            id: 3,
+            id: 4,
             name: "J&N Cookies",
             phase: "IV",
-            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.)",
+            summary: "Online cookie store that allows users to view the cookie menu and search and filter cookies. Users can also create and log into accounts using secure authorization, which will allow them to access additional features, such as managing their carts and account information.",
             languages: ["CSS", "React", "Python", "Flask"],
             collaborators: [
             ],
