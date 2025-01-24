@@ -8,7 +8,7 @@ const mobileTheme = {
   cardHover: '#212D40',
   hoverText: '#F5F5F5',
   hoverTextH3: '#D66853',
-  h1: 'white',
+  h1: '#C0C0C0',
   h2: '#D66853',
   h3: '#C0C0C0',
   p: 'white',
