@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledMain = styled.div`
-    height: var(--size-body);
     font-size: 40px;
     color: gray;
 `
