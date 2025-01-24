@@ -107,7 +107,7 @@ const data = {
             id: 4,
             name: "J&N Cookies",
             phase: "IV",
-            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.)",
+            summary: "Online cookie store that allows users to view the cookie menu and search and filter cookies. Users can also create and log into accounts using secure authorization, which will allow them to access additional features, such as managing their carts and account information.",
             languages: ["CSS", "React", "Python", "Flask"],
             collaborators: [
             ],
@@ -115,8 +115,8 @@ const data = {
             ],
             technical: [
             ],
-            image: "images/projects/rental_management_tool.png",
-            gif: "images/projects/rental_management_tool.gif",
+            image: "images/projects/j-n-cookies.png",
+            gif: "images/projects/j-n-cookies.gif",
             website_link: "https://github.com/jtrapp18/j-n-cookies",
             readme: "https://raw.githubusercontent.com/jtrapp18/j-n-cookies/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/j-n-cookies",
