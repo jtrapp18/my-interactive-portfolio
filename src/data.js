@@ -78,7 +78,7 @@ const data = {
             name: "Rental Management Tool",
             phase: "III",
             summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.)",
-            languages: ["Python"],
+            languages: ["Python", "SQL"],
             collaborators: [
             ],
             features: [
@@ -101,6 +101,25 @@ const data = {
             website_link: "https://github.com/jtrapp18/rental_management_tool",
             readme: "https://raw.githubusercontent.com/jtrapp18/rental_management_tool/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/rental_management_tool",
+            repo_be: null
+        },
+        {
+            id: 3,
+            name: "J&N Cookies",
+            phase: "IV",
+            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.)",
+            languages: ["CSS", "React", "Python", "Flask"],
+            collaborators: [
+            ],
+            features: [
+            ],
+            technical: [
+            ],
+            image: "images/projects/j-n-cookies.png",
+            gif: "images/projects/j-n-cookies.gif",
+            website_link: "https://github.com/jtrapp18/j-n-cookies",
+            readme: "https://raw.githubusercontent.com/jtrapp18/j-n-cookies/refs/heads/main/README.md",
+            repo_fe: "https://github.com/jtrapp18/j-n-cookies",
             repo_be: null
         }
     ],
