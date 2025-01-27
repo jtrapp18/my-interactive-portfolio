@@ -117,7 +117,7 @@ const data = {
             ],
             image: "images/projects/j-n-cookies.png",
             gif: "images/projects/j-n-cookies.gif",
-            website_link: "https://github.com/jtrapp18/j-n-cookies",
+            website_link: "https://j-n-cookies-production.up.railway.app",
             readme: "https://raw.githubusercontent.com/jtrapp18/j-n-cookies/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/j-n-cookies",
             repo_be: null
