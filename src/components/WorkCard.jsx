@@ -60,7 +60,7 @@ const StyledCard = styled.section`
       position: fixed;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 10;
+      z-index: 1000;
       padding: 1vh 1vw 1vh 1vw;
 
       top: ${(props) => props.isMobile ? '0' : '5%'};

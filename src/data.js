@@ -22,10 +22,10 @@ const data = {
             ],
             technical: [
             ],
-            image: "images/projects/j-n-cookies.png",
-            gif: "images/projects/j-n-cookies.gif",
+            image: "images/projects/hive-link.png",
+            gif: "images/projects/hive-link.gif",
             website_link: "https://hive-link.up.railway.app",
-            readme: "https://raw.githubusercontent.com/jtrapp18/hive-net/refs/heads/main/README.md",
+            readme: "https://raw.githubusercontent.com/jtrapp18/hive-link/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/hive-link",
             repo_be: null
         },
@@ -329,5 +329,4 @@ const data = {
         }
     ]
 }
-
 export default data;
