@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const StyledMain = styled.div`
     font-size: 40px;
     color: gray;
+    height: var(--size-body);
 `
 
 const Loading = () => {
