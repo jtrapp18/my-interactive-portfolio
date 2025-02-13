@@ -76,7 +76,7 @@ const StyledCard = styled.section`
       }
 
       .proj-details {
-        height: 55%;
+        height: 45%;
         padding: 1%;
         margin: 2.5%;
         border: 3px double #C0C0C0;
