@@ -20,8 +20,9 @@ const StyledDiv = styled.div`
             width: 100%;
         }
         
-        .logo:hover {
+        img.logo:hover {
             cursor: pointer;
+            zoom: 1.1;
         }
     }
 `

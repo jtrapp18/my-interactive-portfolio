@@ -303,7 +303,7 @@ const data = {
         {
             id: 3,
             label: "what else..",
-            images: ["images/me_coding.jpg", "images/selfie2.jpg"],
+            images: ["images/selfie2.jpg"],
             tagline: "Cat mom, outdoor enthusiast, amatuer artist",
             details: `When I'm not coding, you might find me doing arts and crafts, snowmobiling, camping, or just hanging out with my cats and watching stand-up comedy.`
         }

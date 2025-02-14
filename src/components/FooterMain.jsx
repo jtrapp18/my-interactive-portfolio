@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import data from "../data"
 import Socials from './Socials';
 
 const StyledSection = styled.section`
@@ -11,22 +10,8 @@ const StyledSection = styled.section`
         text-align: center;
     }
 
-    span, #socials-container {
-    justify-content: center;    
-    }
-
-    #socials-container {
-        display: flex;
-    }
-    
-    .logo {
-        width: 40px;
-        margin: 20px;
-    }
-    
-    .logo:hover {
-        width: 50px;
-        cursor: pointer;
+    span {
+        justify-content: center;    
     }
 
     span {
@@ -47,8 +32,6 @@ const StyledSection = styled.section`
 `
 
 const FooterMain = () => {
-    const socials = data.socials;
-
     return (
         <StyledSection>
             <Socials />

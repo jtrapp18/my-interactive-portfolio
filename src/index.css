@@ -108,12 +108,6 @@ span {
   }
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .logo:hover {
-    animation: logo-spin infinite 10s linear;
-  }
-}
-
 @keyframes typing {
   from {
     width: 0;

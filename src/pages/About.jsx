@@ -35,11 +35,11 @@ const StyledArticle = styled.article`
     display: flex;
 
     &.active h2 {
-        animation: pop 2s;
+        animation: pop 3s;
     }
 
     &.active .about-info {
-        animation: fade 2.1s;
+        animation: fade 3s;
     }
 
     h2 {

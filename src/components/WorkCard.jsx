@@ -7,7 +7,8 @@ import { useWindowWidth } from "../context/WindowWidthProvider";
 const StyledCard = styled.section`
     ${CardStyling}
 
-    height: 400px;
+    height: ${(props) => props.isMobile ? '500px' : '400px'};
+    max-height: 85vh;
 
     h2 {
       font-size: clamp(1.5rem, 3.4vw, 1.8rem);
@@ -61,29 +62,30 @@ const StyledCard = styled.section`
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
-      padding: 1vh 1vw 1vh 1vw;
+      padding: 2vh 1vw 2vh 1vw;
 
-      top: ${(props) => props.isMobile ? '0' : '5%'};
+      top: 5vh;
       width: ${(props) => props.isMobile ? '96vw' : '80%'};
-      height: ${(props) => props.isMobile ? '96vh' : '90%'};  
-      
+      height: 90%;
+      max-height: 85vh;
+
       .proj-title {
-        height: 10%;
+        height: auto;
       }
 
       .proj-summary {
-        height: 12%;
+        height: auto;
       }
 
       .proj-details {
-        height: 45%;
+        height: auto;
         padding: 1%;
         margin: 2.5%;
         border: 3px double #C0C0C0;
       }
 
       .language-tags {
-        height: 10%;
+        height: auto;
       }
     }
   `

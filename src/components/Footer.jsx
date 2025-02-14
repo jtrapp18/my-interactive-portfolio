@@ -25,6 +25,7 @@ const StyledFooter = styled.footer`
 
 const StyledDivider = styled.img`
     width: 200px;
+    max-width: 90vw;
 `
 
 const Footer = () => {
