@@ -187,7 +187,7 @@ const data = {
         },
         {
             id: 3,
-            name: "Pension Liability Valuation Tool",
+            name: "Pension Liability Valuation",
             summary: "Developed a VBA-based pension liability valuation tool to automate complex actuarial calculations, enhance data accuracy, and improve user experience. This tool streamlined the generation of year-end financial disclosures and facilitated participant-level liability analysis.",
             languages: ["VBA"],
             features: [
