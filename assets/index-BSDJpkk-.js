@@ -354,7 +354,7 @@ Error generating stack: `+m.message+`
             
             At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
             
-            From there, I decided to enroll in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`},{id:3,label:"what else..",images:["images/me_coding.jpg","images/selfie2.jpg"],tagline:"Cat mom, outdoor enthusiast, amatuer artist",details:"When I'm not coding, you might find me doing arts and crafts, snowmobiling, camping, or just hanging out with my cats and watching stand-up comedy."}],socials:[{id:1,name:"LinkedIn",image:"LI-Black.png",link:"https://www.linkedin.com/in/jacqueline-trapp-065a936b"},{id:2,name:"Github",image:"github-mark.png",link:"https://github.com/jtrapp18"},{id:3,name:"Hashnode",image:"hashnode_black.png",link:"https://hashnode.com/672903e59b3903ff579fbdcd/dashboard"}]},Ww=Ye.div`
+            From there, I decided to enroll in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`},{id:3,label:"what else..",images:["images/selfie2.jpg"],tagline:"Cat mom, outdoor enthusiast, amatuer artist",details:"When I'm not coding, you might find me doing arts and crafts, snowmobiling, camping, or just hanging out with my cats and watching stand-up comedy."}],socials:[{id:1,name:"LinkedIn",image:"LI-Black.png",link:"https://www.linkedin.com/in/jacqueline-trapp-065a936b"},{id:2,name:"Github",image:"github-mark.png",link:"https://github.com/jtrapp18"},{id:3,name:"Hashnode",image:"hashnode_black.png",link:"https://hashnode.com/672903e59b3903ff579fbdcd/dashboard"}]},Ww=Ye.div`
     display: flex;
     height: 100%;
     margin: 0;
@@ -372,8 +372,9 @@ Error generating stack: `+m.message+`
             width: 100%;
         }
         
-        .logo:hover {
+        img.logo:hover {
             cursor: pointer;
+            zoom: 1.1;
         }
     }
 `,cg=()=>{const t=Yi.socials;return O.jsx(Ww,{children:t.map(r=>O.jsx("a",{href:r.link,target:"_blank",title:`Click to go to my ${r.name} page`,children:O.jsx("img",{className:"logo",src:`/my-interactive-portfolio/images/logos/${r.image}`,alt:r.name})},r.id))})},qw=t=>{ee.useEffect(()=>{const r=document.documentElement;return t?r.classList.add("no-scroll"):r.classList.remove("no-scroll"),()=>{r.classList.remove("no-scroll")}},[t])},Yw=Ye.div`
@@ -473,22 +474,8 @@ Error generating stack: `+m.message+`
         text-align: center;
     }
 
-    span, #socials-container {
-    justify-content: center;    
-    }
-
-    #socials-container {
-        display: flex;
-    }
-    
-    .logo {
-        width: 40px;
-        margin: 20px;
-    }
-    
-    .logo:hover {
-        width: 50px;
-        cursor: pointer;
+    span {
+        justify-content: center;    
     }
 
     span {
@@ -526,6 +513,7 @@ Error generating stack: `+m.message+`
     }
 `,px=Ye.img`
     width: 200px;
+    max-width: 90vw;
 `,hx=()=>O.jsxs(dx,{id:"footer",children:[O.jsx("img",{id:"footer-background",src:"/my-interactive-portfolio/images/footer_background.jpeg",alt:"wood pattern"}),O.jsx("div",{children:O.jsx(px,{src:"/my-interactive-portfolio/images/dividers/split_leaf_divider.png"})}),O.jsx(ux,{}),O.jsx(fx,{})]}),fg=ee.createContext(),mx=({children:t})=>{const[r,i]=ee.useState(window.innerWidth<=768);return ee.useEffect(()=>{const l=()=>i(window.innerWidth<=768);return window.addEventListener("resize",l),()=>window.removeEventListener("resize",l)},[]),O.jsx(fg.Provider,{value:r,children:t})},Jo=()=>ee.useContext(fg);Ye.p`
   font-size: 75px;
   font-weight: bold;
@@ -667,11 +655,11 @@ Error generating stack: `+m.message+`
     display: flex;
 
     &.active h2 {
-        animation: pop 2s;
+        animation: pop 3s;
     }
 
     &.active .about-info {
-        animation: fade 2.1s;
+        animation: fade 3s;
     }
 
     h2 {
@@ -895,7 +883,8 @@ Error generating stack: `+m.message+`
 `,o_=()=>{const t=Yi.projects,{id:r}=V0(),i=t.find(l=>l.id===parseInt(r));return O.jsxs(i_,{children:[O.jsxs("article",{className:"page-header",children:[O.jsx(r_,{to:"/projects",children:"Back"}),O.jsx("br",{}),O.jsx("h2",{children:`Featured Project: ${i.name}`}),O.jsx("p",{children:`This project was developed for the end of Phase ${i.phase} assignment for the FlatIron School Software Engineering Bootcamp`})]}),O.jsxs("article",{className:"repo-links",children:[O.jsx("span",{children:O.jsx("a",{title:i.repo_fe,href:i.repo_fe,target:"_blank",children:"Github Repo"})}),i.website_link&&O.jsxs("span",{children:[" | ",O.jsx("a",{title:i.website_link,href:i.website_link,target:"_blank",children:"Deployed Project"})]})]}),O.jsx("br",{}),O.jsx(n_,{readMeLink:i.readme})]})},l_=Ye.section`
     ${ag}
 
-    height: 400px;
+    height: ${t=>t.isMobile?"500px":"400px"};
+    max-height: 85vh;
 
     h2 {
       font-size: clamp(1.5rem, 3.4vw, 1.8rem);
@@ -949,29 +938,30 @@ Error generating stack: `+m.message+`
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
-      padding: 1vh 1vw 1vh 1vw;
+      padding: 2vh 1vw 2vh 1vw;
 
-      top: ${t=>t.isMobile?"0":"5%"};
+      top: 5vh;
       width: ${t=>t.isMobile?"96vw":"80%"};
-      height: ${t=>t.isMobile?"96vh":"90%"};  
-      
+      height: 90%;
+      max-height: 85vh;
+
       .proj-title {
-        height: 10%;
+        height: auto;
       }
 
       .proj-summary {
-        height: 12%;
+        height: auto;
       }
 
       .proj-details {
-        height: 45%;
+        height: auto;
         padding: 1%;
         margin: 2.5%;
         border: 3px double #C0C0C0;
       }
 
       .language-tags {
-        height: 10%;
+        height: auto;
       }
     }
   `;function a_({id:t,name:r,summary:i,languages:l,features:a,technical:u,company:c,areas:f,image:p,activeProj:h,setActiveProj:g}){const y=ee.useRef(null),w=Jo(),v=S=>{y.current&&!y.current.contains(S.target)&&g(null)};ee.useEffect(()=>(document.addEventListener("mousedown",v),()=>{document.removeEventListener("mousedown",v)}),[]);const E=h==t?"expanded":"";return O.jsxs(l_,{isMobile:w,ref:y,className:E,onClick:()=>g(t),children:[E==="expanded"&&O.jsx("span",{className:"close",onClick:()=>g(null),children:"✖"}),O.jsxs("section",{className:"proj-title",children:[O.jsx("h2",{children:r}),O.jsx("h3",{children:`For ${c}`})]}),O.jsx("section",{className:"line-break",children:O.jsx("br",{})}),O.jsx("section",{className:"proj-summary",children:O.jsx("p",{children:i})}),O.jsxs("section",{className:"proj-details",children:[O.jsx("h3",{children:"Key Features"}),O.jsx("ul",{children:a.map(S=>O.jsx("li",{children:S},S))}),O.jsx("hr",{}),O.jsx("h3",{children:"Technical Highlights"}),O.jsx("ul",{children:u.map(S=>O.jsx("li",{children:S},S))})]}),O.jsxs("section",{className:"language-tags",children:[O.jsx("hr",{}),O.jsx(xc,{tags:f,tagType:"Areas of Practice"}),O.jsx(xc,{tags:l,tagType:"Languages Used"})]})]})}const s_=Ye.article`
