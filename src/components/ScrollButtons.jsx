@@ -4,35 +4,40 @@ const StyleScroll = styled.div`
     
     position: fixed;
     cursor: pointer;
-    box-shadow: var(--shadow);
+    right: 0;
     display: flex;
-    background-color: rgba(246, 196, 146, 0.7);
-    overflow: hidden;
-    border-radius: 20px;
-    justify-content: space-between;
-    height: 30px;
-    transform: translateX(-50%);
-    width: 210px;
-    max-width: 75%;
-    top: calc(var(--height-header) + 5px);
-    left: 50%;
+    flex-direction: column;
+    left: max(70%, 550px);
+    transform: translateX(50%);
 
     button {
-        color: gray;
-        background: None;
-        border: none;
+        background: white;
+        border-radius: 50%;
+        border: 2px solid var(--dark-green);
+        color: transparent;
         cursor: pointer;
-        font-size: 16px;
-        width: 100%;
-        padding: 0px 20px 0px 20px;
+        transition: all 0.3s ease;
+        margin: 20px 0;
+        width: 15px;
+        height: 15px;
+        padding: 0;
+        
+        // box-shadow: 
+        //     0 0 8px var(--dark-green),
+        //     0 0 20px var(--dark-green),
+        //     0 0 30px rgba(0, 128, 0, 0.6);
     }
 
     button.active-section {
-        color: var(--dark-green);
+        background: var(--dark-green);
+        width: 20px;
+        height: 20px;
     }
 
     button:hover {
-        color: var(--green);
+        background: var(--green);
+        width: 15px;
+        height: 15px;
     }
 `;
 

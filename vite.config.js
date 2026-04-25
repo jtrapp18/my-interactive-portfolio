@@ -3,9 +3,10 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/my-interactive-portfolio/' : '/',
+  // Change this line to just '/'
+  base: '/', 
   plugins: [react()],
   server: {
-    port: 3000, // Change this to whatever port you want
+    port: 3000,
   },
 })

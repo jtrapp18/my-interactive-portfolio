@@ -9,19 +9,34 @@ const data = {
         'HTML',
         'VBA'
     ],
+// PAGE INTRO TEXT (update this in your JSX/component):
+// "A mix of personal projects and production work — built across bootcamp, freelance, and professional AI engineering."
     projects: [
+        {
+            id: 6,
+            name: "Film Review Platform",
+            phase: "",
+            summary: "A live, full-stack content management platform built for a real user. Features TMDB API integration, Word document rendering, user engagement tools, advanced search, and SEO optimization — actively running in production at jamestrappreviews.com.",
+            languages: ["TypeScript", "React", "Python", "Flask", "SQL"],
+            collaborators: [],
+            features: [],
+            technical: [],
+            image: "images/projects/movie-reviews.png",
+            gif: "images/projects/movie-reviews.gif",
+            website_link: "https://jamestrappreviews.com",
+            readme: "https://raw.githubusercontent.com/jtrapp18/movie-reviews/refs/heads/main/README.md",
+            repo_fe: "https://github.com/jtrapp18/movie-reviews",
+            repo_be: null
+        },
         {
             id: 5,
             name: "Hive Link",
             phase: "V",
-            summary: "A platform for beekeepers to track hive inspections, analyze honey production, predict hive health, and connect with other beekeepers through maps, forums, and events.",
-            languages: ["CSS", "React", "Python", "Flask", "SQL"],
-            collaborators: [
-            ],
-            features: [
-            ],
-            technical: [
-            ],
+            summary: "Full-stack platform for beekeepers to track hive inspections, predict honey production with ML, and connect with other beekeepers through maps, forums, and events.",
+            languages: ["React", "Python", "Flask", "SQL", "CSS"],
+            collaborators: [],
+            features: [],
+            technical: [],
             image: "images/projects/hive-link.png",
             gif: "images/projects/hive-link.gif",
             website_link: "https://hive-link.up.railway.app",
@@ -32,26 +47,12 @@ const data = {
         {
             id: 3,
             name: "Rental Management Tool",
-            phase: "III",
-            summary: "Python-based command-line app designed to manage data pertaining to a rental property business (e.g. tenants, expenses, payments, and units.)",
+            phase: "II",
+            summary: "Python CLI app for managing a rental property business. Built a custom node tree data structure from scratch for multi-level menu navigation, with full CRUD, automated financial reporting, and PDF and CSV exports.",
             languages: ["Python"],
-            collaborators: [
-            ],
-            features: [
-                "Add, view, update, and delete rental units, tenants, expenses, and payment records.",
-                "Automatically generates and prints receipts for payments linked to specific tenants.",
-                "Provides a monthly rollforward showing amounts due for each tenant, including a full payment history.",
-                "Generates and prints a PDF income report summarizing both aggregate results and individual unit performance for a specified year.",
-                "Implements a tree structure using Node instances to provide dynamic, multi-level menu navigation with parent-child relationships.",
-                "Each Node can trigger user-defined procedures, allowing for dynamic operations like filtering tenants or viewing payment details.",
-                "Built with MenuTree and Node classes, enabling an expandable, user-friendly navigation structure.",
-                "A command-line interface enhanced with rich text formatting and custom ASCII art for improved user experience.",
-                "Easily extend the menu system to support future features and operations like tenant or payment management.",
-                "Manages database interactions for creating, reading, updating, and deleting records, with SQL (SQLite or chosen database).",
-                "Ensures that only valid data is entered into the system with custom validation functions for key attributes."
-            ],
-            technical: [
-            ],
+            collaborators: [],
+            features: [],
+            technical: [],
             image: "images/projects/rental_management_tool.png",
             gif: "images/projects/rental_management_tool.gif",
             website_link: "https://github.com/jtrapp18/rental_management_tool",
@@ -60,30 +61,11 @@ const data = {
             repo_be: null
         },
         {
-            id: 4,
-            name: "J&N Cookies",
-            phase: "IV",
-            summary: "Online cookie store where users can browse, search for, and filter cookies. Registered users can mangage their accounts, carts, and past orders.",
-            languages: ["CSS", "React", "Python", "Flask", "SQL"],
-            collaborators: [
-            ],
-            features: [
-            ],
-            technical: [
-            ],
-            image: "images/projects/j-n-cookies.png",
-            gif: "images/projects/j-n-cookies.gif",
-            website_link: "https://j-n-cookies-production.up.railway.app",
-            readme: "https://raw.githubusercontent.com/jtrapp18/j-n-cookies/refs/heads/main/README.md",
-            repo_fe: "https://github.com/jtrapp18/j-n-cookies",
-            repo_be: null
-        },
-        {
             id: 2,
             name: "Wandr Personal Travel Journal",
-            phase: "II",
-            summary: "React-based application designed for documenting travels, creating itineraries, leaving reviews, and tracking visited destinations.",
-            languages: ["CSS", "React"],
+            phase: "III",
+            summary: "React app for documenting travels, planning trips, and tracking destinations — with AccuWeather API integration for live forecasts and a collaborative group build.",
+            languages: ["React", "JavaScript", "SQL", "CSS"],
             collaborators: [
                 {
                     id: 1,
@@ -91,16 +73,8 @@ const data = {
                     link: "https://github.com/kelseyroche"
                 }
             ],
-            features: [
-                "Login and logout functionality.",
-                "Plan trips and save itineraries for destinations.",
-                "Add reviews with photos to share your travel experiences.",
-                "Locate trips using search and filter functionality.",
-                "Utilizes AcuWeather API to view weather forecast for upcoming trips.",
-                "Saves data to database stored in back-end API, hosted on Railway."
-            ],
-            technical: [
-            ],
+            features: [],
+            technical: [],
             image: "images/projects/wandr-personal-travel-journal.png",
             gif: "images/projects/wandr-personal-travel-journal.gif",
             website_link: "https://jtrapp18.github.io/wandr-personal-travel-journal/",
@@ -109,11 +83,27 @@ const data = {
             repo_be: "https://github.com/jtrapp18/wandr-personal-travel-journal-be"
         },
         {
+            id: 4,
+            name: "J&N Cookies",
+            phase: "IV",
+            summary: "Online cookie store where users can browse, search, and filter products. Registered users can manage accounts, carts, and order history.",
+            languages: ["React", "Python", "Flask", "SQL", "CSS"],
+            collaborators: [],
+            features: [],
+            technical: [],
+            image: "images/projects/j-n-cookies.png",
+            gif: "images/projects/j-n-cookies.gif",
+            website_link: "https://j-n-cookies-production.up.railway.app",
+            readme: "https://raw.githubusercontent.com/jtrapp18/j-n-cookies/refs/heads/main/README.md",
+            repo_fe: "https://github.com/jtrapp18/j-n-cookies",
+            repo_be: null
+        },
+        {
             id: 1,
             name: "Curriculum Management Dashboard",
             phase: "I",
-            summary: "Single-page vanilla Javascript app designed to simplify the management of English study curriculums. Teachers can track assignments and grades, while curating their book lists.",
-            languages: ["CSS", "HTML", "JavaScript"],
+            summary: "Vanilla JavaScript single-page app for managing English study curriculums. Teachers track assignments and grades while browsing books via OpenLibrary API — built with pure DOM manipulation, no frameworks.",
+            languages: ["JavaScript", "HTML", "CSS"],
             collaborators: [
                 {
                     id: 1,
@@ -121,129 +111,137 @@ const data = {
                     link: "https://github.com/klaftech"
                 }
             ],
-            features: [
-                "Access & search database of all published books to add to curriculum.",
-                "Allows easy management of active curriculum and assignments.",
-                "Create and edit assignments for each book.",
-                "Track and analyze student's grades and progress across entire class.",
-                "Integrated with OpenLibrary API to load, search and filter published books and retrieve cover images.",
-                "Connects to local database to store and retrieve curriculum, assignments, students and grades through an API hosted on Railway.",
-                "Listens for user events and updates the DOM in response.",
-                "Allows simple drag and drop adding of books to the curriculum.",
-                "Features highly interactive forms for easy data manipulation."
-            ],
-            technical: [
-            ],
+            features: [],
+            technical: [],
             image: "images/projects/curriculum-mgmt.png",
             gif: "images/projects/curriculum-mgmt.gif",
             website_link: "https://jtrapp18.github.io/english-study-curriculum-mgmt/",
             readme: "https://raw.githubusercontent.com/jtrapp18/english-study-curriculum-mgmt/refs/heads/main/README.md",
             repo_fe: "https://github.com/jtrapp18/english-study-curriculum-mgmt",
             repo_be: "https://github.com/jtrapp18/english-study-curriculum-mgmt-be"
-        },
+        }
     ],
     relevantWork: [
         {
-            id: 1,
-            name: "VA Lapse Experience Study for Audit",
-            summary: "Led a team to develop an automated system for generating and analyzing VA lapse experience studies, aimed at assessing client lapse assumptions for year-end audits. The system streamlines data validation, model selection, and reporting, improving audit efficiency and accuracy.",
-            languages: ["Python"],
+            id: 0,
+            name: "Agentic Real Estate Appraisal Review Platform",
+            summary: "Co-led engineering of a production multi-agent AI system for document extraction, assumption benchmarking, and automated deliverable generation — built for an internal PwC team reviewing real estate appraisals. Delivered to UAT in 6 months with a 3-person team, reducing case turnaround from ~3 days to same-day processing.",
+            languages: ["Python", "TypeScript", "React"],
             features: [
-                "Automates data validation and standardization across multiple audit clients.",
-                "Selects the best predictive model based on AUC test metrics.",
-                "Generates exploratory graphs and comparisons to PwC benchmarks.",
-                "Stores reports and visualizations in AWS S3 for auditor access.",
-                "Provides a Streamlit interface for auditors to review and download reports."
+                "Two Human-in-the-Loop (HIL) checkpoints: first for reviewer validation of extracted general property info, second for review of extracted assumption values and benchmark selections — with the ability to add benchmarks and regenerate commentary before finalizing.",
+                "Tiered document extraction pipeline: vision LLM extracts and classifies document pages, followed by a custom extraction agent that uses deterministic rules for simple fields and targeted LLM tool calls with audit wrappers for fields requiring calculation.",
+                "Assumption benchmarking via a DAG for deterministic filtering (state, property type) with LLM fallback for fuzzier attribute matching — pulling relevant benchmarks from a data source and surfacing all applicable options per property.",
+                "LLM-generated commentary for the final client memo, configured via YAML to control tone, structure, and examples — users can review and regenerate commentary after adjusting benchmarks.",
+                "Modular LangGraph subgraphs with parallelization for efficient multi-step workflow execution.",
+                "Automated Excel deliverable generation via pre-built templates populated directly from pipeline output — client-ready with no manual formatting.",
+                "Automated PDF report generation for final memo delivery.",
+                "Interactive node-level visualization allowing reviewers to inspect individual LangGraph node outputs for debugging and transparency.",
+                "Streamlit monitoring tools for workflow observability and real-time status tracking.",
+                "Response caching to reduce LLM API costs and improve performance."
             ],
             technical: [
-                "Python (pandas, scikit-learn, Streamlit)",
-                "AWS S3 for report storage",
-                "Logistic regression, random forest, and neural networks for modeling"
+                "LangGraph with modular subgraphs, parallelization, and Human-in-the-Loop interrupts.",
+                "LangChain and LangSmith for orchestration, tracing, and structured metadata across parallel workflows.",
+                "Pydantic structured outputs enforced across all LLM calls for consistency and downstream reliability.",
+                "Vision LLM for document page extraction feeding into a custom document classifier.",
+                "DAG-based deterministic benchmark lookup with LLM fallback for attribute-level filtering.",
+                "YAML config + baseline prompt template architecture with dynamic placeholders for maintainable prompt management.",
+                "React + TypeScript frontend with interactive node visualization.",
+                "PostgreSQL for structured data storage.",
+                "Python for pipeline logic, caching, and automated Excel/PDF generation.",
+                "AWS for cloud infrastructure and storage."
+            ],
+            year: 2026,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["AI Engineering", "Agentic AI", "Real Estate"],
+            image: null
+        },
+        {
+            id: 1,
+            name: "VA Lapse Experience Study for Audit",
+            summary: "Led a team to develop an automated system for generating and analyzing VA lapse experience studies across multiple audit clients simultaneously, assessing lapse assumptions for year-end audits. Streamlined data validation, model selection, and reporting — improving audit efficiency and accuracy at scale.",
+            languages: ["Python"],
+            features: [
+                "Automated data validation and standardization across multiple audit clients in parallel.",
+                "Automated model selection based on AUC test metrics across logistic regression, random forest, and neural network candidates.",
+                "Generates exploratory graphs and benchmark comparisons against PwC standards.",
+                "Stores reports and visualizations in AWS S3 for auditor access.",
+                "Streamlit interface for auditors to interactively review, filter, and download reports."
+            ],
+            technical: [
+                "Python (pandas, scikit-learn, Streamlit) for modeling and UI.",
+                "AWS S3 for report and visualization storage.",
+                "Automated model selection pipeline comparing logistic regression, random forest, and neural networks on AUC metrics."
             ],
             year: 2023,
             company: "PriceWaterhouseCoopers, LLC",
             areas: ["Audit", "Life Insurance"],
-            image: "images/projects/curriculum-mgmt.png"
+            image: null
         },
         {
             id: 2,
             name: "Quarterly Audit App",
-            summary: "Built a Streamlit tool to automate the quarterly life insurance audit process for FAS 60 and FAS 97 disclosures, improving efficiency and reducing manual data processing.",
+            summary: "Built a Streamlit application to automate the quarterly life insurance audit process for FAS 60 and FAS 97 disclosures, eliminating manual data processing and generating client-ready reports directly from the tool.",
             languages: ["Python"],
             features: [
-                "Automates data access, calculations, and visualizations for FAS disclosures.",
-                "Provides dynamic filtering by year, FAS type, and cohort groups.",
-                "Generates PDF and Excel reports, stored in AWS S3 for audit teams to access through the UI."
+                "Automates data access, calculations, and visualizations for FAS 60 and FAS 97 disclosures.",
+                "Dynamic filtering by year, FAS type, and cohort groups for flexible analysis.",
+                "Generates PDF and Excel reports stored in AWS S3, accessible directly through the Streamlit UI.",
+                "Reduced manual effort in a recurring quarterly process across multiple audit cycles."
             ],
             technical: [
-                "Python (pandas, numpy, Streamlit)",
-                "AWS S3 for file storage",
-                "PDF and Excel report generation"
+                "Python (pandas, numpy, Streamlit) for data processing and UI.",
+                "AWS S3 for file storage and retrieval.",
+                "Automated PDF and Excel report generation."
             ],
-            year: 0,
+            year: 2024,
             company: "PriceWaterhouseCoopers, LLC",
             areas: ["Audit", "Life Insurance"],
             image: null
         },
         {
-            id: 3,
-            name: "Pension Liability Valuation",
-            summary: "Developed a VBA-based pension liability valuation tool to automate complex actuarial calculations, enhance data accuracy, and improve user experience. This tool streamlined the generation of year-end financial disclosures and facilitated participant-level liability analysis.",
-            languages: ["VBA"],
+            id: 7,
+            name: "RAG Pipeline Evaluation",
+            summary: "Contributed to the evaluation of a client RAG pipeline, assessing chunking strategies, embedding quality, and retrieval accuracy. Built a Power BI dashboard to track completeness and accuracy metrics across evaluation dimensions — bridging AI engineering and data visualization.",
+            languages: ["Python"],
             features: [
-                "Automates pension liability calculations for multiple plan types.",
-                "Uses VBA forms for data input, validation, and workflow management.",
-                "Generates year-end disclosure liabilities."
+                "Evaluated RAG pipeline performance across chunking strategy, embedding quality, and retrieval accuracy dimensions.",
+                "Assessed completeness and faithfulness of retrieved context against ground truth.",
+                "Built Power BI dashboard to visualize evaluation metrics and surface areas for improvement.",
+                "Contributed to iterative pipeline refinement based on evaluation findings."
             ],
             technical: [
-                "VBA (Excel macros and forms)",
-                "Automated pension liability calculations",
-                "Data validation and workflow management"
+                "Power BI for evaluation metric visualization and reporting.",
+                "RAG pipeline assessment covering chunking, embedding models, and retrieval accuracy.",
+                "Python for data processing and metric computation."
             ],
-            year: 2023,
-            company: "The Benefit Practice",
-            areas: ["Pension", "Consulting"],
+            year: 2024,
+            company: "PriceWaterhouseCoopers, LLC",
+            areas: ["AI Engineering", "Consulting"],
             image: null
         },
         {
-            id: 4,
-            name: "Project Management Tool 'Portal'",
-            summary: "Developed a comprehensive project management tool using VBA and MS Access to automate task tracking, manage client and plan data, and improve communication within the organization. The tool significantly streamlined administrative processes and enhanced data management and accessibility.",
-            languages: ["SQL", "VBA"],
+            id: 8,
+            name: "Actuarial Process Automation (2015–2021)",
+            summary: "Built a series of internal automation tools across pension consulting and life insurance roles, replacing manual Excel-based workflows with structured database applications, automated reporting pipelines, and custom user interfaces — before modern stacks made this easy.",
+            languages: ["VBA", "SQL"],
             features: [
-                "Automates client and task tracking with SQL-backed data storage.",
-                "Integrates mass email generation via Outlook for client communication.",
-                "Provides a centralized repository for plan details and company resources."
+                "Pension liability valuation tool automating complex actuarial calculations and year-end financial disclosures across multiple plan types.",
+                "Company-wide project management database with custom UI tracking clients, retirement plans, tasks, and doer/reviewer/sign-off roles — including personal dashboards showing each user's outstanding work.",
+                "Mass email automation via Outlook integration, replacing a manual one-by-one communication workflow.",
+                "Actuarial assumption inventory database centralizing metadata, review schedules, and model locations across life insurance products.",
+                "All tools built with data validation, workflow management, and reporting capabilities."
             ],
             technical: [
-                "SQL (MS Access database)",
-                "VBA (for automation and Outlook email integration)"
+                "VBA (Excel macros, forms, and Outlook automation).",
+                "SQL via MS Access for structured data storage and querying.",
+                "Custom form-based UIs built entirely in VBA without modern frontend frameworks."
             ],
-            year: 2023,
-            company: "The Benefit Practice",
-            areas: ["Pension", "Consulting"],
+            year: 2021,
+            company: "The Benefit Practice & Knights of Columbus",
+            areas: ["Pension", "Life Insurance", "Consulting"],
             image: null
-        },
-        {
-            id: 5,
-            name: "Assumption Inventory",
-            summary: "Developed an MS Access-based database with custom front-end functionality to track and manage metadata related to actuarial assumptions for life insurance models, centralizing key details such as assumption names, locations, and review schedules for improved accessibility and coordination.",
-            languages: ["SQL", "VBA"],
-            features: [
-                "Centralizes actuarial assumption metadata for easy tracking and updates.",
-                "Uses MS Access forms and SQL queries for efficient data management.",
-                "Includes a scheduling feature for assumption review meetings."
-            ],
-            technical: [
-                "SQL (MS Access queries)",
-                "VBA (form-based UI)",
-                "Automated scheduling and reporting"
-            ],
-            year: 2020,
-            company: "Knights of Columbus",
-            areas: ["Life Insurance"],
-            image: "images/projects/curriculum-mgmt.png"
-        }        
+        }
     ],
     otherContributions: [
         {
@@ -277,36 +275,63 @@ const data = {
             image: null
         }
     ],
+// Update the socials array too — remove Hashnode
+// Update the languages array at the top — add TypeScript
     aboutMe: [
         {
             id: 1,
             label: "about",
             images: ["images/me_coding.jpg"],
-            tagline: "I'm a life insurance actuary who loves to code.",
-            details: `I have worked as an actuary for 10 years, and in every role, I’ve made it my mission to spot inefficiencies and develop automated solutions to streamline processes.
-            
-            I aim to create tools that eliminate tedious, manual tasks. That way, experts can focus on what really matters—analyzing data, uncovering insights, and making informed decisions.`
+            tagline: "actuary turned software engineer",
+            details: `I'm an actuary who moved into software engineering and AI application development. I've always been drawn to building the tools than running them manually — so eventually I moved to software engineering.
+
+    I am an FSA and have spent the last few years at PwC building production AI systems in financial services.`
         },
         {
             id: 2,
             label: "background",
             images: [],
-            tagline: "Actuary, auditor, consultant, coder",
-            details: `Over the years, I’ve worked in pension consulting, life insurance, auditing, and consulting. 
-            
-            During my first job, I worked extensively in Excel and frequently had to tackle repetitive tasks. To streamline my work, I started experimenting with VBA, which quickly sparked my passion for coding. From that point, I sought to incorporate programming into every project where it could be useful.
-            
-            At work, the majority of my programming experience has involved VBA and Python. However, I've also worked on front-end design in Microsoft Access, as well as projects using Python Streamlit and Power BI.
-            
-            From there, I decided to enroll in a Software Engineering bootcamp at FlatIron School, where I've learned to build applications using JavaScript, React, and Python.`
+            tagline: "always looking to automate",
+            details: `I started my career in pension consulting and life insurance. In every role I ended up being the person who automated the repetitive work — first with VBA and Excel, then Python.
+
+    After completing a software engineering bootcamp in 2024–2025, I moved fully into AI application development. I now co-lead development of a production LangGraph platform at PwC.`
         },
         {
             id: 3,
             label: "what else..",
             images: ["images/selfie2.jpg"],
-            tagline: "Cat mom, outdoor enthusiast, amatuer artist",
-            details: `When I'm not coding, you might find me doing arts and crafts, snowmobiling, camping, or just hanging out with my cats and watching stand-up comedy.`
+            tagline: "cat mom and outdoor enthusiast",
+            details: `When I'm not coding, you'll often find me outdoors — snowmobiling, ice skating, camping, or hiking. I also enjoy painting, arts and crafts, watching stand-up comedy, board games, and spending time with my cats and family.`
         }
+    ],
+
+    // SOCIALS — Hashnode removed
+    socials: [
+        {
+            id: 1,
+            name: "LinkedIn",
+            image: "LI-Black.png",
+            link: "https://www.linkedin.com/in/jacqueline-trapp-065a936b"
+        },
+        {
+            id: 2,
+            name: "Github",
+            image: "github-mark.png",
+            link: "https://github.com/jtrapp18"
+        }
+    ],
+
+    // LANGUAGES — add TypeScript
+    languages: [
+        'Python',
+        'TypeScript',
+        'JavaScript',
+        'React',
+        'Flask',
+        'SQL',
+        'CSS',
+        'HTML',
+        'VBA'
     ],
     socials: [
         {

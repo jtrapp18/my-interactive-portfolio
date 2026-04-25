@@ -1,8 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
-import styled from "styled-components";
-import data from "../data";
+import styled from 'styled-components';
+import data from '../data';
 import ScrollButtons from '../components/ScrollButtons';
 import TechnicalHighlights from '../components/TechnicalHighlights';
+import AboutSection from '../components/AboutSection';
 
 const StyledMain = styled.main`
     box-sizing: border-box;
@@ -18,205 +19,69 @@ const StyledMain = styled.main`
     scroll-snap-type: y mandatory;
     overflow-y: auto;
     height: var(--size-body);
-    
+
     ::-webkit-scrollbar {
         width: 0px;
         height: 0px;
     }
 `;
 
-const StyledArticle = styled.article`
+const TechnicalArticle = styled.article`
     scroll-snap-align: start;
-    height: var(--size-body);
-    margin: 0;
-    width: 65%;
-    background: rgba(255, 255, 255, 0.9);
-    align-items: center;
+    justify-content: center;
     display: flex;
-
-    &.active h2 {
-        animation: pop 3s;
-    }
-
-    &.active .about-info {
-        animation: fade 3s;
-    }
-
-    h2 {
-        font-size: clamp(3rem, calc(100vw / 8), 5rem);
-        margin-bottom: 0px;
-        margin-top: 10px;
-        width: fit-content;
-        display: flex;
-
-        strong {
-            color: var(--green);
-        }
-    }
-
-    p {
-        font-size: clamp(.8rem, 1.5vw, 1.1rem);
-    }
-
-    h3 {
-        margin: 0;
-        font-size: clamp(1rem, 2vw, 1.4rem);
-    }
-
-    section {
-        padding: 0px 30px 0px 30px;
-        position: relative;
-        width: 100%;
-        border-radius: 20px;
-    }
-
-    .about-info {
-        display: grid;
-        width: 100%;
-        max-height: 90%;
-        grid-template-columns: 2fr 1fr;
-        gap: 25px;
-    }
-
-    .about-info > :only-child {
-        grid-column: span 2;
-    }
+    width: 100%;
 
     @media screen and (max-width: 768px) {
         width: 90%;
-        .about-info {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-        }
     }
 `;
-
-const ImageContainer = styled.div`
-    position: relative;
-    height: 0;
-
-    width: 100%;
-    padding-top: 100%;
-    max-width: 500px;
-    border-radius: 200px;
-    overflow: hidden;
-
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-        transition: opacity 1s ease-in-out;
-        opacity: 0;
-    }
-
-    img.active {
-        opacity: 1;
-    }
-
-    @media screen and (max-width: 768px) {
-        width: 70%;
-        border-radius: 0px;
-        padding-top: 70%;
-    }
-`;
-
 
 const About = () => {
     const aboutMe = data.aboutMe;
     const containerRef = useRef(null);
     const sectionsRef = useRef([]);
     const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     useEffect(() => {
         const handleScroll = () => {
             const container = containerRef.current;
-    
-            if (container) {
-                const scrollTop = container.scrollTop;
+            if (!container) return;
 
-                const sectionIndex = sectionsRef.current.findIndex((section) => {
-                    const { top, bottom } = section.getBoundingClientRect();
-    
-                    // Check if the section is currently in view
-                    return top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2;
-                });
-    
-                if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
-                    setCurrentSectionIndex(sectionIndex);
-                }
+            const sectionIndex = sectionsRef.current.findIndex((section) => {
+                if (!section) return false;
+                const { top, bottom } = section.getBoundingClientRect();
+                return top <= window.innerHeight / 2 && bottom >= window.innerHeight / 2;
+            });
+
+            if (sectionIndex !== -1 && sectionIndex !== currentSectionIndex) {
+                setCurrentSectionIndex(sectionIndex);
             }
         };
-    
+
         const container = containerRef.current;
         container.addEventListener('scroll', handleScroll);
-    
-        return () => {
-            container.removeEventListener('scroll', handleScroll);
-        };
-    }, [currentSectionIndex]);    
-
-    useEffect(() => {
-        if (aboutMe[currentSectionIndex]?.images?.length > 1) {
-            const interval = setInterval(() => {
-                setCurrentImageIndex((prevIndex) =>
-                    (prevIndex + 1) % aboutMe[currentSectionIndex].images.length
-                );
-            }, 5000);
-
-            return () => clearInterval(interval); // Cleanup interval on component unmount
-        }
-    }, [currentSectionIndex, aboutMe]);
+        return () => container.removeEventListener('scroll', handleScroll);
+    }, [currentSectionIndex]);
 
     return (
         <StyledMain ref={containerRef}>
             {aboutMe.map((about, index) => (
-                <StyledArticle
-                    ref={(el) => (sectionsRef.current[index] = el)}
+                <AboutSection
                     key={about.id}
-                    image={about.background}
-                    className={currentSectionIndex === index ? 'active' : ''}
-                >
-                    <section>
-                        <h2>
-                            {about.label}<strong>.</strong>
-                        </h2>
-                        {about.tagline && (<h3>{about.tagline}</h3>)}
-                        <div className="about-info">
-                            <p>
-                                {about.details.split('\n').map((line, index) => (
-                                    <React.Fragment key={index}>
-                                        {line}
-                                        {index < about.details.split('\n').length - 1 && <br />}
-                                    </React.Fragment>
-                                ))}
-                            </p>
-                            {about.images && about.images.length > 0 && (
-                                <ImageContainer>
-                                    {about.images.map((image, imgIndex) => (
-                                        <img
-                                            key={imgIndex}
-                                            src={`${import.meta.env.BASE_URL}${image}`}
-                                            alt={`Image ${imgIndex + 1}`}
-                                            className={currentImageIndex === imgIndex ? 'active' : imgIndex === 0 ? 'active' : ''}
-                                        />
-                                    ))}
-                                </ImageContainer>
-                            )}
-                        </div>
-                    </section>
-                </StyledArticle>
+                    about={about}
+                    isActive={currentSectionIndex === index}
+                    sectionRef={(el) => (sectionsRef.current[index] = el)}
+                />
             ))}
-            <StyledArticle 
+            <TechnicalArticle
                 ref={(el) => (sectionsRef.current[aboutMe.length] = el)}
                 className={currentSectionIndex === aboutMe.length ? 'active technical' : 'technical'}
             >
-                <TechnicalHighlights />
-            </StyledArticle>
+                <TechnicalHighlights
+                    isActive={currentSectionIndex === aboutMe.length}
+                />
+            </TechnicalArticle>
             <ScrollButtons
                 containerRef={containerRef}
                 sectionsRef={sectionsRef}

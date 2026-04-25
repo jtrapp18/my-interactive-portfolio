@@ -31,7 +31,6 @@ const Projects = () => {
             <div className='main-content'>
               <article className='page-header'>
                 <h1>Featured Projects</h1>
-                <p>During my Software Engineering course at Flatiron School, I completed a series of both group and solo projects, which are described below.</p>
                 <i>Click on any card for more details.</i>
               </article>
               <Overlay isVisible={activeProj !== null} opacity={.5}/>

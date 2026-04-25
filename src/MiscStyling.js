@@ -207,12 +207,13 @@ const StyledForm = styled.form`
 
 const CardHover = css`
     &:hover {
-        background: ${(props) => props.theme.cardHover};
+        // background: ${(props) => props.theme.cardHover};
         
         color: ${(props) => props.theme.hoverText};
+        box-shadow: var(--shadow-dark);
 
         h2 {
-          text-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+          text-shadow: 2px 2px 2px rgba(0, 0, 0, .3);
         }
 
         h3 {
@@ -279,5 +280,79 @@ const Overlay = styled.div`
   opacity: ${({ isVisible }) => (isVisible ? 1 : 0)};
 `;
 
+const StyledAboutArticle = styled.article`
+    scroll-snap-align: start;
+    height: var(--size-body);
+    margin: 0;
+    width: 65%;
+    background: rgba(255, 255, 255, 0.9);
+    align-items: center;
+    display: flex;
+
+    &.active h2 {
+        animation: pop 3s;
+    }
+
+
+    &.active .about-info {
+        animation: settle 0.4s ease-out;
+    }
+
+    @keyframes settle {
+        from { transform: translateY(8px); opacity: 0.7; }
+        to   { transform: translateY(0);   opacity: 1; }
+    }
+
+    h2 {
+        font-size: clamp(3rem, calc(100vw / 8), 5rem);
+        margin-bottom: 0px;
+        margin-top: 10px;
+        width: fit-content;
+        display: flex;
+
+        strong {
+            color: var(--green);
+        }
+    }
+
+    p {
+        font-size: clamp(.8rem, 1.5vw, 1.1rem);
+    }
+
+    h3 {
+        margin: 0;
+        font-size: clamp(1rem, 2vw, 1.4rem);
+    }
+
+    section {
+        padding: 0px 30px 0px 30px;
+        position: relative;
+        width: 100%;
+        border-radius: 20px;
+    }
+
+    .about-info {
+        display: grid;
+        width: 100%;
+        max-height: 90%;
+        grid-template-columns: 2fr 1fr;
+        gap: 25px;
+    }
+
+    .about-info > :only-child {
+        grid-column: span 2;
+    }
+
+    @media screen and (max-width: 768px) {
+        width: 90%;
+        .about-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+    }
+`;
+
+
 export { mobileTheme, windowTheme, StyledMenuItem, StyledNavLink, StyledLink, StyledMain, 
-  StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation, Overlay }
+  StyledButton, StyledForm, CardHover, CardStyling, TypeAnimation, Overlay, StyledAboutArticle }

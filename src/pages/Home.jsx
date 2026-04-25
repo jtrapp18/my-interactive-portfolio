@@ -28,7 +28,8 @@ const StyledDiv = styled.div`
     }
 
     strong {
-      color: rgb(255, 255, 157);
+      // color: rgb(255, 255, 157);
+      color: #E3735E;
     }
 
     h1:hover strong, p:hover strong {
@@ -84,6 +85,7 @@ const Home = () => {
   }, []);
 
   if (!imageLoaded) {return <Loading />}
+  // return <Loading />
 
   return (
     <main>
@@ -91,7 +93,7 @@ const Home = () => {
         {imageLoaded && showText && (
           <section>
             <h1>Hi, I'm <strong>Jacqueline</strong></h1>
-            <p>I'm a <strong>Full-Stack Developer</strong></p>
+            <p>I'm an <strong>Actuary</strong> and <strong>AI Engineer</strong></p>
           </section>
         )}
 

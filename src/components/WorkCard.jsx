@@ -64,6 +64,13 @@ const StyledCard = styled.section`
       z-index: 1000;
       padding: 2vh 1vw 2vh 1vw;
 
+      &:hover {
+        background: white;
+        h2 {
+          text-shadow: none;
+        }
+      }
+
       top: 5vh;
       width: ${(props) => props.isMobile ? '96vw' : '80%'};
       height: 90%;
